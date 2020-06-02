@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CMGTGraph", "CMGTGraph\CMGTGraph.csproj", "{86D31DD5-757A-41CD-817E-E8614D6A5A6A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CMGTGraphTest", "CMGTGraphTest\CMGTGraphTest.csproj", "{F15D920A-2DFF-4FF1-89C6-B00DF5A47F2E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{86D31DD5-757A-41CD-817E-E8614D6A5A6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{86D31DD5-757A-41CD-817E-E8614D6A5A6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{86D31DD5-757A-41CD-817E-E8614D6A5A6A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F15D920A-2DFF-4FF1-89C6-B00DF5A47F2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F15D920A-2DFF-4FF1-89C6-B00DF5A47F2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F15D920A-2DFF-4FF1-89C6-B00DF5A47F2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F15D920A-2DFF-4FF1-89C6-B00DF5A47F2E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
