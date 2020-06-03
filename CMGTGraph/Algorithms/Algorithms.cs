@@ -128,7 +128,7 @@ namespace CMGTGraph.Algorithms
                 
                 if (fromOpenList != null && newCurrentLength >= fromOpenList.CurrentPathLength) continue; // find a way to save Path lengths to nodes
                 
-                fromOpenList ??= new Node<T>(neighbor);
+                fromOpenList = fromOpenList ?? new Node<T>(neighbor);
                 fromOpenList.Predecessor = node.Data;
                 fromOpenList.CurrentPathLength = newCurrentLength;
 

@@ -20,7 +20,7 @@ namespace CMGTGraph.Calculators
         /// <inheritdoc />
         public float Length(Point t)
         {
-            return MathF.Sqrt(t.X * t.X + t.Y * t.Y);
+            return (float) Math.Sqrt(t.X * t.X + t.Y * t.Y);
         }
 
         /// <inheritdoc />

@@ -55,10 +55,10 @@ namespace CMGTGraph
             var sb = new StringBuilder();
             sb.AppendLine("---------------------");
             sb.AppendLine($"Graph ({NodeCount.ToString()} nodes)");
-            foreach (var (key, value) in _connections)
+            foreach (var t in _connections)
             {
-                sb.AppendLine($"Node: {key.ToString()}");
-                foreach (var x1 in value)
+                sb.AppendLine($"Node: {t.Key.ToString()}");
+                foreach (var x1 in t.Value)
                 {
                     sb.AppendLine($"\tConnection to: {x1.ToString()}");
                 }
