@@ -8,7 +8,7 @@ namespace CMGTGraph.Algorithms
     public static class Algorithms
     {
         #region Node
-        private class Node<T> : IEquatable<Node<T>> where T : IEquatable<T>
+        public class Node<T> : IEquatable<Node<T>> where T : IEquatable<T>
         {
             public readonly T Data;
             public T Predecessor;
@@ -60,20 +60,17 @@ namespace CMGTGraph.Algorithms
         public static List<T> AStarSolve<T>(this Graph<T> graph, T start, T end)
             where T : IEquatable<T>
         {
-            var valid = true;
             if (!graph.Contains(start))
             {
                 Logger.Warn("Start node doesn't exist in graph!");
-                valid = false;
+                throw new Graph<T>.NodeNotFoundException(start);
             }
 
             if (!graph.Contains(end))
             {
                 Logger.Warn("End node doesn't exist in graph!");
-                valid = false;
+                throw new Graph<T>.NodeNotFoundException(end);
             }
-            
-            if(!valid) return new List<T>();
             
             // var closed = new Dictionary<T, Node<T>>();
             var closed = new HashSet<Node<T>>();

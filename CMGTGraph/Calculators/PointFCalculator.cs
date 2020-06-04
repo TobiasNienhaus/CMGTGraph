@@ -15,10 +15,9 @@ namespace CMGTGraph.Calculators
         /// <inheritdoc />
         public float Distance(PointF a, PointF b)
         {
-            if (Equals(a, b)) return 0f;
             ThrowIfNull(a, b);
 
-            return Length(Add(a, b));
+            return Length(Subtract(a, b));
         }
 
         /// <inheritdoc />
@@ -51,15 +50,6 @@ namespace CMGTGraph.Calculators
         {
             if(a == null) throw new ArgumentNullException(nameof(a));
             if(b == null) throw new ArgumentNullException(nameof(b));
-        }
-        
-        private static void ThrowIfNull(params PointF[] p)
-        {
-            if (p.Length == 0) return;
-            if (p.Any(point => point == null))
-            {
-                throw new ArgumentNullException();
-            }
         }
     }
 }
