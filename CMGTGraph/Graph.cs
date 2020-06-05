@@ -97,7 +97,7 @@ namespace CMGTGraph
             {
                 return _connections[node];
             }
-            catch (KeyNotFoundException e)
+            catch (KeyNotFoundException)
             {
                 throw new NodeNotFoundException();
             }

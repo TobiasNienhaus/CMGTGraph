@@ -14,9 +14,10 @@ namespace CMGTGraph.Algorithms
             public T Predecessor;
             public float CurrentPathLength;
             public float EstimatedCompletePathLength;
+            public float CompleteEstimate => CurrentPathLength + EstimatedCompletePathLength;
 
-            public Node(T data, T predecessor = default, float currentPathLength = float.MaxValue,
-                float estimatedCompletePathLength = float.MinValue)
+            public Node(T data, T predecessor = default, float currentPathLength = 0f,
+                float estimatedCompletePathLength = float.MaxValue)
             {
                 Data = data;
                 Predecessor = predecessor;
@@ -62,32 +63,34 @@ namespace CMGTGraph.Algorithms
         {
             if (!graph.Contains(start))
             {
-                Logger.Warn("Start node doesn't exist in graph!");
+                Logger.Error("Start node doesn't exist in graph!");
                 throw new Graph<T>.NodeNotFoundException(start);
             }
 
             if (!graph.Contains(end))
             {
-                Logger.Warn("End node doesn't exist in graph!");
+                Logger.Error("End node doesn't exist in graph!");
                 throw new Graph<T>.NodeNotFoundException(end);
             }
             
             // var closed = new Dictionary<T, Node<T>>();
             var closed = new HashSet<Node<T>>();
             // var open = new Dictionary<T, Node<T>>();
-            var open = new List<Node<T>> {new Node<T>(start)};
+            var open = new List<Node<T>> {new Node<T>(start, estimatedCompletePathLength: graph.Calculator.Distance(start, end))};
 
             var connections = graph.Connections;
 
             do
             {
-                var recordHolder = open[0];
+                var recordHolder = open.First();
                 var record = recordHolder.EstimatedCompletePathLength;
                 foreach (var node in open)
                 {
-                    if (!(node.EstimatedCompletePathLength < record)) continue;
-                    record = node.EstimatedCompletePathLength;
-                    recordHolder = node;
+                    if (node.EstimatedCompletePathLength < record)
+                    {
+                        record = node.EstimatedCompletePathLength;
+                        recordHolder = node;
+                    }
                 }
 
                 open.Remove(recordHolder);
@@ -113,25 +116,48 @@ namespace CMGTGraph.Algorithms
         {
             foreach (var neighbor in neighbors)
             {
-                if (closed.Contains(new Node<T>(neighbor))) continue;
-
-                var newCurrentLength = node.CurrentPathLength + calculator.Distance(node.Data, neighbor);
+                var currentPathLength = node.CurrentPathLength + calculator.Distance(node.Data, neighbor);
                 
-                Node<T> fromOpenList = null;
-                foreach (var n in open)
+                Node<T> n = null;
+                var fromClosedList = false;
+                foreach (var openNode in open)
                 {
-                    if (n.Data.Equals(neighbor)) fromOpenList = n;
+                    if (openNode.Data.Equals(neighbor)) n = openNode;
                 }
                 
-                if (fromOpenList != null && newCurrentLength >= fromOpenList.CurrentPathLength) continue; // find a way to save Path lengths to nodes
+                if (n == null)
+                {
+                    foreach (var closedNode in closed)
+                    {
+                        if (closedNode.Data.Equals(neighbor))
+                        {
+                            n = closedNode;
+                            fromClosedList = true;
+                            break;
+                        }
+                    }
+                }
                 
-                fromOpenList = fromOpenList ?? new Node<T>(neighbor);
-                fromOpenList.Predecessor = node.Data;
-                fromOpenList.CurrentPathLength = newCurrentLength;
-
-                fromOpenList.EstimatedCompletePathLength = newCurrentLength + calculator.Distance(neighbor, finish);
+                if (n == null)
+                {
+                    n = new Node<T>(neighbor, node.Data);
+                    open.Add(n);
+                }
                 
-                if (!open.Contains(fromOpenList)) open.Add(fromOpenList);
+                var estimateComponent = calculator.Distance(neighbor, finish);
+                var completeEstimate = currentPathLength + estimateComponent;
+                
+                if (completeEstimate < n.EstimatedCompletePathLength)
+                {
+                    if (fromClosedList)
+                    {
+                        closed.Remove(n);
+                        open.Add(n);
+                    }
+                    n.CurrentPathLength = currentPathLength;
+                    n.EstimatedCompletePathLength = completeEstimate;
+                    n.Predecessor = node.Data;
+                }
             }
         }
 
@@ -142,7 +168,7 @@ namespace CMGTGraph.Algorithms
             while (current != null)
             {
                 ret.Add(current.Data);
-
+                Logger.Log($"data: {current.Data} predecessor: {current.Predecessor} G: {current.CurrentPathLength} H: {current.EstimatedCompletePathLength} F: {current.CompleteEstimate}");
                 current = current.Predecessor != null ? knownNodes[current.Predecessor] : null;
             }
 
