@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using CMGTGraph.Calculators;
 using CMGTGraph.Logging;
 
 namespace CMGTGraph.Algorithms
@@ -44,7 +45,7 @@ namespace CMGTGraph.Algorithms
 
                 open.Remove(curr);
                 visited.Add(curr);
-                DijkstraExpandNode(curr, graph.GetConnections(curr.Data), open, visited, graph.Calculator);
+                DijkstraExpandNode(curr, graph.GetPassableConnections(curr.Data), open, visited, graph.Calculator);
             }
             Logger.Warn("No path found!");
             return new List<T>();

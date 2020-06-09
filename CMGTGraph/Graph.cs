@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
+using CMGTGraph.Calculators;
 
 namespace CMGTGraph
 {
-    // TODO add IReadOnlyGraph interface to make it possible to provide a immutable copy of the graph
-    
     /// <summary>
     /// The representation of a graph.
     /// </summary>
@@ -24,12 +25,14 @@ namespace CMGTGraph
         }
         
         private readonly Dictionary<T, HashSet<T>> _connections;
-        
-        public ReadOnlyDictionary<T, HashSet<T>> Connections => new ReadOnlyDictionary<T, HashSet<T>>(_connections);
-        
+
+        /// <inheritdoc />
         public int NodeCount => _connections.Count;
-        
+
+        /// <inheritdoc />
         public ICalculator<T> Calculator { get; }
+
+        private readonly HashSet<T> _impassable;
         
         /// <summary>
         /// Create a new graph.
@@ -39,6 +42,7 @@ namespace CMGTGraph
         {
             Calculator = calculator;
             _connections = new Dictionary<T, HashSet<T>>();
+            _impassable = new HashSet<T>();
         }
         
         /// <summary>
@@ -87,22 +91,14 @@ namespace CMGTGraph
             
             return _connections[nodeA].Remove(nodeB) | _connections[nodeB].Remove(nodeA);
         }
-        
-        /// <summary>
-        /// Get the connections of a node in a graph.
-        /// </summary>
-        /// <exception cref="NodeNotFoundException"></exception>
-        public HashSet<T> GetConnections(T node)
+
+        /// <inheritdoc />
+        public HashSet<T> GetPassableConnections(T node)
         {
-            // TODO the returned HashSet can still be altered
-            try
-            {
-                return _connections[node];
-            }
-            catch (KeyNotFoundException)
-            {
-                throw new NodeNotFoundException();
-            }
+            if(!Contains(node)) throw new NodeNotFoundException(node);
+            var conn = new HashSet<T>(_connections[node]);
+            conn.ExceptWith(_impassable);
+            return conn;
         }
 
         /// <summary>
@@ -150,6 +146,52 @@ namespace CMGTGraph
         public bool Contains(T value)
         {
             return _connections.ContainsKey(value);
+        }
+
+        /// <inheritdoc />
+        public bool NodeIsPassable(T node)
+        {
+            return !_impassable.Contains(node);
+        }
+
+        public void MakeImpassable(T node)
+        {
+            if (!_impassable.Contains(node)) _impassable.Add(node);
+        }
+
+        public void MakePassable(T node)
+        {
+            if (_impassable.Contains(node)) _impassable.Remove(node);
+        }
+
+        public void TogglePassable(T node)
+        {
+            if (_impassable.Contains(node)) _impassable.Remove(node);
+            else _impassable.Add(node);
+        }
+
+        /// <inheritdoc />
+        public bool IsConnected()
+        {
+            var startNode = _connections.Keys.First();
+            var visited = new HashSet<T> {startNode};
+            var q = new Queue<T>();
+            q.Enqueue(startNode);
+            
+            while (q.Count > 0)
+            {
+                var n = q.Dequeue();
+                foreach (var nb in GetPassableConnections(n))
+                {
+                    if(visited.Contains(nb)) continue;
+                    q.Enqueue(nb);
+                    visited.Add(nb);
+                }
+            }
+
+            if (visited.Count > NodeCount)
+                throw new Exception("Somehow more nodes where visited then are in the graph.");
+            return visited.Count == NodeCount;
         }
     }
 }

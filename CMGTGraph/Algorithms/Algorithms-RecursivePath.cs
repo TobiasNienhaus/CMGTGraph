@@ -31,7 +31,7 @@ namespace CMGTGraph.Algorithms
             if(depth == MaxDepth) return new List<T>();
             List<T> l = null;
 
-            foreach (var c in graph.GetConnections(start))
+            foreach (var c in graph.GetPassableConnections(start))
             {
                 if (pathTo.Contains(c)) continue;
 

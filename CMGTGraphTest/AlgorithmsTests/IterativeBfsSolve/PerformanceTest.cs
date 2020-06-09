@@ -55,7 +55,7 @@ namespace CMGTGraphTest.AlgorithmsTests.IterativeBfsSolve
         private void PrintPath(List<Point> path)
         {
             var sb = new StringBuilder();
-            sb.AppendFormat("Path: (Length: {0})\n", path.Count.ToString());
+            sb.AppendFormat("Path: (SqrLength: {0})\n", path.Count.ToString());
             foreach (var point in path)
             {
                 sb.AppendLine(point.ToString());

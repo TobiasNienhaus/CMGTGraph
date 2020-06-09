@@ -68,6 +68,18 @@ namespace CMGTGraph.Algorithms
                 Logger.Error("End node doesn't exist in graph!");
                 throw new Graph<T>.NodeNotFoundException(end);
             }
+
+            if (!g.NodeIsPassable(start))
+            {
+                Logger.Error("Can't calculate path starting from impassable node.");
+                throw new InvalidOperationException();
+            }
+
+            if (!g.NodeIsPassable(end))
+            {
+                Logger.Error("Can't calculate path ending in impassable node.");
+                throw new InvalidOperationException();
+            }
         }
         
         private static List<T> BuildPath<T>(Node<T> from, IEnumerable<Node<T>> knownNodes) where T : IEquatable<T>
