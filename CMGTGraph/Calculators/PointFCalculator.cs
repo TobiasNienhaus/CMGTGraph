@@ -6,46 +6,22 @@ namespace CMGTGraph.Calculators
 {
     public class PointFCalculator : ICalculator<PointF>
     {
+
         /// <inheritdoc />
-        public bool Equals(PointF a, PointF b)
+        public float SqrDistance(PointF a, PointF b)
         {
-            return a.Equals(b);
+            ThrowIfNull(a, b);
+            var x = b.X - a.X;
+            var y = b.Y - a.Y;
+            return x * x + y * y;
         }
 
         /// <inheritdoc />
         public float Distance(PointF a, PointF b)
         {
-            ThrowIfNull(a, b);
-
-            return Length(Subtract(a, b));
+            return (float) Math.Sqrt(SqrDistance(a, b));
         }
 
-        /// <inheritdoc />
-        public float Length(PointF t)
-        {
-            ThrowIfNull(t);
-            return (float) Math.Sqrt(t.X * t.X + t.Y * t.Y);
-        }
-
-        /// <inheritdoc />
-        public PointF Subtract(PointF a, PointF b)
-        {
-            ThrowIfNull(a, b);
-            return new PointF(a.X - b.X, a.Y - b.Y);
-        }
-
-        /// <inheritdoc />
-        public PointF Add(PointF a, PointF b)
-        {
-            ThrowIfNull(a, b);
-            return new PointF(a.X + b.X, a.Y + b.Y);
-        }
-
-        private static void ThrowIfNull(PointF a)
-        {
-            if(a == null) throw new ArgumentNullException(nameof(a));
-        }
-        
         private static void ThrowIfNull(PointF a, PointF b)
         {
             if(a == null) throw new ArgumentNullException(nameof(a));

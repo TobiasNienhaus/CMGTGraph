@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using CMGTGraph.Calculators;
 using CMGTGraph.Logging;
 
 namespace CMGTGraph.Algorithms
@@ -37,9 +38,7 @@ namespace CMGTGraph.Algorithms
             var closed = new HashSet<AStarNode<T>>();
             // var open = new Dictionary<T, Node<T>>();
             var open = new List<AStarNode<T>> {new AStarNode<T>(start, distanceToFinish: graph.Calculator.Distance(start, end))};
-
-            var connections = graph.Connections;
-
+            
             while(open.Count > 0)
             {
                 // get most promising node
@@ -58,13 +57,13 @@ namespace CMGTGraph.Algorithms
                     return BuildPath(recordHolder, closed);
 
                 closed.Add(recordHolder);
-                AStarExpandNode(recordHolder, end, connections[recordHolder.Data], open, closed, graph.Calculator);
+                AStarExpandNode(recordHolder, end, graph.GetPassableConnections(recordHolder.Data), open, closed, graph.Calculator);
             }
 
             return new List<T>();
         }
 
-        private static void AStarExpandNode<T>(DijkstraNode<T> node, T finish, HashSet<T> neighbors,
+        private static void AStarExpandNode<T>(DijkstraNode<T> node, T finish, IEnumerable<T> neighbors,
             ICollection<AStarNode<T>> open, ICollection<AStarNode<T>> closed, ICalculator<T> calculator) where T : IEquatable<T>
         {
             foreach (var neighbor in neighbors)

@@ -8,6 +8,8 @@ namespace CMGTGraphTest
 {
     public class GraphTest
     {
+        // TODO add unit tests for passable and impassable nodes
+
         private Graph<Point> _graph;
 
         [SetUp]
@@ -19,9 +21,7 @@ namespace CMGTGraphTest
         [Test]
         public void NullTests()
         {
-            Assert.NotNull(_graph.Connections);
             Assert.NotNull(_graph.Calculator);
-            Assert.IsTrue(_graph.Connections.Count == _graph.NodeCount);
         }
 
         [Test]
@@ -141,6 +141,35 @@ namespace CMGTGraphTest
             Assert.Catch<Graph<Point>.NodeNotFoundException>(() => _graph.GetConnections(new Point(-9, -9)));
 
             Console.WriteLine(sb.ToString());
+        }
+
+        [Test]
+        public void IsConnectedTest()
+        {
+            for (var i = 0; i < 10; i++)
+            {
+                _graph.AddConnection(new Point(i, 0), new Point(i + 1, 0));
+                _graph.AddConnection(new Point(i, 0), new Point(i, 1));
+                _graph.AddConnection(new Point(i, 1), new Point(i + 1, 1));
+            }
+            Assert.IsTrue(_graph.IsConnected());
+        }
+
+        [Test]
+        public void IsNotConnectedTest()
+        {
+            _graph.Add(new Point(0, 1));
+            _graph.AddConnection(new Point(0, 1), new Point(1, 2));
+            _graph.AddConnection(new Point(2, 3), new Point(3, 4));
+            _graph.AddConnection(new Point(3, 4), new Point(1, 2));
+            // separate net
+            _graph.AddConnection(new Point(800, 100), new Point(900, 100));
+            _graph.AddConnection(new Point(900, 100), new Point(850, 1000));
+            _graph.AddConnection(new Point(800, 100), new Point(850, 1000));
+            _graph.AddConnection(new Point(850, 1000), new Point(950, 800));
+            _graph.AddConnection(new Point(950, 800), new Point(20, 80));
+            
+            Assert.IsFalse(_graph.IsConnected());
         }
 
         [Test]

@@ -1,5 +1,6 @@
 ﻿using CMGTGraph;
 using CMGTGraph.Algorithms;
+using CMGTGraph.Logging;
 using CMGTGraph.Types;
 using NUnit.Framework;
 
@@ -18,6 +19,11 @@ namespace CMGTGraphTest.AlgorithmsTests.Dijkstra
             _testGraph.AddConnection(new Point(0, 1), new Point(1, 2));
             _testGraph.AddConnection(new Point(2, 3), new Point(3, 4));
             _testGraph.AddConnection(new Point(3, 4), new Point(1, 2));
+            
+            _testGraph.AddConnection(new Point(3, 4), new Point(10, 40));
+            _testGraph.AddConnection(new Point(10, 40), new Point(20, 80));
+            _testGraph.MakeImpassable(new Point(10, 40));
+            
             // separate net
             _testGraph.AddConnection(new Point(800, 100), new Point(900, 100));
             _testGraph.AddConnection(new Point(900, 100), new Point(850, 1000));

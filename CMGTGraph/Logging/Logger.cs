@@ -63,7 +63,7 @@ namespace CMGTGraph.Logging
                 ColorLog("CMGTGraph [Error]: " + text, ConsoleColor.Red);
         }
 
-        public static void ColorLog(string text, ConsoleColor color)
+        public static void ColorLog(string text, ConsoleColor color = ConsoleColor.White)
         {
             var c = Console.ForegroundColor;
             Console.ForegroundColor = color;

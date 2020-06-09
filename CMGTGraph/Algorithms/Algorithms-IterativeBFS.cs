@@ -19,7 +19,7 @@ namespace CMGTGraph.Algorithms
             while (q.Count > 0)
             {
                 var curr = q.Dequeue();
-                var nbs = graph.GetConnections(curr.Data);
+                var nbs = graph.GetPassableConnections(curr.Data);
                 foreach (var nb in nbs)
                 {
                     var node = new Node<T>(nb, curr.Data);

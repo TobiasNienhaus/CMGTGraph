@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
+using CMGTGraph.Calculators;
 
 namespace CMGTGraph
 {
@@ -24,12 +27,14 @@ namespace CMGTGraph
         }
         
         private readonly Dictionary<T, HashSet<T>> _connections;
-        
-        public ReadOnlyDictionary<T, HashSet<T>> Connections => new ReadOnlyDictionary<T, HashSet<T>>(_connections);
-        
+
+        /// <inheritdoc />
         public int NodeCount => _connections.Count;
-        
+
+        /// <inheritdoc />
         public ICalculator<T> Calculator { get; }
+
+        private readonly HashSet<T> _impassable;
         
         /// <summary>
         /// Create a new graph.
@@ -39,6 +44,7 @@ namespace CMGTGraph
         {
             Calculator = calculator;
             _connections = new Dictionary<T, HashSet<T>>();
+            _impassable = new HashSet<T>();
         }
         
         /// <summary>
@@ -105,6 +111,14 @@ namespace CMGTGraph
             }
         }
 
+        /// <inheritdoc />
+        public HashSet<T> GetPassableConnections(T node)
+        {
+            var conn = new HashSet<T>(GetConnections(node));
+            conn.ExceptWith(_impassable);
+            return conn;
+        }
+
         /// <summary>
         /// Test if the provided nodes have a connection in the graph. Returns true if yes.
         /// </summary>
@@ -150,6 +164,52 @@ namespace CMGTGraph
         public bool Contains(T value)
         {
             return _connections.ContainsKey(value);
+        }
+
+        /// <inheritdoc />
+        public bool NodeIsPassable(T node)
+        {
+            return !_impassable.Contains(node);
+        }
+
+        public void MakeImpassable(T node)
+        {
+            if (!_impassable.Contains(node)) _impassable.Add(node);
+        }
+
+        public void MakePassable(T node)
+        {
+            if (_impassable.Contains(node)) _impassable.Remove(node);
+        }
+
+        public void TogglePassable(T node)
+        {
+            if (_impassable.Contains(node)) _impassable.Remove(node);
+            else _impassable.Add(node);
+        }
+
+        /// <inheritdoc />
+        public bool IsConnected()
+        {
+            var startNode = _connections.Keys.First();
+            var visited = new HashSet<T> {startNode};
+            var q = new Queue<T>();
+            q.Enqueue(startNode);
+            
+            while (q.Count > 0)
+            {
+                var n = q.Dequeue();
+                foreach (var nb in GetPassableConnections(n))
+                {
+                    if(visited.Contains(nb)) continue;
+                    q.Enqueue(nb);
+                    visited.Add(nb);
+                }
+            }
+
+            if (visited.Count > NodeCount)
+                throw new Exception("Somehow more nodes where visited then are in the graph.");
+            return visited.Count == NodeCount;
         }
     }
 }
