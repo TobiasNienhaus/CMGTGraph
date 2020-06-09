@@ -12,7 +12,12 @@ namespace CMGTGraph
         /// The number of nodes in the graph.
         /// </summary>
         int NodeCount { get; }
-        
+
+        /// <summary>
+        /// Get all the nodes in the graph.
+        /// </summary>
+        HashSet<T> Nodes { get; }
+
         /// <summary>
         /// The calculator that can be used to calculate things like SqrDistance between nodes.
         /// </summary>

@@ -30,6 +30,9 @@ namespace CMGTGraph
         public int NodeCount => _connections.Count;
 
         /// <inheritdoc />
+        public HashSet<T> Nodes => new HashSet<T>(_connections.Keys);
+
+        /// <inheritdoc />
         public ICalculator<T> Calculator { get; }
 
         private readonly HashSet<T> _impassable;
