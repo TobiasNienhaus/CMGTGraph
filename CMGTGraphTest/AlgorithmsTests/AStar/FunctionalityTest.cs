@@ -5,7 +5,7 @@ using NUnit.Framework;
 
 namespace CMGTGraphTest.AlgorithmsTests.AStar
 {
-    public class CommonAStarOperationsTest
+    public class FunctionalityTest
     {
         private Graph<Point> _testGraph;
         

@@ -8,7 +8,7 @@ using NUnit.Framework;
 
 namespace CMGTGraphTest.AlgorithmsTests.Recursive
 {
-    public class RecursivePathTest
+    public class FunctionalityTest
     {
         private Graph<Point> _testGraph;
         private Logger.LogLevel _oldLevel;

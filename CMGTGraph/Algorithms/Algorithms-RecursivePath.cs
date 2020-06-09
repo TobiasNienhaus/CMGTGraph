@@ -10,17 +10,7 @@ namespace CMGTGraph.Algorithms
         
         public static List<T> RecursiveSolve<T>(this IReadOnlyGraph<T> graph, T start, T end) where T : IEquatable<T>
         {
-            if (!graph.Contains(start))
-            {
-                Logger.Error("Start node doesn't exist in graph!");
-                throw new Graph<T>.NodeNotFoundException(start);
-            }
-
-            if (!graph.Contains(end))
-            {
-                Logger.Error("End node doesn't exist in graph!");
-                throw new Graph<T>.NodeNotFoundException(end);
-            }
+            graph.ThrowOnInvalidInput(start, end);
             
             Logger.Warn("This can take a while!");
             

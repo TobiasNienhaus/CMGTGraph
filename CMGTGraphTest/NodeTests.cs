@@ -1,8 +1,7 @@
 ﻿using System;
-using CMGTGraph.Algorithms;
 using NUnit.Framework;
-using Node = CMGTGraph.Algorithms.Algorithms.Node<float>;
-using NodeI = CMGTGraph.Algorithms.Algorithms.Node<int>;
+using Node = CMGTGraph.Algorithms.Algorithms.AStarNode<float>;
+using NodeI = CMGTGraph.Algorithms.Algorithms.AStarNode<int>;
 
 namespace CMGTGraphTest
 {

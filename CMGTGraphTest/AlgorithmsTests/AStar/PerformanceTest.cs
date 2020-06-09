@@ -8,7 +8,7 @@ using NUnit.Framework;
 
 namespace CMGTGraphTest.AlgorithmsTests.AStar
 {
-    public class BigAlgorithmsAStarTest
+    public class PerformanceTest
     {
         private Graph<Point> _g;
         private Random _random;
