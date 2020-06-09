@@ -101,6 +101,14 @@ namespace CMGTGraph
             return conn;
         }
 
+        /// <inheritdoc />
+        public HashSet<T> GetPassableConnections(T node)
+        {
+            var conn = new HashSet<T>(GetConnections(node));
+            conn.ExceptWith(_impassable);
+            return conn;
+        }
+
         /// <summary>
         /// Test if the provided nodes have a connection in the graph. Returns true if yes.
         /// </summary>
