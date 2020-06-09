@@ -2,15 +2,16 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
-using CMGTGraph.Types;
 
 namespace CMGTGraph
 {
+    // TODO add IReadOnlyGraph interface to make it possible to provide a immutable copy of the graph
+    
     /// <summary>
     /// The representation of a graph.
     /// </summary>
     /// <typeparam name="T">T needs to have a robust GetHashCode() implementation, as many operations rely on it in here</typeparam>
-    public class Graph<T> where T : IEquatable<T>
+    public class Graph<T> : IReadOnlyGraph<T> where T : IEquatable<T>
     {
         public sealed class NodeNotFoundException : KeyNotFoundException
         {
@@ -93,6 +94,7 @@ namespace CMGTGraph
         /// <exception cref="NodeNotFoundException"></exception>
         public HashSet<T> GetConnections(T node)
         {
+            // TODO the returned HashSet can still be altered
             try
             {
                 return _connections[node];

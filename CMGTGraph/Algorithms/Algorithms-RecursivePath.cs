@@ -8,7 +8,7 @@ namespace CMGTGraph.Algorithms
     {
         private const int MaxDepth = 100;
         
-        public static List<T> RecursiveSolve<T>(this Graph<T> graph, T start, T end) where T : IEquatable<T>
+        public static List<T> RecursiveSolve<T>(this IReadOnlyGraph<T> graph, T start, T end) where T : IEquatable<T>
         {
             if (!graph.Contains(start))
             {
@@ -35,7 +35,7 @@ namespace CMGTGraph.Algorithms
             return path;
         }
 
-        private static List<T> RecursiveSolve<T>(this Graph<T> graph, T start, T end, List<T> pathTo,int depth = 0)
+        private static List<T> RecursiveSolve<T>(this IReadOnlyGraph<T> graph, T start, T end, List<T> pathTo,int depth = 0)
             where T : IEquatable<T>
         {
             if(depth == MaxDepth) return new List<T>();

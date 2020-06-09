@@ -64,7 +64,7 @@ namespace CMGTGraph.Algorithms
         /// </summary>
         /// <exception cref="Graph{T}.NodeNotFoundException">Thrown when one (or both) of the nodes can't be found in the
         /// graph</exception>
-        public static List<T> AStarSolve<T>(this Graph<T> graph, T start, T end)
+        public static List<T> AStarSolve<T>(this IReadOnlyGraph<T> graph, T start, T end)
             where T : IEquatable<T>
         {
             if (!graph.Contains(start))
