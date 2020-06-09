@@ -5,7 +5,7 @@ using CMGTGraph.Logging;
 
 namespace CMGTGraph.Algorithms
 {
-    public static class Algorithms
+    public static partial class Algorithms
     {
         #region Node
         public class Node<T> : IEquatable<Node<T>> where T : IEquatable<T>
@@ -57,7 +57,13 @@ namespace CMGTGraph.Algorithms
             }
         }
         #endregion
-
+        
+        /// <summary>
+        /// Get a path between two points in the graph using the A* algorithm.
+        /// If no path can be found, an empty list is returned.
+        /// </summary>
+        /// <exception cref="Graph{T}.NodeNotFoundException">Thrown when one (or both) of the nodes can't be found in the
+        /// graph</exception>
         public static List<T> AStarSolve<T>(this Graph<T> graph, T start, T end)
             where T : IEquatable<T>
         {

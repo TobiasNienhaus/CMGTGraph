@@ -1,6 +1,8 @@
 ﻿using System;
 using CMGTGraph.Algorithms;
 using NUnit.Framework;
+using Node = CMGTGraph.Algorithms.Algorithms.Node<float>;
+using NodeI = CMGTGraph.Algorithms.Algorithms.Node<int>;
 
 namespace CMGTGraphTest
 {
@@ -17,9 +19,9 @@ namespace CMGTGraphTest
         [Test]
         public void EqualityTest()
         {
-            var n1 = new Algorithms.Node<float>(1f);
-            var n11 = new Algorithms.Node<float>(1f);
-            var n2 = new Algorithms.Node<float>(2f);
+            var n1 = new Node(1f);
+            var n11 = new Node(1f);
+            var n2 = new Node(2f);
 
             Assert.IsTrue(n1.Equals(n11));
             Assert.IsTrue(n1.Equals(n1));
@@ -36,8 +38,8 @@ namespace CMGTGraphTest
             for (var i = 0; i < 10000; i++)
             {
                 var val = _random.Next();
-                var a = new Algorithms.Node<int>(val);
-                var b = new Algorithms.Node<int>(val);
+                var a = new NodeI(val);
+                var b = new NodeI(val);
                 Assert.True(a.GetHashCode() == b.GetHashCode());
             }
 

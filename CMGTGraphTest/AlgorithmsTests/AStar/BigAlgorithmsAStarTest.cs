@@ -1,12 +1,12 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using NUnit.Framework;
 using CMGTGraph;
 using CMGTGraph.Algorithms;
 using CMGTGraph.Types;
+using NUnit.Framework;
 
-namespace CMGTGraphTest
+namespace CMGTGraphTest.AlgorithmsTests.AStar
 {
     public class BigAlgorithmsAStarTest
     {
@@ -39,7 +39,7 @@ namespace CMGTGraphTest
             }
         }
 
-        [Test, Timeout(500)]
+        [Test, MaxTime(1000)]
         public void Test()
         {
             var start = new Point(_random.Next(100), _random.Next(100));

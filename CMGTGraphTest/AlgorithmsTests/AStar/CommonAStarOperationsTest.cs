@@ -1,12 +1,9 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
-using NUnit.Framework;
 using CMGTGraph;
 using CMGTGraph.Algorithms;
 using CMGTGraph.Types;
+using NUnit.Framework;
 
-namespace CMGTGraphTest
+namespace CMGTGraphTest.AlgorithmsTests.AStar
 {
     public class CommonAStarOperationsTest
     {
