@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Runtime.Remoting.Metadata.W3cXsd2001;
 using CMGTGraph;
 using CMGTGraph.Calculators;
@@ -24,7 +25,7 @@ namespace CMGTGraphTest
             var p1 = new PointF(0f, 0f);
             var p11 = new PointF(0f, 0f);
             var p2 = new PointF(0f, 1f);
-            Assert.IsNotNull(PointF.Calculator);
+            Assert.IsNotNull(PointFCalculator.This);
 
             Assert.IsNotNull(p1.ToString());
 
@@ -66,7 +67,7 @@ namespace CMGTGraphTest
         {
             var p1 = new PointF(3f, 4f);
             var p2 = new PointF(6f, 8f);
-            TestCalculator(PointF.Calculator, null, p1, p2, 5f, 25f);
+            TestCalculator(PointFCalculator.This, null, p1, p2, 5f, 25f);
         }
 
         [Test]
@@ -75,7 +76,7 @@ namespace CMGTGraphTest
             var p1 = new Point(0, 0);
             var p11 = new Point(0, 0);
             var p2 = new Point(0, 1);
-            Assert.IsNotNull(Point.Calculator);
+            Assert.IsNotNull(PointCalculator.This);
 
             Assert.IsTrue(new Point(1, 2).X == 1);
             Assert.IsTrue(new Point(1, 2).Y == 2);
@@ -118,16 +119,36 @@ namespace CMGTGraphTest
         {
             var p1 = new Point(3, 4);
             var p2 = new Point(6, 8);
-            TestCalculator(Point.Calculator, null, p1, p2, 5f, 25f);
+            TestCalculator(PointCalculator.This, null, p1, p2, 5f, 25f);
         }
 
-        private static void TestCalculator<T>(ICalculator<T> c, T @null, T a, T b, float distAb, float sqrDistAb) where T : IEquatable<T>
+        [Test]
+        public void MiscCalculatorsTest()
         {
-            Assert.IsTrue(Math.Abs(c.Distance(a, b) - distAb) < float.Epsilon);
+            var p1 = new Point(3, 4);
+            var p2 = new Point(6, 8);
+            var pf1 = new PointF(3, 4);
+            var pf2 = new PointF(6, 8);
+            
+            TestCalculator(PointManhattanCalculator.This, null, p1, p2, 7, 49);
+            TestCalculator(PointFManhattanCalculator.This, null, pf1, pf2, 7, 49);
+
+            const float dist = 5.242640687f;
+            const float distSqr = dist * dist;
+            TestCalculator(PointDiagonalCalculator.Octile, null, p1, p2, dist, distSqr, 0.00001f);
+            TestCalculator(PointFDiagonalCalculator.Octile, null, pf1, pf2, dist, distSqr, 0.00001f);
+            
+            TestCalculator(PointDiagonalCalculator.Chebyshev, null, p1, p2, 4f, 16f);
+            TestCalculator(PointFDiagonalCalculator.Chebyshev, null, pf1, pf2, 4f, 16f);
+        }
+
+        private static void TestCalculator<T>(ICalculator<T> c, T @null, T a, T b, float distAb, float sqrDistAb, float accuracy = float.Epsilon) where T : IEquatable<T>
+        {
+            Assert.IsTrue(Math.Abs(c.Distance(a, b) - distAb) < accuracy);
             Assert.Catch(() => c.Distance(a, @null));
             Assert.Catch(() => c.Distance(@null, a));
             
-            Assert.IsTrue(Math.Abs(c.SqrDistance(a, b) - sqrDistAb) < float.Epsilon);
+            Assert.IsTrue(Math.Abs(c.SqrDistance(a, b) - sqrDistAb) < accuracy);
             Assert.Catch(() => c.SqrDistance(a, @null));
             Assert.Catch(() => c.SqrDistance(@null, a));
         }

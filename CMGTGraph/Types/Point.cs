@@ -9,13 +9,6 @@ namespace CMGTGraph.Types
         public readonly int X;
         public readonly int Y;
 
-        public static PointCalculator Calculator { get; }
-
-        static Point()
-        {
-            Calculator = new PointCalculator();
-        }
-
         public Point(int x, int y)
         {
             X = x;

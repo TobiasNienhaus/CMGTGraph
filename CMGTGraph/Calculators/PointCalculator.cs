@@ -5,6 +5,12 @@ namespace CMGTGraph.Calculators
 {
     public class PointCalculator : ICalculator<Point>
     {
+        private PointCalculator(){}
+
+        public static readonly PointCalculator This;
+
+        static PointCalculator() => This = new PointCalculator();
+        
         /// <inheritdoc />
         public float SqrDistance(Point a, Point b)
         {

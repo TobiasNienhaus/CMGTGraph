@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using CMGTGraph;
 using CMGTGraph.Algorithms;
+using CMGTGraph.Calculators;
 using CMGTGraph.Logging;
 using CMGTGraph.Types;
 using NUnit.Framework;
@@ -21,7 +22,7 @@ namespace CMGTGraphTest.AlgorithmsTests.Recursive
             
             Logger.Log("Started testing");
             
-            _testGraph = new Graph<Point>(Point.Calculator);
+            _testGraph = new Graph<Point>(PointCalculator.This);
             _testGraph.Add(new Point(0, 1));
             _testGraph.AddConnection(new Point(0, 1), new Point(1, 2));
             _testGraph.AddConnection(new Point(2, 3), new Point(3, 4));

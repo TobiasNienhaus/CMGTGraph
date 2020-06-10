@@ -1,5 +1,6 @@
 using CMGTGraph;
 using CMGTGraph.Algorithms;
+using CMGTGraph.Calculators;
 using CMGTGraph.Types;
 using NUnit.Framework;
 
@@ -12,7 +13,7 @@ namespace CMGTGraphTest.AlgorithmsTests.AStar
         [SetUp]
         public void Setup()
         {
-            _testGraph = new Graph<Point>(Point.Calculator);
+            _testGraph = new Graph<Point>(PointCalculator.This);
             _testGraph.Add(new Point(0, 1));
             _testGraph.AddConnection(new Point(0, 1), new Point(1, 2));
             _testGraph.AddConnection(new Point(2, 3), new Point(3, 4));

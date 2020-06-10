@@ -1,8 +1,11 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
 using System.Text;
 using CMGTGraph;
 using CMGTGraph.Algorithms;
+using CMGTGraph.Calculators;
 using CMGTGraph.Logging;
 using CMGTGraph.Types;
 using NUnit.Framework;
@@ -17,41 +20,53 @@ namespace CMGTGraphTest.AlgorithmsTests.AStar
         [SetUp]
         public void Setup()
         {
-            _g = new Graph<Point>(Point.Calculator);
+            _g = new Graph<Point>(PointCalculator.This);
             _random = new Random();
-            
-            for (var x = 0; x < 100; x++)
-            {
-                for (var y = 0; y < 100; y++)
-                {
-                    var p = new Point(x, y);
-                    if (x + 1 < 100)
-                    {
-                        var pr = new Point(x + 1, y);
-                        _g.AddConnection(p, pr);
-                    }
 
-                    if (y + 1 < 100)
-                    {
-                        var pd = new Point(x, y + 1);
-                        _g.AddConnection(p, pd);
-                    }
-                }
+            while (_g.NodeCount < 100) _g.Add(new Point(_random.Next(100), _random.Next(100)));
+
+            var nodes = _g.Nodes.ToArray();
+            Logger.Log($"NodeCount: {nodes.Length.ToString()}");
+            Console.WriteLine($"NodeCount: {nodes.Length.ToString()}");
+            for (var i = 0; i < nodes.Length * 3; i++)
+            {
+                var n1 = nodes[_random.Next(0, nodes.Length)];
+                var n2 = nodes[_random.Next(0, nodes.Length)];
+                _g.AddConnection(n1, n2);
+            }
+
+            while (!_g.IsConnected())
+            {
+                var n1 = nodes[_random.Next(0, nodes.Length)];
+                var n2 = nodes[_random.Next(0, nodes.Length)];
+                _g.AddConnection(n1, n2);
             }
         }
 
-        [Test, MaxTime(1000)]
+        [Test]
         public void Test()
         {
             var logLevel = Logger.LoggingLevel;
-            Logger.LoggingLevel = Logger.LogLevel.Spam;
-            var start = new Point(_random.Next(100), _random.Next(100));
-            var end = new Point(_random.Next(100), _random.Next(100));
+            Logger.LoggingLevel = Logger.LogLevel.Verbose;
+            
+            var nodes = _g.Nodes.ToArray();
+            var start = nodes[_random.Next(0, nodes.Length)];
+            var end = nodes[_random.Next(0, nodes.Length)];
 
+            var stopwatch = new Stopwatch();
+            stopwatch.Start();
+            
             var path = _g.AStarSolve(start, end);
+            
+            stopwatch.Stop();
+            var elapsed = stopwatch.ElapsedMilliseconds;
+            Logger.Log($"A* took {elapsed.ToString()}ms");
+            Assert.LessOrEqual(elapsed, 250L, "Test took to long");
             Assert.IsNotEmpty(path);
             PrintPath(path);
             Logger.LoggingLevel = logLevel;
+
+            Console.WriteLine(_g.ToString());
         }
 
         private void PrintPath(List<Point> path)

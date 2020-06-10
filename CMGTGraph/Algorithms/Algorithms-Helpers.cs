@@ -123,6 +123,7 @@ namespace CMGTGraph.Algorithms
 
         public struct PathFindingResult<T> where T : IEquatable<T>
         {
+            // TODO maybe make OPen and Closed IEnumerable
             public List<T> Path;
             public HashSet<T> OpenNodes;
             public HashSet<T> ClosedNodes;

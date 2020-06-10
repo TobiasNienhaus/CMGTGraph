@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Text;
 using CMGTGraph;
+using CMGTGraph.Algorithms;
+using CMGTGraph.Calculators;
 using CMGTGraph.Types;
 using NUnit.Framework;
 
@@ -15,7 +17,7 @@ namespace CMGTGraphTest
         [SetUp]
         public void SetUp()
         {
-            _graph = new Graph<Point>(Point.Calculator);
+            _graph = new Graph<Point>(PointCalculator.This);
         }
 
         [Test]
@@ -170,6 +172,38 @@ namespace CMGTGraphTest
             _graph.AddConnection(new Point(950, 800), new Point(20, 80));
             
             Assert.IsFalse(_graph.IsConnected());
+        }
+
+        [Test]
+        public void PassableTest()
+        {
+            _graph.Add(new Point(0, 1));
+            _graph.AddConnection(new Point(0, 1), new Point(1, 2));
+            _graph.AddConnection(new Point(2, 3), new Point(3, 4));
+            _graph.AddConnection(new Point(3, 4), new Point(1, 2));
+            
+            _graph.AddConnection(new Point(3, 4), new Point(10, 20));
+            _graph.AddConnection(new Point(10, 20), new Point(20, 80));
+            // separate net
+            _graph.AddConnection(new Point(800, 100), new Point(900, 100));
+            _graph.AddConnection(new Point(900, 100), new Point(850, 1000));
+            _graph.AddConnection(new Point(800, 100), new Point(850, 1000));
+            _graph.AddConnection(new Point(850, 1000), new Point(950, 800));
+            _graph.AddConnection(new Point(950, 800), new Point(20, 80));
+
+            var hingePoint = new Point(10, 20);
+            _graph.TogglePassable(hingePoint);
+            Assert.False(_graph.NodeIsPassable(hingePoint));
+            Assert.Catch<InvalidOperationException>(() => _graph.AStarSolve(new Point(10, 20), new Point(800, 100)));
+            Assert.Catch<InvalidOperationException>(() => _graph.AStarSolve(new Point(800, 100), new Point(10, 20)));
+            
+            _graph.MakePassable(hingePoint);
+            Assert.True(_graph.NodeIsPassable(hingePoint));
+            
+            _graph.TogglePassable(hingePoint);
+            Assert.False(_graph.NodeIsPassable(hingePoint));
+            _graph.TogglePassable(hingePoint);
+            Assert.True(_graph.NodeIsPassable(hingePoint));
         }
 
         [Test]

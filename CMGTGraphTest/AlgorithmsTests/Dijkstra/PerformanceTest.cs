@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using CMGTGraph;
 using CMGTGraph.Algorithms;
+using CMGTGraph.Calculators;
 using CMGTGraph.Types;
 using NUnit.Framework;
 
@@ -17,7 +18,7 @@ namespace CMGTGraphTest.AlgorithmsTests.Dijkstra
         [SetUp]
         public void Setup()
         {
-            _g = new Graph<Point>(Point.Calculator);
+            _g = new Graph<Point>(PointCalculator.This);
             _random = new Random();
 
             for (var x = 0; x < 100; x++)

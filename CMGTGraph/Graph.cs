@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
-using System.Security.Cryptography;
 using System.Text;
 using CMGTGraph.Calculators;
 
 namespace CMGTGraph
 {
+	// TODO look into ALT A* (https://www.microsoft.com/en-us/research/wp-content/uploads/2004/07/tr-2004-24.pdf)
+
     /// <summary>
     /// The representation of a graph.
     /// </summary>
@@ -16,8 +16,6 @@ namespace CMGTGraph
     {
         public sealed class NodeNotFoundException : KeyNotFoundException
         {
-            public NodeNotFoundException()
-            { }
             public NodeNotFoundException(T value)
             {
                 Data.Add("ToString", value.Equals(null) ? value.ToString() : "null");
@@ -33,7 +31,7 @@ namespace CMGTGraph
         public HashSet<T> Nodes => new HashSet<T>(_connections.Keys);
 
         /// <inheritdoc />
-        public ICalculator<T> Calculator { get; }
+        public ICalculator<T> Calculator { get; set; }
 
         private readonly HashSet<T> _impassable;
         
@@ -59,11 +57,14 @@ namespace CMGTGraph
         
         /// <summary>
         /// Add a connection between two nodes. If one or both of the nodes don't/doesn't
-        /// exist in the graph, it/they will be added to the graph. 
+        /// exist in the graph, it/they will be added to the graph.
+        /// If you pass the same node twice, it will be added to the graph but no connections will be added
+        /// as to not create loops. 
         /// </summary>
         public void AddConnection(T nodeA, T nodeB)
         {
             Add(nodeA);
+            if (nodeA.Equals(nodeB)) return;
             Add(nodeB);
             _connections[nodeA].Add(nodeB);
             _connections[nodeB].Add(nodeA);

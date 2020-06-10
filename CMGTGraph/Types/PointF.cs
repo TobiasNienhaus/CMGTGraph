@@ -9,13 +9,6 @@ namespace CMGTGraph.Types
         public readonly float X;
         public readonly float Y;
 
-        public static PointFCalculator Calculator { get; }
-
-        static PointF()
-        {
-            Calculator = new PointFCalculator();
-        }
-
         public PointF(float x, float y)
         {
             X = x;
