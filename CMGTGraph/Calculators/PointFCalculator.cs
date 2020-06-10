@@ -6,7 +6,6 @@ namespace CMGTGraph.Calculators
 {
     public class PointFCalculator : ICalculator<PointF>
     {
-
         /// <inheritdoc />
         public float SqrDistance(PointF a, PointF b)
         {

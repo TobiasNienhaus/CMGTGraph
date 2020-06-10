@@ -7,6 +7,8 @@ namespace CMGTGraph.Algorithms
 {
     public static partial class Algorithms
     {
+        #region Node
+
         public class Node<T> : IEquatable<Node<T>> where T : IEquatable<T>
         {
             public readonly T Data;
@@ -55,6 +57,16 @@ namespace CMGTGraph.Algorithms
             #endregion
         }
 
+        #endregion
+
+        #region Check Input
+
+        /// <summary>
+        /// Throw if one of the input parameters is not a valid start node.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <exception cref="Graph{T}.NodeNotFoundException"></exception>
+        /// <exception cref="InvalidOperationException"></exception>
         private static void ThrowOnInvalidInput<T>(this IReadOnlyGraph<T> g, T start, T end) where T : IEquatable<T>
         {
             if (!g.Contains(start))
@@ -81,7 +93,11 @@ namespace CMGTGraph.Algorithms
                 throw new InvalidOperationException();
             }
         }
-        
+
+        #endregion
+
+        #region Build Path
+
         private static List<T> BuildPath<T>(Node<T> from, IEnumerable<Node<T>> knownNodes) where T : IEquatable<T>
         {
             var p = BuildRecursiveReversePath(from, knownNodes.ToDictionary(n => n.Data));
@@ -97,10 +113,24 @@ namespace CMGTGraph.Algorithms
             while (current != null)
             {
                 ret.Add(current.Data);
-                current = current.Predecessor != null ? knownNodes[current.Predecessor] : null;
+                current = current.Predecessor == null ? null : knownNodes[current.Predecessor];
             }
 
             return ret;
         }
+
+        #endregion
+
+        public struct PathFindingResult<T> where T : IEquatable<T>
+        {
+            public List<T> Path;
+            public List<T> VisitedNodes;
+
+            public PathFindingResult(List<T> path, List<T> visitedNodes)
+            {
+                Path = path;
+                VisitedNodes = visitedNodes;
+            }
+        } 
     }
 }

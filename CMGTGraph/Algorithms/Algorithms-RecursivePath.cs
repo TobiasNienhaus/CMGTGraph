@@ -14,18 +14,12 @@ namespace CMGTGraph.Algorithms
             
             Logger.Warn("This can take a while!");
             
-            // Algorithm:
-            // RecursiveSolve(Graph, start, end, from, pathTo)
-            // get neighbors of start node
-            // Get recursive path from neighbor to end (if the neighbor is not in pathTo)
-            // return shortest of the paths
-
-            var path = graph.RecursiveSolve(start, end, new List<T>());
+            var path = RecursiveSolve(graph, start, end, new List<T>());
             path.Reverse();
             return path;
         }
 
-        private static List<T> RecursiveSolve<T>(this IReadOnlyGraph<T> graph, T start, T end, List<T> pathTo,int depth = 0)
+        private static List<T> RecursiveSolve<T>(IReadOnlyGraph<T> graph, T start, T end, List<T> pathTo,int depth = 0)
             where T : IEquatable<T>
         {
             if(depth == MaxDepth) return new List<T>();

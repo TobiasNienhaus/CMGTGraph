@@ -22,7 +22,15 @@ namespace CMGTGraph.Algorithms
         public static List<T> DijkstraSolve<T>(this IReadOnlyGraph<T> graph, T start, T end) where T : IEquatable<T>
         {
             graph.ThrowOnInvalidInput(start, end);
-            
+
+            return graph.DijkstraSolveWithInfo(start, end).Path;
+        }
+
+        public static PathFindingResult<T> DijkstraSolveWithInfo<T>(this IReadOnlyGraph<T> g, T start, T end)
+            where T : IEquatable<T>
+        {
+            g.ThrowOnInvalidInput(start, end);
+
             var startNode = new DijkstraNode<T>(start, currentPathLength: 0f);
             var open = new List<DijkstraNode<T>> {startNode};
 
@@ -41,14 +49,15 @@ namespace CMGTGraph.Algorithms
                 }
 
                 if (curr.Data.Equals(end))
-                    return BuildPath(curr, visited);
+                    return new PathFindingResult<T>(BuildPath(curr, visited), open.ConvertAll(x => x.Data));
 
                 open.Remove(curr);
                 visited.Add(curr);
-                DijkstraExpandNode(curr, graph.GetPassableConnections(curr.Data), open, visited, graph.Calculator);
+                DijkstraExpandNode(curr, g.GetPassableConnections(curr.Data), open, visited, g.Calculator);
             }
+
             Logger.Warn("No path found!");
-            return new List<T>();
+            return new PathFindingResult<T>(new List<T>(), new List<T>());
         }
 
         private static void DijkstraExpandNode<T>(DijkstraNode<T> node, HashSet<T> neighbors,

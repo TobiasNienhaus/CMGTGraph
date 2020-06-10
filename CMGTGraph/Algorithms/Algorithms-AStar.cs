@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using CMGTGraph.Calculators;
 using CMGTGraph.Logging;
@@ -22,24 +23,33 @@ namespace CMGTGraph.Algorithms
         }
         #endregion
 
-
         /// <summary>
         /// Get a path between two points in the graph using the A* algorithm.
         /// If no path can be found, an empty list is returned.
         /// </summary>
-        /// <exception cref="Graph{T}.NodeNotFoundException">Thrown when one (or both) of the nodes can't be found in the
-        /// graph</exception>
         public static List<T> AStarSolve<T>(this IReadOnlyGraph<T> graph, T start, T end)
             where T : IEquatable<T>
         {
             graph.ThrowOnInvalidInput(start, end);
-            
-            // var closed = new Dictionary<T, Node<T>>();
+
+            return graph.AStarSolveWithInfo(start, end).Path;
+        }
+        
+        /// <summary>
+        /// Get a path between two points in the graph using the A* algorithm.
+        /// A list of the visited nodes is also returned. 
+        /// If no path can be found, both lists in the result are empty.
+        /// </summary>
+        public static PathFindingResult<T> AStarSolveWithInfo<T>(this IReadOnlyGraph<T> g, T start, T end)
+            where T : IEquatable<T>
+        {
+            g.ThrowOnInvalidInput(start, end);
+
             var closed = new HashSet<AStarNode<T>>();
-            // var open = new Dictionary<T, Node<T>>();
-            var open = new List<AStarNode<T>> {new AStarNode<T>(start, distanceToFinish: graph.Calculator.Distance(start, end))};
-            
-            while(open.Count > 0)
+            var open = new List<AStarNode<T>>
+                {new AStarNode<T>(start, distanceToFinish: g.Calculator.Distance(start, end))};
+
+            while (open.Count > 0)
             {
                 // get most promising node
                 var recordHolder = open.First();
@@ -54,13 +64,14 @@ namespace CMGTGraph.Algorithms
                 open.Remove(recordHolder);
 
                 if (recordHolder.Data.Equals(end))
-                    return BuildPath(recordHolder, closed);
+                    return new PathFindingResult<T>(BuildPath(recordHolder, closed), open.ConvertAll(x => x.Data));
 
                 closed.Add(recordHolder);
-                AStarExpandNode(recordHolder, end, graph.GetPassableConnections(recordHolder.Data), open, closed, graph.Calculator);
+                AStarExpandNode(recordHolder, end, g.GetPassableConnections(recordHolder.Data), open, closed,
+                    g.Calculator);
             }
 
-            return new List<T>();
+            return new PathFindingResult<T>(new List<T>(), new List<T>());
         }
 
         private static void AStarExpandNode<T>(DijkstraNode<T> node, T finish, IEnumerable<T> neighbors,
@@ -71,6 +82,9 @@ namespace CMGTGraph.Algorithms
                 var n = new AStarNode<T>(neighbor);
                 if(closed.Contains(n)) continue;
 
+                // TODO spam also F G and H when changing them
+                
+                // TODO i suspect this is not calculated correctly (diagonal is sometimes chosen over direct)
                 var currentPathLength = node.CurrentPathLength + calculator.Distance(node.Data, neighbor);
                 if (!open.Contains(n))
                 {
@@ -78,7 +92,7 @@ namespace CMGTGraph.Algorithms
                     n.CurrentPathLength = currentPathLength;
                     n.DistanceToFinish = calculator.Distance(neighbor, finish);
                     open.Add(n);
-                    Logger.Spam($"Added new node {n.Data.ToString()}");
+                    Logger.Spam($"Added new node {n.Data.ToString()} F {n.EstimatedCompletePathLength.ToString(CultureInfo.InvariantCulture)} G {n.CurrentPathLength.ToString(CultureInfo.InvariantCulture)} H {n.DistanceToFinish.ToString(CultureInfo.InvariantCulture)}");
                 }
                 else if(currentPathLength < n.CurrentPathLength)
                 {

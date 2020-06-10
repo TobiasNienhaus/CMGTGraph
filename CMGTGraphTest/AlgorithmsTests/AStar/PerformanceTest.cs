@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using CMGTGraph;
 using CMGTGraph.Algorithms;
+using CMGTGraph.Logging;
 using CMGTGraph.Types;
 using NUnit.Framework;
 
@@ -42,12 +43,15 @@ namespace CMGTGraphTest.AlgorithmsTests.AStar
         [Test, MaxTime(1000)]
         public void Test()
         {
+            var logLevel = Logger.LoggingLevel;
+            Logger.LoggingLevel = Logger.LogLevel.Spam;
             var start = new Point(_random.Next(100), _random.Next(100));
             var end = new Point(_random.Next(100), _random.Next(100));
 
             var path = _g.AStarSolve(start, end);
             Assert.IsNotEmpty(path);
             PrintPath(path);
+            Logger.LoggingLevel = logLevel;
         }
 
         private void PrintPath(List<Point> path)
