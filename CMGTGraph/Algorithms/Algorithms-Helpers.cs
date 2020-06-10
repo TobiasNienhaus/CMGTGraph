@@ -124,13 +124,18 @@ namespace CMGTGraph.Algorithms
         public struct PathFindingResult<T> where T : IEquatable<T>
         {
             public List<T> Path;
-            public List<T> VisitedNodes;
+            public HashSet<T> OpenNodes;
+            public HashSet<T> ClosedNodes;
 
-            public PathFindingResult(List<T> path, List<T> visitedNodes)
+            public PathFindingResult(List<T> path, HashSet<T> openNodes, HashSet<T> closedNodes)
             {
                 Path = path;
-                VisitedNodes = visitedNodes;
+                OpenNodes = openNodes;
+                ClosedNodes = closedNodes;
             }
+
+            public static PathFindingResult<T> Empty =>
+                new PathFindingResult<T>(new List<T>(), new HashSet<T>(), new HashSet<T>());
         } 
     }
 }

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.InteropServices;
 using CMGTGraph.Logging;
 
 namespace CMGTGraph.Algorithms
@@ -32,7 +31,9 @@ namespace CMGTGraph.Algorithms
                     var node = new Node<T>(nb, curr.Data);
                     if (nb.Equals(end))
                     {
-                        return new PathFindingResult<T>(BuildPath(node, visited), visited.ToList().ConvertAll(x => x.Data));
+                        return new PathFindingResult<T>(BuildPath(node, visited), 
+                            new HashSet<T>(visited.Select(x => x.Data)),
+                            new HashSet<T>());
                     }
 
                     if (visited.Contains(node)) continue;
@@ -43,7 +44,7 @@ namespace CMGTGraph.Algorithms
             }
 
             Logger.Warn("No path found!");
-            return new PathFindingResult<T>(new List<T>(), new List<T>());
+            return PathFindingResult<T>.Empty;
         }
     }
 }

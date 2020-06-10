@@ -46,7 +46,7 @@ namespace CMGTGraph.Algorithms
             g.ThrowOnInvalidInput(start, end);
 
             var closed = new HashSet<AStarNode<T>>();
-            var open = new List<AStarNode<T>>
+            var open = new HashSet<AStarNode<T>>
                 {new AStarNode<T>(start, distanceToFinish: g.Calculator.Distance(start, end))};
 
             while (open.Count > 0)
@@ -64,14 +64,18 @@ namespace CMGTGraph.Algorithms
                 open.Remove(recordHolder);
 
                 if (recordHolder.Data.Equals(end))
-                    return new PathFindingResult<T>(BuildPath(recordHolder, closed), open.ConvertAll(x => x.Data));
+                {
+                    return new PathFindingResult<T>(BuildPath(recordHolder, closed),
+                        new HashSet<T>(open.Select(x => x.Data)),
+                        new HashSet<T>(closed.Select(x => x.Data)));
+                }
 
                 closed.Add(recordHolder);
                 AStarExpandNode(recordHolder, end, g.GetPassableConnections(recordHolder.Data), open, closed,
                     g.Calculator);
             }
 
-            return new PathFindingResult<T>(new List<T>(), new List<T>());
+            return PathFindingResult<T>.Empty;
         }
 
         private static void AStarExpandNode<T>(DijkstraNode<T> node, T finish, IEnumerable<T> neighbors,

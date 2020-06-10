@@ -32,7 +32,7 @@ namespace CMGTGraph.Algorithms
             g.ThrowOnInvalidInput(start, end);
 
             var startNode = new DijkstraNode<T>(start, currentPathLength: 0f);
-            var open = new List<DijkstraNode<T>> {startNode};
+            var open = new HashSet<DijkstraNode<T>> {startNode};
 
             var visited = new HashSet<DijkstraNode<T>> {startNode};
 
@@ -49,7 +49,11 @@ namespace CMGTGraph.Algorithms
                 }
 
                 if (curr.Data.Equals(end))
-                    return new PathFindingResult<T>(BuildPath(curr, visited), open.ConvertAll(x => x.Data));
+                {
+                    return new PathFindingResult<T>(BuildPath(curr, visited),
+                        new HashSet<T>(open.Select(x => x.Data)),
+                        new HashSet<T>(visited.Select(x => x.Data)));
+                }
 
                 open.Remove(curr);
                 visited.Add(curr);
@@ -57,7 +61,7 @@ namespace CMGTGraph.Algorithms
             }
 
             Logger.Warn("No path found!");
-            return new PathFindingResult<T>(new List<T>(), new List<T>());
+            return PathFindingResult<T>.Empty;
         }
 
         private static void DijkstraExpandNode<T>(DijkstraNode<T> node, HashSet<T> neighbors,
