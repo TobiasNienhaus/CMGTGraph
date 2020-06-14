@@ -38,7 +38,10 @@ namespace CMGTGraph.Algorithms
         /// <summary>
         /// Get a path between two points in the graph using the A* algorithm.
         /// A list of the visited nodes is also returned. 
-        /// If no path can be found, both lists in the result are empty.
+        /// If no path can be found, the <see cref="PathFindingResult{T}"/> will be empty, but no members will be null.
+        /// <br/><see cref="PathFindingResult{T}"/> will contain the found path, the nodes that were queued to be evaluated
+        /// (in <see cref="PathFindingResult{T}.OpenNodes"/>) and the nodes that were finally evaluated
+        /// (in <see cref="PathFindingResult{T}.ClosedNodes"/>)
         /// </summary>
         public static PathFindingResult<T> AStarSolveWithInfo<T>(this IReadOnlyGraph<T> g, T start, T end, ICalculator<T> calculator = null)
             where T : IEquatable<T>
@@ -54,15 +57,8 @@ namespace CMGTGraph.Algorithms
             while (open.Count > 0)
             {
                 // get most promising node
-                AStarNode<T> recordHolder = null;
-                var record = float.MaxValue;
-                foreach (var node in open)
-                {
-                    if (node.EstimatedCompletePathLength >= record) continue;
-                    record = node.EstimatedCompletePathLength;
-                    recordHolder = node;
-                }
-                
+                var recordHolder = AStarGetMostPromisingNode(open);
+
                 if(recordHolder == null) continue;
                 
                 if (recordHolder.Data.Equals(end))
@@ -82,19 +78,27 @@ namespace CMGTGraph.Algorithms
             return PathFindingResult<T>.Empty;
         }
 
+        private static AStarNode<T> AStarGetMostPromisingNode<T>(HashSet<AStarNode<T>> open) where T : IEquatable<T>
+        {
+            AStarNode<T> recordHolder = null;
+            var record = float.MaxValue;
+            foreach (var node in open)
+            {
+                if (node.EstimatedCompletePathLength >= record) continue;
+                record = node.EstimatedCompletePathLength;
+                recordHolder = node;
+            }
+
+            return recordHolder;
+        }
+
         private static void AStarExpandNode<T>(DijkstraNode<T> node, T finish, IEnumerable<T> neighbors,
             ICollection<AStarNode<T>> open, ICollection<AStarNode<T>> closed, ICalculator<T> calculator) where T : IEquatable<T>
         {
             foreach (var neighbor in neighbors)
             {
                 var n = new AStarNode<T>(neighbor);
-                // if (closed.Contains(n))
-                // {
-                //     Logger.Spam("Node in closed");
-                //     continue;
-                // }
 
-                // TODO i suspect this is not calculated correctly (diagonal is sometimes chosen over direct)
                 var currentPathLength = node.CurrentPathLength + calculator.Distance(node.Data, neighbor);
 
                 var inOpen = open.Contains(n);

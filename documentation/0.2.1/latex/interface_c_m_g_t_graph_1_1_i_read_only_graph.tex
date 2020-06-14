@@ -1,0 +1,172 @@
+\hypertarget{interface_c_m_g_t_graph_1_1_i_read_only_graph}{}\doxysection{C\+M\+G\+T\+Graph.\+I\+Read\+Only\+Graph$<$ T $>$ Interface Template Reference}
+\label{interface_c_m_g_t_graph_1_1_i_read_only_graph}\index{CMGTGraph.IReadOnlyGraph$<$ T $>$@{CMGTGraph.IReadOnlyGraph$<$ T $>$}}
+
+
+Inheritance diagram for C\+M\+G\+T\+Graph.\+I\+Read\+Only\+Graph$<$ T $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{interface_c_m_g_t_graph_1_1_i_read_only_graph__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Hash\+Set$<$ T $>$ \mbox{\hyperlink{interface_c_m_g_t_graph_1_1_i_read_only_graph_a973330c0b5d3384c4d0d2af7dd5bef92}{Get\+Passable\+Connections}} (T node)
+\begin{DoxyCompactList}\small\item\em Get all the nodes that are connected to this node, provided they are passable. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{interface_c_m_g_t_graph_1_1_i_read_only_graph_ae7474c3669dd21c56f2dfc241c9f45de}{Have\+Connection}} (T nodeA, T nodeB)
+\begin{DoxyCompactList}\small\item\em Check if two nodes are connected \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{interface_c_m_g_t_graph_1_1_i_read_only_graph_a9b8bf263511243528c33096933ff48a0}{Contains}} (T value)
+\begin{DoxyCompactList}\small\item\em Check if a node is in the graph. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{interface_c_m_g_t_graph_1_1_i_read_only_graph_ae9258b72175a42c0bf61149082ec65e2}{Node\+Is\+Passable}} (T node)
+\begin{DoxyCompactList}\small\item\em Check if a node is passable. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{interface_c_m_g_t_graph_1_1_i_read_only_graph_a9d4be4ba527318b86f32b4fc3704b375}{Is\+Connected}} ()
+\begin{DoxyCompactList}\small\item\em Check if the graph is connected (every node has a path to every other node). This takes into account, if the node is passable. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{interface_c_m_g_t_graph_1_1_i_read_only_graph_ad07ce3a7833442ff677241bf4ce99e75}{Node\+Count}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The number of nodes in the graph. \end{DoxyCompactList}\item 
+Hash\+Set$<$ T $>$ \mbox{\hyperlink{interface_c_m_g_t_graph_1_1_i_read_only_graph_af769a4e3cd6519a40def8638b4e02721}{Nodes}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Get all the nodes in the graph. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{interface_c_m_g_t_graph_1_1_calculators_1_1_i_calculator}{I\+Calculator}}$<$ T $>$ \mbox{\hyperlink{interface_c_m_g_t_graph_1_1_i_read_only_graph_ac50802111228d4cfc566627d9278b692}{Calculator}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The calculator that can be used to calculate things like Sqr\+Distance between nodes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{interface_c_m_g_t_graph_1_1_i_read_only_graph_a9b8bf263511243528c33096933ff48a0}\label{interface_c_m_g_t_graph_1_1_i_read_only_graph_a9b8bf263511243528c33096933ff48a0}} 
+\index{CMGTGraph.IReadOnlyGraph$<$ T $>$@{CMGTGraph.IReadOnlyGraph$<$ T $>$}!Contains@{Contains}}
+\index{Contains@{Contains}!CMGTGraph.IReadOnlyGraph$<$ T $>$@{CMGTGraph.IReadOnlyGraph$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Contains()}{Contains()}}
+{\footnotesize\ttfamily bool \mbox{\hyperlink{interface_c_m_g_t_graph_1_1_i_read_only_graph}{C\+M\+G\+T\+Graph.\+I\+Read\+Only\+Graph}}$<$ T $>$.Contains (\begin{DoxyParamCaption}\item[{T}]{value }\end{DoxyParamCaption})}
+
+
+
+Check if a node is in the graph. 
+
+
+
+Implemented in \mbox{\hyperlink{class_c_m_g_t_graph_1_1_graph_a751bfb39ca1bd427fa37b5103262d0ff}{C\+M\+G\+T\+Graph.\+Graph$<$ T $>$}}.
+
+\mbox{\Hypertarget{interface_c_m_g_t_graph_1_1_i_read_only_graph_a973330c0b5d3384c4d0d2af7dd5bef92}\label{interface_c_m_g_t_graph_1_1_i_read_only_graph_a973330c0b5d3384c4d0d2af7dd5bef92}} 
+\index{CMGTGraph.IReadOnlyGraph$<$ T $>$@{CMGTGraph.IReadOnlyGraph$<$ T $>$}!GetPassableConnections@{GetPassableConnections}}
+\index{GetPassableConnections@{GetPassableConnections}!CMGTGraph.IReadOnlyGraph$<$ T $>$@{CMGTGraph.IReadOnlyGraph$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{GetPassableConnections()}{GetPassableConnections()}}
+{\footnotesize\ttfamily Hash\+Set$<$T$>$ \mbox{\hyperlink{interface_c_m_g_t_graph_1_1_i_read_only_graph}{C\+M\+G\+T\+Graph.\+I\+Read\+Only\+Graph}}$<$ T $>$.Get\+Passable\+Connections (\begin{DoxyParamCaption}\item[{T}]{node }\end{DoxyParamCaption})}
+
+
+
+Get all the nodes that are connected to this node, provided they are passable. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_c_m_g_t_graph_1_1_graph_a07ab5b529fdc82dd788a00d5d91bc8d3}{C\+M\+G\+T\+Graph.\+Graph$<$ T $>$}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{interface_c_m_g_t_graph_1_1_i_read_only_graph_a973330c0b5d3384c4d0d2af7dd5bef92_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{interface_c_m_g_t_graph_1_1_i_read_only_graph_ae7474c3669dd21c56f2dfc241c9f45de}\label{interface_c_m_g_t_graph_1_1_i_read_only_graph_ae7474c3669dd21c56f2dfc241c9f45de}} 
+\index{CMGTGraph.IReadOnlyGraph$<$ T $>$@{CMGTGraph.IReadOnlyGraph$<$ T $>$}!HaveConnection@{HaveConnection}}
+\index{HaveConnection@{HaveConnection}!CMGTGraph.IReadOnlyGraph$<$ T $>$@{CMGTGraph.IReadOnlyGraph$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{HaveConnection()}{HaveConnection()}}
+{\footnotesize\ttfamily bool \mbox{\hyperlink{interface_c_m_g_t_graph_1_1_i_read_only_graph}{C\+M\+G\+T\+Graph.\+I\+Read\+Only\+Graph}}$<$ T $>$.Have\+Connection (\begin{DoxyParamCaption}\item[{T}]{nodeA,  }\item[{T}]{nodeB }\end{DoxyParamCaption})}
+
+
+
+Check if two nodes are connected 
+
+
+
+Implemented in \mbox{\hyperlink{class_c_m_g_t_graph_1_1_graph_a1a2348161324e99160c45ae61da17db9}{C\+M\+G\+T\+Graph.\+Graph$<$ T $>$}}.
+
+\mbox{\Hypertarget{interface_c_m_g_t_graph_1_1_i_read_only_graph_a9d4be4ba527318b86f32b4fc3704b375}\label{interface_c_m_g_t_graph_1_1_i_read_only_graph_a9d4be4ba527318b86f32b4fc3704b375}} 
+\index{CMGTGraph.IReadOnlyGraph$<$ T $>$@{CMGTGraph.IReadOnlyGraph$<$ T $>$}!IsConnected@{IsConnected}}
+\index{IsConnected@{IsConnected}!CMGTGraph.IReadOnlyGraph$<$ T $>$@{CMGTGraph.IReadOnlyGraph$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{IsConnected()}{IsConnected()}}
+{\footnotesize\ttfamily bool \mbox{\hyperlink{interface_c_m_g_t_graph_1_1_i_read_only_graph}{C\+M\+G\+T\+Graph.\+I\+Read\+Only\+Graph}}$<$ T $>$.Is\+Connected (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Check if the graph is connected (every node has a path to every other node). This takes into account, if the node is passable. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_c_m_g_t_graph_1_1_graph_a85d32280b1ff83c8bd23b801122133ad}{C\+M\+G\+T\+Graph.\+Graph$<$ T $>$}}.
+
+\mbox{\Hypertarget{interface_c_m_g_t_graph_1_1_i_read_only_graph_ae9258b72175a42c0bf61149082ec65e2}\label{interface_c_m_g_t_graph_1_1_i_read_only_graph_ae9258b72175a42c0bf61149082ec65e2}} 
+\index{CMGTGraph.IReadOnlyGraph$<$ T $>$@{CMGTGraph.IReadOnlyGraph$<$ T $>$}!NodeIsPassable@{NodeIsPassable}}
+\index{NodeIsPassable@{NodeIsPassable}!CMGTGraph.IReadOnlyGraph$<$ T $>$@{CMGTGraph.IReadOnlyGraph$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{NodeIsPassable()}{NodeIsPassable()}}
+{\footnotesize\ttfamily bool \mbox{\hyperlink{interface_c_m_g_t_graph_1_1_i_read_only_graph}{C\+M\+G\+T\+Graph.\+I\+Read\+Only\+Graph}}$<$ T $>$.Node\+Is\+Passable (\begin{DoxyParamCaption}\item[{T}]{node }\end{DoxyParamCaption})}
+
+
+
+Check if a node is passable. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_c_m_g_t_graph_1_1_graph_acf9379a9e014e9ccd6d472d678d5d41d}{C\+M\+G\+T\+Graph.\+Graph$<$ T $>$}}.
+
+
+
+\doxysubsection{Property Documentation}
+\mbox{\Hypertarget{interface_c_m_g_t_graph_1_1_i_read_only_graph_ac50802111228d4cfc566627d9278b692}\label{interface_c_m_g_t_graph_1_1_i_read_only_graph_ac50802111228d4cfc566627d9278b692}} 
+\index{CMGTGraph.IReadOnlyGraph$<$ T $>$@{CMGTGraph.IReadOnlyGraph$<$ T $>$}!Calculator@{Calculator}}
+\index{Calculator@{Calculator}!CMGTGraph.IReadOnlyGraph$<$ T $>$@{CMGTGraph.IReadOnlyGraph$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Calculator}{Calculator}}
+{\footnotesize\ttfamily \mbox{\hyperlink{interface_c_m_g_t_graph_1_1_calculators_1_1_i_calculator}{I\+Calculator}}$<$T$>$ \mbox{\hyperlink{interface_c_m_g_t_graph_1_1_i_read_only_graph}{C\+M\+G\+T\+Graph.\+I\+Read\+Only\+Graph}}$<$ T $>$.Calculator\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+The calculator that can be used to calculate things like Sqr\+Distance between nodes. 
+
+\mbox{\Hypertarget{interface_c_m_g_t_graph_1_1_i_read_only_graph_ad07ce3a7833442ff677241bf4ce99e75}\label{interface_c_m_g_t_graph_1_1_i_read_only_graph_ad07ce3a7833442ff677241bf4ce99e75}} 
+\index{CMGTGraph.IReadOnlyGraph$<$ T $>$@{CMGTGraph.IReadOnlyGraph$<$ T $>$}!NodeCount@{NodeCount}}
+\index{NodeCount@{NodeCount}!CMGTGraph.IReadOnlyGraph$<$ T $>$@{CMGTGraph.IReadOnlyGraph$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{NodeCount}{NodeCount}}
+{\footnotesize\ttfamily int \mbox{\hyperlink{interface_c_m_g_t_graph_1_1_i_read_only_graph}{C\+M\+G\+T\+Graph.\+I\+Read\+Only\+Graph}}$<$ T $>$.Node\+Count\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+The number of nodes in the graph. 
+
+\mbox{\Hypertarget{interface_c_m_g_t_graph_1_1_i_read_only_graph_af769a4e3cd6519a40def8638b4e02721}\label{interface_c_m_g_t_graph_1_1_i_read_only_graph_af769a4e3cd6519a40def8638b4e02721}} 
+\index{CMGTGraph.IReadOnlyGraph$<$ T $>$@{CMGTGraph.IReadOnlyGraph$<$ T $>$}!Nodes@{Nodes}}
+\index{Nodes@{Nodes}!CMGTGraph.IReadOnlyGraph$<$ T $>$@{CMGTGraph.IReadOnlyGraph$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Nodes}{Nodes}}
+{\footnotesize\ttfamily Hash\+Set$<$T$>$ \mbox{\hyperlink{interface_c_m_g_t_graph_1_1_i_read_only_graph}{C\+M\+G\+T\+Graph.\+I\+Read\+Only\+Graph}}$<$ T $>$.Nodes\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Get all the nodes in the graph. 
+
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+M\+G\+T\+Graph/I\+Read\+Only\+Graph.\+cs\end{DoxyCompactItemize}

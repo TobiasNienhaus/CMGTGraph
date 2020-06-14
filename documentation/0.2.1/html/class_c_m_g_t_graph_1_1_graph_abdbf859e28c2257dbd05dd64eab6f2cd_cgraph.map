@@ -1,0 +1,4 @@
+<map id="CMGTGraph.Graph.AddConnection" name="CMGTGraph.Graph.AddConnection">
+<area shape="rect" id="node1" title="Add a connection between two nodes. If one or both of the nodes don&#39;t/doesn&#39;t exist in the graph,..." alt="" coords="5,5,231,32"/>
+<area shape="rect" id="node2" href="$class_c_m_g_t_graph_1_1_graph.html#af6ba39c0042d188a4286009c94a93c5c" title="Add a node to the graph. If the node is already in the graph, nothing happens." alt="" coords="279,5,439,32"/>
+</map>

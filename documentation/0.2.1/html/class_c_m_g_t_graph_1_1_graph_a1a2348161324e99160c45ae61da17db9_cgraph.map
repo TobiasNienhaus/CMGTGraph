@@ -1,0 +1,4 @@
+<map id="CMGTGraph.Graph.HaveConnection" name="CMGTGraph.Graph.HaveConnection">
+<area shape="rect" id="node1" title="Test if the provided nodes have a connection in the graph. Returns true if yes." alt="" coords="5,5,236,32"/>
+<area shape="rect" id="node2" href="$class_c_m_g_t_graph_1_1_graph.html#a751bfb39ca1bd427fa37b5103262d0ff" title="Check if a node is in the graph." alt="" coords="284,5,472,32"/>
+</map>

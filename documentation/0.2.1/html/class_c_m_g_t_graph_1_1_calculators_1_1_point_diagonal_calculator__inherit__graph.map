@@ -1,0 +1,4 @@
+<map id="CMGTGraph.Calculators.PointDiagonalCalculator" name="CMGTGraph.Calculators.PointDiagonalCalculator">
+<area shape="rect" id="node1" title="This uses Diagonal distance. Use this if you can move in 8 directions." alt="" coords="5,80,203,121"/>
+<area shape="rect" id="node2" href="$interface_c_m_g_t_graph_1_1_calculators_1_1_i_calculator.html" title=" " alt="" coords="35,5,173,32"/>
+</map>

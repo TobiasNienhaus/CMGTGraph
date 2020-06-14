@@ -121,12 +121,17 @@ namespace CMGTGraph.Algorithms
 
         #endregion
 
-        public struct PathFindingResult<T> where T : IEquatable<T>
+        #region Pathfinding result
+        /// <summary>
+        /// A struct containing data about the path-finding query.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        public readonly struct PathFindingResult<T> where T : IEquatable<T>
         {
-            // TODO maybe make OPen and Closed IEnumerable
-            public List<T> Path;
-            public HashSet<T> OpenNodes;
-            public HashSet<T> ClosedNodes;
+            // TODO maybe make Open and Closed IEnumerable
+            public readonly List<T> Path;
+            public readonly HashSet<T> OpenNodes;
+            public readonly HashSet<T> ClosedNodes;
 
             public PathFindingResult(List<T> path, HashSet<T> openNodes, HashSet<T> closedNodes)
             {
@@ -137,6 +142,7 @@ namespace CMGTGraph.Algorithms
 
             public static PathFindingResult<T> Empty =>
                 new PathFindingResult<T>(new List<T>(), new HashSet<T>(), new HashSet<T>());
-        } 
+        }
+        #endregion
     }
 }

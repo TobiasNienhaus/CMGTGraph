@@ -1,0 +1,4 @@
+<map id="CMGTGraph.Algorithms.Algorithms.AStarSolveWithInfo&lt; T &gt;" name="CMGTGraph.Algorithms.Algorithms.AStarSolveWithInfo&lt; T &gt;">
+<area shape="rect" id="node1" title="Get a path between two points in the graph using the A* algorithm. A list of the visited nodes is als..." alt="" coords="5,5,236,47"/>
+<area shape="rect" id="node2" href="$interface_c_m_g_t_graph_1_1_i_read_only_graph.html#a973330c0b5d3384c4d0d2af7dd5bef92" title="Get all the nodes that are connected to this node, provided they are passable." alt="" coords="284,5,481,47"/>
+</map>

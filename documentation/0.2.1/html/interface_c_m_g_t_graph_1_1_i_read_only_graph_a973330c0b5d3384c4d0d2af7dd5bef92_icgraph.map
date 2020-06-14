@@ -1,0 +1,4 @@
+<map id="CMGTGraph.IReadOnlyGraph.GetPassableConnections" name="CMGTGraph.IReadOnlyGraph.GetPassableConnections">
+<area shape="rect" id="node1" title="Get all the nodes that are connected to this node, provided they are passable." alt="" coords="284,5,481,47"/>
+<area shape="rect" id="node2" href="$class_c_m_g_t_graph_1_1_algorithms_1_1_algorithms.html#ac6850e8e292b5b81d93d85978c633e96" title="Get a path between two points in the graph using the A* algorithm. A list of the visited nodes is als..." alt="" coords="5,5,236,47"/>
+</map>

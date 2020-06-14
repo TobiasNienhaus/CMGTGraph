@@ -14,18 +14,18 @@ namespace CMGTGraph.Algorithms
             return graph.IterativeBfsSolveWithInfo(start, end).Path;
         }
 
-        public static PathFindingResult<T> IterativeBfsSolveWithInfo<T>(this IReadOnlyGraph<T> g, T start, T end)
+        public static PathFindingResult<T> IterativeBfsSolveWithInfo<T>(this IReadOnlyGraph<T> graph, T start, T end)
             where T : IEquatable<T>
         {
-            var q = new Queue<Node<T>>();
-            q.Enqueue(new Node<T>(start));
+            var queue = new Queue<Node<T>>();
+            queue.Enqueue(new Node<T>(start));
 
             var visited = new HashSet<Node<T>> {new Node<T>(start)};
 
-            while (q.Count > 0)
+            while (queue.Count > 0)
             {
-                var curr = q.Dequeue();
-                var nbs = g.GetPassableConnections(curr.Data);
+                var curr = queue.Dequeue();
+                var nbs = graph.GetPassableConnections(curr.Data);
                 foreach (var nb in nbs)
                 {
                     var node = new Node<T>(nb, curr.Data);
@@ -39,7 +39,7 @@ namespace CMGTGraph.Algorithms
                     if (visited.Contains(node)) continue;
 
                     visited.Add(node);
-                    q.Enqueue(node);
+                    queue.Enqueue(node);
                 }
             }
 

@@ -1,0 +1,138 @@
+\hypertarget{class_c_m_g_t_graph_1_1_algorithms_1_1_algorithms}{}\doxysection{C\+M\+G\+T\+Graph.\+Algorithms.\+Algorithms Class Reference}
+\label{class_c_m_g_t_graph_1_1_algorithms_1_1_algorithms}\index{CMGTGraph.Algorithms.Algorithms@{CMGTGraph.Algorithms.Algorithms}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_c_m_g_t_graph_1_1_algorithms_1_1_algorithms_1_1_a_star_node}{A\+Star\+Node}}
+\item 
+class \mbox{\hyperlink{class_c_m_g_t_graph_1_1_algorithms_1_1_algorithms_1_1_dijkstra_node}{Dijkstra\+Node}}
+\item 
+class \mbox{\hyperlink{class_c_m_g_t_graph_1_1_algorithms_1_1_algorithms_1_1_node}{Node}}
+\item 
+struct \mbox{\hyperlink{struct_c_m_g_t_graph_1_1_algorithms_1_1_algorithms_1_1_path_finding_result}{Path\+Finding\+Result}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static List$<$ T $>$ \mbox{\hyperlink{class_c_m_g_t_graph_1_1_algorithms_1_1_algorithms_a3719d88e07c2d9cab0674028f3fdfa06}{A\+Star\+Solve$<$ T $>$}} (this \mbox{\hyperlink{interface_c_m_g_t_graph_1_1_i_read_only_graph}{I\+Read\+Only\+Graph}}$<$ T $>$ graph, T start, T end, \mbox{\hyperlink{interface_c_m_g_t_graph_1_1_calculators_1_1_i_calculator}{I\+Calculator}}$<$ T $>$ calculator=null)
+\begin{DoxyCompactList}\small\item\em Get a path between two points in the graph using the A$\ast$ algorithm. If no path can be found, an empty list is returned. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{struct_c_m_g_t_graph_1_1_algorithms_1_1_algorithms_1_1_path_finding_result}{Path\+Finding\+Result}}$<$ T $>$ \mbox{\hyperlink{class_c_m_g_t_graph_1_1_algorithms_1_1_algorithms_ac6850e8e292b5b81d93d85978c633e96}{A\+Star\+Solve\+With\+Info$<$ T $>$}} (this \mbox{\hyperlink{interface_c_m_g_t_graph_1_1_i_read_only_graph}{I\+Read\+Only\+Graph}}$<$ T $>$ g, T start, T end, \mbox{\hyperlink{interface_c_m_g_t_graph_1_1_calculators_1_1_i_calculator}{I\+Calculator}}$<$ T $>$ calculator=null)
+\begin{DoxyCompactList}\small\item\em Get a path between two points in the graph using the A$\ast$ algorithm. A list of the visited nodes is also returned. If no path can be found, both lists in the result are empty. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_m_g_t_graph_1_1_algorithms_1_1_algorithms_afcd10463f4a8e867ac293ceffb169f60}\label{class_c_m_g_t_graph_1_1_algorithms_1_1_algorithms_afcd10463f4a8e867ac293ceffb169f60}} 
+static List$<$ T $>$ {\bfseries Dijkstra\+Solve$<$ T $>$} (this \mbox{\hyperlink{interface_c_m_g_t_graph_1_1_i_read_only_graph}{I\+Read\+Only\+Graph}}$<$ T $>$ graph, T start, T end)
+\item 
+\mbox{\Hypertarget{class_c_m_g_t_graph_1_1_algorithms_1_1_algorithms_abdb23b5d31c817edaeec719691a89422}\label{class_c_m_g_t_graph_1_1_algorithms_1_1_algorithms_abdb23b5d31c817edaeec719691a89422}} 
+static \mbox{\hyperlink{struct_c_m_g_t_graph_1_1_algorithms_1_1_algorithms_1_1_path_finding_result}{Path\+Finding\+Result}}$<$ T $>$ {\bfseries Dijkstra\+Solve\+With\+Info$<$ T $>$} (this \mbox{\hyperlink{interface_c_m_g_t_graph_1_1_i_read_only_graph}{I\+Read\+Only\+Graph}}$<$ T $>$ g, T start, T end)
+\item 
+\mbox{\Hypertarget{class_c_m_g_t_graph_1_1_algorithms_1_1_algorithms_ad6ca1e185f6b7b197319633e5704ff0f}\label{class_c_m_g_t_graph_1_1_algorithms_1_1_algorithms_ad6ca1e185f6b7b197319633e5704ff0f}} 
+static List$<$ T $>$ {\bfseries Iterative\+Bfs\+Solve$<$ T $>$} (this \mbox{\hyperlink{interface_c_m_g_t_graph_1_1_i_read_only_graph}{I\+Read\+Only\+Graph}}$<$ T $>$ graph, T start, T end)
+\item 
+\mbox{\Hypertarget{class_c_m_g_t_graph_1_1_algorithms_1_1_algorithms_ad9980be82f55c2d2cc0e948bef6ffd04}\label{class_c_m_g_t_graph_1_1_algorithms_1_1_algorithms_ad9980be82f55c2d2cc0e948bef6ffd04}} 
+static \mbox{\hyperlink{struct_c_m_g_t_graph_1_1_algorithms_1_1_algorithms_1_1_path_finding_result}{Path\+Finding\+Result}}$<$ T $>$ {\bfseries Iterative\+Bfs\+Solve\+With\+Info$<$ T $>$} (this \mbox{\hyperlink{interface_c_m_g_t_graph_1_1_i_read_only_graph}{I\+Read\+Only\+Graph}}$<$ T $>$ g, T start, T end)
+\item 
+\mbox{\Hypertarget{class_c_m_g_t_graph_1_1_algorithms_1_1_algorithms_a6e1d3fb0d8a4115a811794b761e09f8c}\label{class_c_m_g_t_graph_1_1_algorithms_1_1_algorithms_a6e1d3fb0d8a4115a811794b761e09f8c}} 
+static List$<$ T $>$ {\bfseries Recursive\+Solve$<$ T $>$} (this \mbox{\hyperlink{interface_c_m_g_t_graph_1_1_i_read_only_graph}{I\+Read\+Only\+Graph}}$<$ T $>$ graph, T start, T end)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_c_m_g_t_graph_1_1_algorithms_1_1_algorithms_aa6ef850657425957da22c35dd288c3e5}\label{class_c_m_g_t_graph_1_1_algorithms_1_1_algorithms_aa6ef850657425957da22c35dd288c3e5}} 
+static \mbox{\hyperlink{class_c_m_g_t_graph_1_1_algorithms_1_1_algorithms_1_1_a_star_node}{A\+Star\+Node}}$<$ T $>$ {\bfseries A\+Star\+Get\+Most\+Promising\+Node$<$ T $>$} (Hash\+Set$<$ \mbox{\hyperlink{class_c_m_g_t_graph_1_1_algorithms_1_1_algorithms_1_1_a_star_node}{A\+Star\+Node}}$<$ T $>$$>$ open)
+\item 
+\mbox{\Hypertarget{class_c_m_g_t_graph_1_1_algorithms_1_1_algorithms_a92c58d3551358817dae374f53dfd9cc2}\label{class_c_m_g_t_graph_1_1_algorithms_1_1_algorithms_a92c58d3551358817dae374f53dfd9cc2}} 
+static void {\bfseries A\+Star\+Expand\+Node$<$ T $>$} (\mbox{\hyperlink{class_c_m_g_t_graph_1_1_algorithms_1_1_algorithms_1_1_dijkstra_node}{Dijkstra\+Node}}$<$ T $>$ node, T finish, I\+Enumerable$<$ T $>$ neighbors, I\+Collection$<$ \mbox{\hyperlink{class_c_m_g_t_graph_1_1_algorithms_1_1_algorithms_1_1_a_star_node}{A\+Star\+Node}}$<$ T $>$$>$ open, I\+Collection$<$ \mbox{\hyperlink{class_c_m_g_t_graph_1_1_algorithms_1_1_algorithms_1_1_a_star_node}{A\+Star\+Node}}$<$ T $>$$>$ closed, \mbox{\hyperlink{interface_c_m_g_t_graph_1_1_calculators_1_1_i_calculator}{I\+Calculator}}$<$ T $>$ calculator)
+\item 
+\mbox{\Hypertarget{class_c_m_g_t_graph_1_1_algorithms_1_1_algorithms_aa659843ef4c92031c5d2da97b63b2a1a}\label{class_c_m_g_t_graph_1_1_algorithms_1_1_algorithms_aa659843ef4c92031c5d2da97b63b2a1a}} 
+static void {\bfseries Dijkstra\+Expand\+Node$<$ T $>$} (\mbox{\hyperlink{class_c_m_g_t_graph_1_1_algorithms_1_1_algorithms_1_1_dijkstra_node}{Dijkstra\+Node}}$<$ T $>$ node, Hash\+Set$<$ T $>$ neighbors, I\+Collection$<$ \mbox{\hyperlink{class_c_m_g_t_graph_1_1_algorithms_1_1_algorithms_1_1_dijkstra_node}{Dijkstra\+Node}}$<$ T $>$$>$ open, I\+Collection$<$ \mbox{\hyperlink{class_c_m_g_t_graph_1_1_algorithms_1_1_algorithms_1_1_dijkstra_node}{Dijkstra\+Node}}$<$ T $>$$>$ closed, \mbox{\hyperlink{interface_c_m_g_t_graph_1_1_calculators_1_1_i_calculator}{I\+Calculator}}$<$ T $>$ calculator)
+\item 
+static void \mbox{\hyperlink{class_c_m_g_t_graph_1_1_algorithms_1_1_algorithms_aa90995367a09dc1b1fabed2dcf69a0bd}{Throw\+On\+Invalid\+Input$<$ T $>$}} (this \mbox{\hyperlink{interface_c_m_g_t_graph_1_1_i_read_only_graph}{I\+Read\+Only\+Graph}}$<$ T $>$ g, T start, T end)
+\begin{DoxyCompactList}\small\item\em Throw if one of the input parameters is not a valid start node. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_m_g_t_graph_1_1_algorithms_1_1_algorithms_ad62ecdf8f72844e361b2a623215fb276}\label{class_c_m_g_t_graph_1_1_algorithms_1_1_algorithms_ad62ecdf8f72844e361b2a623215fb276}} 
+static List$<$ T $>$ {\bfseries Build\+Path$<$ T $>$} (\mbox{\hyperlink{class_c_m_g_t_graph_1_1_algorithms_1_1_algorithms_1_1_node}{Node}}$<$ T $>$ from, I\+Enumerable$<$ \mbox{\hyperlink{class_c_m_g_t_graph_1_1_algorithms_1_1_algorithms_1_1_node}{Node}}$<$ T $>$$>$ known\+Nodes)
+\item 
+\mbox{\Hypertarget{class_c_m_g_t_graph_1_1_algorithms_1_1_algorithms_a2cf6ae8891261175c39e7ef8293b5783}\label{class_c_m_g_t_graph_1_1_algorithms_1_1_algorithms_a2cf6ae8891261175c39e7ef8293b5783}} 
+static List$<$ T $>$ {\bfseries Build\+Recursive\+Reverse\+Path$<$ T $>$} (\mbox{\hyperlink{class_c_m_g_t_graph_1_1_algorithms_1_1_algorithms_1_1_node}{Node}}$<$ T $>$ from, I\+Read\+Only\+Dictionary$<$ T, \mbox{\hyperlink{class_c_m_g_t_graph_1_1_algorithms_1_1_algorithms_1_1_node}{Node}}$<$ T $>$$>$ known\+Nodes)
+\item 
+\mbox{\Hypertarget{class_c_m_g_t_graph_1_1_algorithms_1_1_algorithms_a07d5da12d0957916d595a38770329d5f}\label{class_c_m_g_t_graph_1_1_algorithms_1_1_algorithms_a07d5da12d0957916d595a38770329d5f}} 
+static List$<$ T $>$ {\bfseries Recursive\+Solve$<$ T $>$} (\mbox{\hyperlink{interface_c_m_g_t_graph_1_1_i_read_only_graph}{I\+Read\+Only\+Graph}}$<$ T $>$ graph, T start, T end, List$<$ T $>$ path\+To, int depth=0)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_c_m_g_t_graph_1_1_algorithms_1_1_algorithms_a5d0d0fa3bb2d2c6203af17dd61eba219}\label{class_c_m_g_t_graph_1_1_algorithms_1_1_algorithms_a5d0d0fa3bb2d2c6203af17dd61eba219}} 
+const int {\bfseries Max\+Depth} = 100
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_c_m_g_t_graph_1_1_algorithms_1_1_algorithms_a3719d88e07c2d9cab0674028f3fdfa06}\label{class_c_m_g_t_graph_1_1_algorithms_1_1_algorithms_a3719d88e07c2d9cab0674028f3fdfa06}} 
+\index{CMGTGraph.Algorithms.Algorithms@{CMGTGraph.Algorithms.Algorithms}!AStarSolve$<$ T $>$@{AStarSolve$<$ T $>$}}
+\index{AStarSolve$<$ T $>$@{AStarSolve$<$ T $>$}!CMGTGraph.Algorithms.Algorithms@{CMGTGraph.Algorithms.Algorithms}}
+\doxysubsubsection{\texorpdfstring{AStarSolve$<$ T $>$()}{AStarSolve< T >()}}
+{\footnotesize\ttfamily static List$<$T$>$ C\+M\+G\+T\+Graph.\+Algorithms.\+Algorithms.\+A\+Star\+Solve$<$ T $>$ (\begin{DoxyParamCaption}\item[{this \mbox{\hyperlink{interface_c_m_g_t_graph_1_1_i_read_only_graph}{I\+Read\+Only\+Graph}}$<$ T $>$}]{graph,  }\item[{T}]{start,  }\item[{T}]{end,  }\item[{\mbox{\hyperlink{interface_c_m_g_t_graph_1_1_calculators_1_1_i_calculator}{I\+Calculator}}$<$ T $>$}]{calculator = {\ttfamily null} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Get a path between two points in the graph using the A$\ast$ algorithm. If no path can be found, an empty list is returned. 
+
+\begin{Desc}
+\item[Type Constraints]\begin{description}
+\item[{\em T} : {\em I\+Equatable$<$T$>$}]\end{description}
+\end{Desc}
+\mbox{\Hypertarget{class_c_m_g_t_graph_1_1_algorithms_1_1_algorithms_ac6850e8e292b5b81d93d85978c633e96}\label{class_c_m_g_t_graph_1_1_algorithms_1_1_algorithms_ac6850e8e292b5b81d93d85978c633e96}} 
+\index{CMGTGraph.Algorithms.Algorithms@{CMGTGraph.Algorithms.Algorithms}!AStarSolveWithInfo$<$ T $>$@{AStarSolveWithInfo$<$ T $>$}}
+\index{AStarSolveWithInfo$<$ T $>$@{AStarSolveWithInfo$<$ T $>$}!CMGTGraph.Algorithms.Algorithms@{CMGTGraph.Algorithms.Algorithms}}
+\doxysubsubsection{\texorpdfstring{AStarSolveWithInfo$<$ T $>$()}{AStarSolveWithInfo< T >()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{struct_c_m_g_t_graph_1_1_algorithms_1_1_algorithms_1_1_path_finding_result}{Path\+Finding\+Result}}$<$T$>$ C\+M\+G\+T\+Graph.\+Algorithms.\+Algorithms.\+A\+Star\+Solve\+With\+Info$<$ T $>$ (\begin{DoxyParamCaption}\item[{this \mbox{\hyperlink{interface_c_m_g_t_graph_1_1_i_read_only_graph}{I\+Read\+Only\+Graph}}$<$ T $>$}]{g,  }\item[{T}]{start,  }\item[{T}]{end,  }\item[{\mbox{\hyperlink{interface_c_m_g_t_graph_1_1_calculators_1_1_i_calculator}{I\+Calculator}}$<$ T $>$}]{calculator = {\ttfamily null} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Get a path between two points in the graph using the A$\ast$ algorithm. A list of the visited nodes is also returned. If no path can be found, both lists in the result are empty. 
+
+\begin{Desc}
+\item[Type Constraints]\begin{description}
+\item[{\em T} : {\em I\+Equatable$<$T$>$}]\end{description}
+\end{Desc}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_m_g_t_graph_1_1_algorithms_1_1_algorithms_ac6850e8e292b5b81d93d85978c633e96_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_c_m_g_t_graph_1_1_algorithms_1_1_algorithms_aa90995367a09dc1b1fabed2dcf69a0bd}\label{class_c_m_g_t_graph_1_1_algorithms_1_1_algorithms_aa90995367a09dc1b1fabed2dcf69a0bd}} 
+\index{CMGTGraph.Algorithms.Algorithms@{CMGTGraph.Algorithms.Algorithms}!ThrowOnInvalidInput$<$ T $>$@{ThrowOnInvalidInput$<$ T $>$}}
+\index{ThrowOnInvalidInput$<$ T $>$@{ThrowOnInvalidInput$<$ T $>$}!CMGTGraph.Algorithms.Algorithms@{CMGTGraph.Algorithms.Algorithms}}
+\doxysubsubsection{\texorpdfstring{ThrowOnInvalidInput$<$ T $>$()}{ThrowOnInvalidInput< T >()}}
+{\footnotesize\ttfamily static void C\+M\+G\+T\+Graph.\+Algorithms.\+Algorithms.\+Throw\+On\+Invalid\+Input$<$ T $>$ (\begin{DoxyParamCaption}\item[{this \mbox{\hyperlink{interface_c_m_g_t_graph_1_1_i_read_only_graph}{I\+Read\+Only\+Graph}}$<$ T $>$}]{g,  }\item[{T}]{start,  }\item[{T}]{end }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Throw if one of the input parameters is not a valid start node. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Graph$<$\+T$>$.\+Node\+Not\+Found\+Exception} & \\
+\hline
+{\em Invalid\+Operation\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+\begin{Desc}
+\item[Type Constraints]\begin{description}
+\item[{\em T} : {\em I\+Equatable$<$T$>$}]\end{description}
+\end{Desc}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+M\+G\+T\+Graph/\+Algorithms/Algorithms-\/\+A\+Star.\+cs\item 
+C\+M\+G\+T\+Graph/\+Algorithms/Algorithms-\/\+Recursive\+Path.\+cs\item 
+C\+M\+G\+T\+Graph/\+Algorithms/Algorithms-\/\+Dijkstra.\+cs\item 
+C\+M\+G\+T\+Graph/\+Algorithms/Algorithms-\/\+Helpers.\+cs\item 
+C\+M\+G\+T\+Graph/\+Algorithms/Algorithms-\/\+Iterative\+B\+F\+S.\+cs\end{DoxyCompactItemize}

@@ -1,0 +1,6 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$interface_c_m_g_t_graph_1_1_calculators_1_1_i_calculator.html" title=" " alt="" coords="5,71,233,112"/>
+<area shape="rect" id="node2" href="$class_c_m_g_t_graph_1_1_calculators_1_1_point_calculator.html" title=" " alt="" coords="281,5,479,47"/>
+<area shape="rect" id="node3" href="$class_c_m_g_t_graph_1_1_calculators_1_1_point_diagonal_calculator.html" title="This uses Diagonal distance. Use this if you can move in 8 directions." alt="" coords="281,71,479,112"/>
+<area shape="rect" id="node4" href="$class_c_m_g_t_graph_1_1_calculators_1_1_point_manhattan_calculator.html" title="This uses Manhattan square distance as the distance calculation. Use this when you can move in 4 dire..." alt="" coords="281,136,479,177"/>
+</map>

@@ -8,6 +8,11 @@ namespace CMGTGraph.Algorithms
     {
         private const int MaxDepth = 100;
         
+        /// <summary>
+        /// Kind of the worst kind of pathfinding you can choose, ever.
+        /// <br/> It will (eventually) return a path between <see cref="start"/> and <see cref="end"/> using a
+        /// recursive algorithm.
+        /// </summary>
         public static List<T> RecursiveSolve<T>(this IReadOnlyGraph<T> graph, T start, T end) where T : IEquatable<T>
         {
             graph.ThrowOnInvalidInput(start, end);
@@ -23,27 +28,27 @@ namespace CMGTGraph.Algorithms
             where T : IEquatable<T>
         {
             if(depth == MaxDepth) return new List<T>();
-            List<T> l = null;
+            List<T> path = null;
 
-            foreach (var c in graph.GetPassableConnections(start))
+            foreach (var nb in graph.GetPassableConnections(start))
             {
-                if (pathTo.Contains(c)) continue;
+                if (pathTo.Contains(nb)) continue;
 
                 // end and start have to be flipped because the path is built in reverse order
-                if (c.Equals(end))
+                if (nb.Equals(end))
                 {
                     return new List<T> {end, start};
                 }
 
-                var newPath = RecursiveSolve(graph, c, end, new List<T>(pathTo) {start}, depth + 1);
+                var newPath = RecursiveSolve(graph, nb, end, new List<T>(pathTo) {start}, depth + 1);
 
-                if (newPath.Count > 0 && (l == null || newPath.Count < l.Count))
-                    l = newPath;
+                if (newPath.Count > 0 && (path == null || newPath.Count < path.Count))
+                    path = newPath;
             }
             
-            l?.Add(start);
+            path?.Add(start);
 
-            return l ?? new List<T>();
+            return path ?? new List<T>();
         }
     }
 }
