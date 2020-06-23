@@ -1,17 +1,15 @@
-# CMGT Graph
-
-A graph implementation for a university course.
+# CMGTGraph
 
 ## What this is
 
-> **Please do not use this in any production code!**
-> It is not meant for that.
-> You can use it however you want (for now), just don't blame me if something breaks.
+This is a small graph library, which is currently capable of storing a graph (using an adjacency list) and performing the algorithms recursive DFS, iterative BFS, Dijkstra and A* on a graph, as well as some other small tasks, like determining, if a graph is connected or not.
 
-This is a part of an assignment for algorithms in university. I wanted to try and develop the part about creating a graph class and implementing pathfinding in a seperate DLL to gain experience in things like that.
+It was originally meant to solve different tasks in an assignment, just made reusable.
 
-> If you need a graph implementation for production, use [QuickGraph](https://www.nuget.org/packages/QuickGraph/).
+## What I learned
 
-## NuGet
+From this I learned how to develop a library seperate from a project, as well as writing reusable, clear and easy to use code. I also learned the basics of unit testing with NUnit from it. I also learned how to distribute a package over NuGet, as you can also find it [here](https://www.nuget.org/packages/CMGTGraph/).
 
-This project is published on NuGet [here](https://www.nuget.org/packages/CMGTGraph/). You probably shouldn't use it for any production code, because it is not meant for that.
+## DISCLAIMER
+
+This project doesn't have a license yet and I will add it once I find the time. In the mean time (or in general :^), especially for production code) you can look at the very good library [QuickGraph](https://archive.codeplex.com/?p=quickgraph) [(or alternatively on NuGet)](https://www.nuget.org/packages/QuickGraph/) although it is not maintained anymore apart from some forks.
