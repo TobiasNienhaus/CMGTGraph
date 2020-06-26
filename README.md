@@ -12,4 +12,4 @@ From this I learned how to develop a library seperate from a project, as well as
 
 ## DISCLAIMER
 
-This project doesn't have a license yet and I will add it once I find the time. In the mean time (or in general :^), especially for production code) you can look at the very good library [QuickGraph](https://archive.codeplex.com/?p=quickgraph) [(or alternatively on NuGet)](https://www.nuget.org/packages/QuickGraph/) although it is not maintained anymore apart from some forks.
+This project doesn't have a license yet and I will add it once I find the time. In the mean time (or in general :^), especially for production code) you can look at the very good library [QuickGraph](https://archive.codeplex.com/?p=quickgraph) ([or alternatively on NuGet](https://www.nuget.org/packages/QuickGraph/)) although it is not maintained anymore apart from some forks.
