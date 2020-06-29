@@ -11,6 +11,7 @@ namespace CMGTGraph
         /// </summary>
         int NodeCount { get; }
 
+        // TODO ensure that a non alterable list is returned (ensure that it is a copied list or that it is immutable)
         /// <summary>
         /// Get all the nodes in the graph.
         /// </summary>
@@ -21,6 +22,7 @@ namespace CMGTGraph
         /// </summary>
         ICalculator<T> Calculator { get; }
         
+        // TODO implementations aren't guaranteed to return something immutable
         /// <summary>
         /// Get all the nodes that are connected to this node, provided they are passable.
         /// </summary>

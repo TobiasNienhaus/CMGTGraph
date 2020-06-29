@@ -111,6 +111,7 @@ namespace CMGTGraph
         /// <exception cref="NodeNotFoundException">Thrown when one of the provided nodes is not in the graph</exception>
         public bool HaveConnection(T nodeA, T nodeB)
         {
+            // TODO maybe don't throw exception, but return false
             if(!Contains(nodeA)) throw new NodeNotFoundException(nodeA);
             if(!Contains(nodeB)) throw new NodeNotFoundException(nodeB);
 
