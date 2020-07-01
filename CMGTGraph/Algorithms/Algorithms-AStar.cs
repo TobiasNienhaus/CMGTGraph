@@ -46,6 +46,7 @@ namespace CMGTGraph.Algorithms
         public static PathFindingResult<T> AStarSolveWithInfo<T>(this IReadOnlyGraph<T> g, T start, T end, ICalculator<T> calculator = null)
             where T : IEquatable<T>
         {
+            // TODO if start and end are the same, immediately return an empty list
             g.ThrowOnInvalidInput(start, end);
 
             calculator = calculator ?? g.Calculator;

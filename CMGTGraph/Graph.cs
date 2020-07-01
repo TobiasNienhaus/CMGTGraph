@@ -22,6 +22,9 @@ namespace CMGTGraph
             }
         }
         
+        /// <summary>
+        /// The underlying representation of the graph as an adjacency list.
+        /// </summary>
         private readonly Dictionary<T, HashSet<T>> _connections;
 
         /// <inheritdoc />
@@ -30,9 +33,13 @@ namespace CMGTGraph
         /// <inheritdoc />
         public HashSet<T> Nodes => new HashSet<T>(_connections.Keys);
 
+        // TODO maybe make the calculator not a member of graph, but a thing that is e.g. passed to functions
         /// <inheritdoc />
         public ICalculator<T> Calculator { get; set; }
 
+        /// <summary>
+        /// The collection of nodes that is not passable.
+        /// </summary>
         private readonly HashSet<T> _impassable;
         
         /// <summary>
@@ -148,6 +155,11 @@ namespace CMGTGraph
             return sb.ToString();
         }
 
+        /// <summary>
+        /// Is a specific node in the Graph?
+        /// </summary>
+        /// <param name="value">The node to check</param>
+        /// <returns>Returns true, if the passed node is in the graph</returns>
         public bool Contains(T value)
         {
             return _connections.ContainsKey(value);
@@ -159,16 +171,25 @@ namespace CMGTGraph
             return !_impassable.Contains(node);
         }
 
+        /// <summary>
+        /// Make a node impassable. Has no effect, if the node is already impassable.
+        /// </summary>
         public void MakeImpassable(T node)
         {
             if (!_impassable.Contains(node)) _impassable.Add(node);
         }
 
+        /// <summary>
+        /// Make a node passable. Has no effect, if the node is already passable.
+        /// </summary>
         public void MakePassable(T node)
         {
             if (_impassable.Contains(node)) _impassable.Remove(node);
         }
 
+        /// <summary>
+        /// Toggle, if a node is passable or not, i.e. make it passable when it's not and make it impassable when it is.
+        /// </summary>
         public void TogglePassable(T node)
         {
             if (_impassable.Contains(node)) _impassable.Remove(node);

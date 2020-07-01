@@ -10,7 +10,7 @@ namespace CMGTGraph.Algorithms
         
         /// <summary>
         /// Kind of the worst kind of pathfinding you can choose, ever.
-        /// <br/> It will (eventually) return a path between <see cref="start"/> and <see cref="end"/> using a
+        /// <br/>It will (eventually) return a path between <see cref="start"/> and <see cref="end"/> using a
         /// recursive algorithm.
         /// </summary>
         public static List<T> RecursiveSolve<T>(this IReadOnlyGraph<T> graph, T start, T end) where T : IEquatable<T>
@@ -24,7 +24,21 @@ namespace CMGTGraph.Algorithms
             return path;
         }
 
-        private static List<T> RecursiveSolve<T>(IReadOnlyGraph<T> graph, T start, T end, List<T> pathTo,int depth = 0)
+        /// <summary>
+        /// The actual recursive method that is used to calculate the path.
+        /// <br/>This method has an "artificial" recursion anchor at <see cref="MaxDepth"/> to
+        /// prevent a <see cref="StackOverflowException"/>.
+        /// It will simply stop recursing deeper after a depth deeper than <see cref="MaxDepth"/>.
+        /// <br/>Use cautiously :) it can take a while.
+        /// </summary>
+        /// <param name="graph">The graph to perform the operation on.</param>
+        /// <param name="start">The start node of the problem</param>
+        /// <param name="end">The end node.</param>
+        /// <param name="pathTo">The current path to the start node.</param>
+        /// <param name="depth">The current depth we are at.</param>
+        /// <typeparam name="T"></typeparam>
+        /// <returns>Returns the reverse path from <see cref="start"/> to <see cref="end"/></returns>
+        private static List<T> RecursiveSolve<T>(IReadOnlyGraph<T> graph, T start, T end, List<T> pathTo, int depth = 0)
             where T : IEquatable<T>
         {
             if(depth == MaxDepth) return new List<T>();
