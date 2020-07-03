@@ -38,6 +38,7 @@ namespace CMGTGraph.Algorithms
             where T : IEquatable<T>
         {
             g.ThrowOnInvalidInput(start, end);
+            if(start.Equals(end)) return PathFindingResult<T>.Empty;
 
             var startNode = new DijkstraNode<T>(start, currentPathLength: 0f);
             // we have visited the start node already and thus don't need to again
@@ -49,14 +50,7 @@ namespace CMGTGraph.Algorithms
             {
                 // get the node that has the shortest saved path to the start node
                 // TODO refactor into function (Finding best node)
-                var curr = open.First();
-                var record = curr.CurrentPathLength;
-                foreach (var node in open)
-                {
-                    if (node == curr || node.CurrentPathLength >= record) continue;
-                    record = node.CurrentPathLength;
-                    curr = node;
-                }
+                var curr = GetNearestNode(open);
 
                 // if the best node is actually the finish: hooray lucky day, return it
                 if (curr.Data.Equals(end))
@@ -75,6 +69,20 @@ namespace CMGTGraph.Algorithms
             }
             // we haven't found a path
             return PathFindingResult<T>.Empty;
+        }
+
+        private static DijkstraNode<T> GetNearestNode<T>(HashSet<DijkstraNode<T>> open) where T : IEquatable<T>
+        {
+            var curr = open.First();
+            var record = curr.CurrentPathLength;
+            foreach (var node in open)
+            {
+                if (node == curr || node.CurrentPathLength >= record) continue;
+                record = node.CurrentPathLength;
+                curr = node;
+            }
+
+            return curr;
         }
 
         /// <summary>
