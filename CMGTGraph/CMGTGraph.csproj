@@ -14,8 +14,4 @@
       <PackageReference Include="Microsoft.Bcl.HashCode" Version="1.1.0" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="Preprocessed\Algorithms" />
-    </ItemGroup>
-
 </Project>

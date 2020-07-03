@@ -8,10 +8,18 @@ namespace CMGTGraph.Algorithms
     public static partial class Algorithms
     {
         #region Node
-
+        /// <summary>
+        /// A basic node that links an entry in a node with a predecessor.
+        /// </summary>
         public class Node<T> : IEquatable<Node<T>> where T : IEquatable<T>
         {
+            /// <summary>
+            /// The actual data that is also (hopefully) in the graph
+            /// </summary>
             public readonly T Data;
+            /// <summary>
+            /// The predecessor to this node
+            /// </summary>
             public T Predecessor;
 
             public Node(T data, T predecessor = default)
@@ -97,7 +105,18 @@ namespace CMGTGraph.Algorithms
         #endregion
 
         #region Build Path
-
+        /// <summary>
+        /// <para>
+        /// Build a path from a node (usually the finish node of the pathfinding request) and a
+        /// collection of known nodes (which will be used as a look up into the graph).
+        /// </para>
+        /// <para>
+        /// <paramref name="from"/> will be the last node in the built path, as this is the
+        /// node to get the predecessor from.
+        /// </para>
+        /// </summary>
+        /// <param name="from">The node to build the recursively build the path from.</param>
+        /// <param name="knownNodes"></param>
         private static List<T> BuildPath<T>(Node<T> from, IEnumerable<Node<T>> knownNodes) where T : IEquatable<T>
         {
             var p = BuildRecursiveReversePath(from, knownNodes.ToDictionary(n => n.Data));
@@ -105,10 +124,18 @@ namespace CMGTGraph.Algorithms
             return p;
         }
 
+        /// <summary>
+        /// Recursively build a path from a node using a lookup of values from the node wrapper to the
+        /// actual containing type.
+        /// </summary>
+        /// <param name="from">The node to build from</param>
+        /// <param name="knownNodes">A look up from the node wrapper to the graph type</param>
         private static List<T> BuildRecursiveReversePath<T>(Node<T> from, IReadOnlyDictionary<T, Node<T>> knownNodes)
             where T : IEquatable<T>
         {
             var ret = new List<T>();
+            // until we have non just add the predecessor to the list and update the current node 
+            // to be that predecessor
             var current = from;
             while (current != null)
             {
@@ -129,6 +156,8 @@ namespace CMGTGraph.Algorithms
         public readonly struct PathFindingResult<T> where T : IEquatable<T>
         {
             // TODO maybe make Open and Closed IEnumerable
+            // TODO is it a good idea to make this a struct (has reference types)
+            // TODO think about making this a class and subdivide it into multiple classes (for A*, Dijkstra, etc.)
             public readonly List<T> Path;
             public readonly HashSet<T> OpenNodes;
             public readonly HashSet<T> ClosedNodes;
@@ -139,6 +168,8 @@ namespace CMGTGraph.Algorithms
                 OpenNodes = openNodes;
                 ClosedNodes = closedNodes;
             }
+            
+            // TODO make an alternative constructor that can take collections of nodes
 
             public static PathFindingResult<T> Empty =>
                 new PathFindingResult<T>(new List<T>(), new HashSet<T>(), new HashSet<T>());

@@ -11,8 +11,13 @@ namespace CMGTGraph.Preprocessed
     // https://www.google.com/search?client=opera&q=jump+point+search&sourceid=opera&ie=UTF-8&oe=UTF-8
     // http://theory.stanford.edu/~amitp/GameProgramming/
     
+    /// <summary>
+    /// This interface is very much not finished at all. In fact it's not even started yet. :^)
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public interface IAltPreprocessedReadOnlyGraph<T> : IReadOnlyGraph<T> where T : IEquatable<T>
     {
+        // TODO some algorithm that's good here :)
         // needs some landmarks
     }
 }

@@ -1,14 +1,23 @@
 ﻿using System;
 using System.Globalization;
-using CMGTGraph.Calculators;
 
 namespace CMGTGraph.Types
 {
+    /// <summary>
+    /// A simple class that represents a point in 2D space using integers.
+    /// </summary>
     public class Point : IEquatable<Point>
     {
+        // TODO this should be a struct
+        // TODO both Point and PointF should inherit from a struct because then calculators can become 1
         public readonly int X;
         public readonly int Y;
 
+        /// <summary>
+        /// Create a new integer Point. All the values are readonly.
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
         public Point(int x, int y)
         {
             X = x;

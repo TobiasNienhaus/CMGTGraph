@@ -14,8 +14,17 @@ namespace CMGTGraph
     /// <typeparam name="T">T needs to have a robust GetHashCode() implementation, as many operations rely on it in here</typeparam>
     public class Graph<T> : IReadOnlyGraph<T> where T : IEquatable<T>
     {
+        /// <summary>
+        /// An exception that can be thrown when a specific node is not found is not found in the graph.
+        /// <br/>It contains the node that was requested to be found in string represantation.
+        /// </summary>
         public sealed class NodeNotFoundException : KeyNotFoundException
         {
+            /// <summary>
+            /// Create a new <see cref="NodeNotFoundException"/> with the value that was tried to be found,
+            /// but was not found. This node will be stored in the exception data in string representation.
+            /// </summary>
+            /// <param name="value"></param>
             public NodeNotFoundException(T value)
             {
                 Data.Add("ToString", value.Equals(null) ? value.ToString() : "null");

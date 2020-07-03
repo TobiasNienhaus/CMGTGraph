@@ -1,14 +1,23 @@
 ﻿using System;
 using System.Globalization;
-using CMGTGraph.Calculators;
 
 namespace CMGTGraph.Types
 {
+    /// <summary>
+    /// A simple class that represents a point in 2D space with floating point values.
+    /// </summary>
     public class PointF : IEquatable<PointF>
     {
+        // TODO this should REALLY be a struct
+        // TODO make them inherit from an interface like IPoint for example
         public readonly float X;
         public readonly float Y;
 
+        /// <summary>
+        /// Create a floating point Point. The values are completely readonly and cannot be changed after construction.
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
         public PointF(float x, float y)
         {
             X = x;

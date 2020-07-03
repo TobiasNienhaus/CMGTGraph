@@ -4,12 +4,17 @@ using CMGTGraph.Types;
 
 namespace CMGTGraph.Calculators
 {
+    /// <inheritdoc/>
+    /// T is in this case of type <see cref="PointF"/>.
+    /// The distance calculation used here is Euclidean distance.
     public class PointFCalculator : ICalculator<PointF>
     {
         private PointFCalculator()
-        {
-        }
+        { }
 
+        /// <summary>
+        /// The instance of this calculator.
+        /// </summary>
         public static readonly PointFCalculator This;
 
         static PointFCalculator() => This = new PointFCalculator();
@@ -29,6 +34,9 @@ namespace CMGTGraph.Calculators
             return (float) Math.Sqrt(SqrDistance(a, b));
         }
 
+        /// <summary>
+        /// Throw an <see cref="ArgumentNullException"/> if one of the provided arguments is null.
+        /// </summary>
         private static void ThrowIfNull(PointF a, PointF b)
         {
             if(a == null) throw new ArgumentNullException(nameof(a));

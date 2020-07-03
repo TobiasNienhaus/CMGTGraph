@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using CMGTGraph.Logging;
 
 namespace CMGTGraph.Algorithms
@@ -28,7 +29,7 @@ namespace CMGTGraph.Algorithms
         /// The actual recursive method that is used to calculate the path.
         /// <br/>This method has an "artificial" recursion anchor at <see cref="MaxDepth"/> to
         /// prevent a <see cref="StackOverflowException"/>.
-        /// It will simply stop recursing deeper after a depth deeper than <see cref="MaxDepth"/>.
+        /// It will simply stop recursing deeper after a depth higher than <see cref="MaxDepth"/>.
         /// <br/>Use cautiously :) it can take a while.
         /// </summary>
         /// <param name="graph">The graph to perform the operation on.</param>
@@ -44,22 +45,24 @@ namespace CMGTGraph.Algorithms
             if(depth == MaxDepth) return new List<T>();
             List<T> path = null;
 
-            foreach (var nb in graph.GetPassableConnections(start))
+            // In this case LINQ made it way more readable :) so we keep it
+            // we only want to ask neighbors for a path, if they aren't in the path towards us
+            // otherwise there would be some nasty infinite loops making this bad algorithm even worse
+            foreach (var nb in graph.GetPassableConnections(start).Where(nb => !pathTo.Contains(nb)))
             {
-                if (pathTo.Contains(nb)) continue;
-
                 // end and start have to be flipped because the path is built in reverse order
-                if (nb.Equals(end))
-                {
-                    return new List<T> {end, start};
-                }
+                if (nb.Equals(end)) return new List<T> {end, start};
 
+                // hand the task of finding a path off to the neighbor
                 var newPath = RecursiveSolve(graph, nb, end, new List<T>(pathTo) {start}, depth + 1);
 
+                // the new path is only better if it exists, if there was no previous path, or
+                // if it is shorter than the previous path
                 if (newPath.Count > 0 && (path == null || newPath.Count < path.Count))
                     path = newPath;
             }
             
+            // If there is a path we want to add start to it (living off our neighbors work)
             path?.Add(start);
 
             return path ?? new List<T>();
