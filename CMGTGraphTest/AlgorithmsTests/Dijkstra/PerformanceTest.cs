@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text;
 using CMGTGraph;
 using CMGTGraph.Algorithms;
 using CMGTGraph.Calculators;
+using CMGTGraph.Logging;
 using CMGTGraph.Types;
 using NUnit.Framework;
 
@@ -47,9 +49,15 @@ namespace CMGTGraphTest.AlgorithmsTests.Dijkstra
             var start = new Point(_random.Next(100), _random.Next(100));
             var end = new Point(_random.Next(100), _random.Next(100));
 
-            var path = _g.DijkstraSolve(start, end);
-            Assert.IsNotEmpty(path);
-            PrintPath(path);
+            var sw = new Stopwatch();
+            sw.Start();
+            var result = _g.DijkstraSolveWithInfo(start, end);
+            sw.Stop();
+            Logger.Error($"Dijkstra took {sw.ElapsedMilliseconds}ms, put {result.ClosedNodes.Count} on " +
+                         $"its closed list, and put {result.OpenNodes.Count} on its open list. " +
+                         $"(The whole graph has {_g.NodeCount} nodes)");
+            Assert.IsNotEmpty(result.Path);
+            PrintPath(result.Path);
         }
 
         private static void PrintPath(IReadOnlyCollection<Point> path)
