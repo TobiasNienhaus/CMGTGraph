@@ -77,8 +77,8 @@ namespace CMGTGraph.Algorithms
             T end, ICalculator<T> calculator = null)
             where T : IEquatable<T>
         {
-            // TODO if start and end are the same, immediately return an empty list
             g.ThrowOnInvalidInput(start, end);
+            if(start.Equals(end)) return PathFindingResult<T>.Empty;
 
             // check if another calculator has been provided, if not choose the one from the graph
             calculator = calculator ?? g.Calculator;
@@ -133,8 +133,9 @@ namespace CMGTGraph.Algorithms
             var record = float.MaxValue;
             // TODO try out the LINQ version (looks more readable, debatable if it actually does the same)
             foreach (var node in open)
+            // foreach (var node in open.Where(node => !(node.EstimatedCompletePathLength >= record)))
             {
-                if (node.EstimatedCompletePathLength >= record) continue;
+                if (node.EstimatedCompletePathLength >= record) continue; // with LINQ not needed
                 record = node.EstimatedCompletePathLength;
                 recordHolder = node;
             }
@@ -153,21 +154,38 @@ namespace CMGTGraph.Algorithms
         /// <param name="closed">The list of nodes we don't want to expand later</param>
         /// <param name="calculator">The calculator we want to use to calculate distances between nodes</param>
         private static void AStarExpandNode<T>(DijkstraNode<T> node, T finish, IEnumerable<T> neighbors,
-            ICollection<AStarNode<T>> open, ICollection<AStarNode<T>> closed, ICalculator<T> calculator) where T : IEquatable<T>
+            HashSet<AStarNode<T>> open, HashSet<AStarNode<T>> closed, ICalculator<T> calculator) where T : IEquatable<T>
         {
             foreach (var neighbor in neighbors)
             {
-                var n = new AStarNode<T>(neighbor);
+                AStarNode<T> n = null;
 
                 // calculate 
                 var currentPathLength = node.CurrentPathLength + calculator.Distance(node.Data, neighbor);
 
                 // on the basis of the containing node only (no heuristic, predecessor, etc.)
-                var inOpen = open.Contains(n);
-                var inClosed = closed.Contains(n);
+                // TODO check out TryGetValue from .Net Framework 4.7.2+
+                var inOpen = false;
+                foreach (var aStarNode in open.Where(aStarNode => aStarNode.Data.Equals(neighbor)))
+                {
+                    inOpen = true;
+                    n = aStarNode;
+                }
+                var inClosed = false;
+                if (!inOpen)
+                {
+                    foreach (var aStarNode in closed.Where(aStarNode => aStarNode.Data.Equals(neighbor)))
+                    {
+                        inClosed = true;
+                        n = aStarNode;
+                    }
+                }
                 
-                // TODO we actually never get the values from the list to compare them so this never fires
-                if((inOpen || inClosed) && currentPathLength >= n.CurrentPathLength) continue;
+                if(!inOpen && !inClosed) 
+                    n = new AStarNode<T>(neighbor);
+                else if (currentPathLength >= n.CurrentPathLength)
+                    continue;
+                // After this point, n cannot be null
 
                 n.Predecessor = node.Data;
                 n.CurrentPathLength = currentPathLength;
