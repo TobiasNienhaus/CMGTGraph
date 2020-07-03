@@ -44,8 +44,6 @@ namespace CMGTGraph.Algorithms
             public AStarNode(T data, T predecessor = default, float currentPathLength = 0f,
                 float distanceToFinish = float.MaxValue) : base(data, predecessor, currentPathLength)
             {
-                // TODO throw if data is null
-                
                 // TODO why is this one initialized with different default values than the base class????
                 // -> currentPathLength is here 0, in the base class (DijkstraNode) it is float.MaxValue
                 // -> The algorithms should not rely on the default values

@@ -24,6 +24,8 @@ namespace CMGTGraph.Algorithms
 
             public Node(T data, T predecessor = default)
             {
+                // ?? syntax isn't allowed in this C# version :(
+                if(data == null) throw new ArgumentNullException(nameof(data));
                 Data = data;
                 Predecessor = predecessor;
             }
