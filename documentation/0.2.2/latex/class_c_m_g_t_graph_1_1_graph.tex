@@ -1,0 +1,268 @@
+\hypertarget{class_c_m_g_t_graph_1_1_graph}{}\doxysection{C\+M\+G\+T\+Graph.\+Graph$<$ T $>$ Class Template Reference}
+\label{class_c_m_g_t_graph_1_1_graph}\index{CMGTGraph.Graph$<$ T $>$@{CMGTGraph.Graph$<$ T $>$}}
+
+
+The representation of a graph.  
+
+
+Inheritance diagram for C\+M\+G\+T\+Graph.\+Graph$<$ T $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_c_m_g_t_graph_1_1_graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_c_m_g_t_graph_1_1_graph_1_1_node_not_found_exception}{Node\+Not\+Found\+Exception}}
+\begin{DoxyCompactList}\small\item\em An exception that can be thrown when a specific node is not found is not found in the graph. ~\newline
+It contains the node that was requested to be found in string represantation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_c_m_g_t_graph_1_1_graph_a66f3109bc0eef6440ea2f488368a9230}{Graph}} (\mbox{\hyperlink{interface_c_m_g_t_graph_1_1_calculators_1_1_i_calculator}{I\+Calculator}}$<$ T $>$ calculator)
+\begin{DoxyCompactList}\small\item\em Create a new graph. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_m_g_t_graph_1_1_graph_af6ba39c0042d188a4286009c94a93c5c}{Add}} (T node)
+\begin{DoxyCompactList}\small\item\em Add a node to the graph. If the node is already in the graph, nothing happens. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_m_g_t_graph_1_1_graph_abdbf859e28c2257dbd05dd64eab6f2cd}{Add\+Connection}} (T nodeA, T nodeB)
+\begin{DoxyCompactList}\small\item\em Add a connection between two nodes. If one or both of the nodes don\textquotesingle{}t/doesn\textquotesingle{}t exist in the graph, it/they will be added to the graph. If you pass the same node twice, it will be added to the graph but no connections will be added as to not create loops. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_c_m_g_t_graph_1_1_graph_a078399f0ecf64be5ba1f1077e5e80629}{Remove\+Node}} (T node)
+\begin{DoxyCompactList}\small\item\em Remove the provided node and all connections to that node. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_c_m_g_t_graph_1_1_graph_a0ca0fa22ed4e604e2d03f79d6582faba}{Remove\+Connection}} (T nodeA, T nodeB)
+\begin{DoxyCompactList}\small\item\em Remove the connection between the two nodes. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_m_g_t_graph_1_1_graph_a07ab5b529fdc82dd788a00d5d91bc8d3}\label{class_c_m_g_t_graph_1_1_graph_a07ab5b529fdc82dd788a00d5d91bc8d3}} 
+Hash\+Set$<$ T $>$ \mbox{\hyperlink{class_c_m_g_t_graph_1_1_graph_a07ab5b529fdc82dd788a00d5d91bc8d3}{Get\+Passable\+Connections}} (T node)
+\begin{DoxyCompactList}\small\item\em Get all the nodes that are connected to this node, provided they are passable. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_c_m_g_t_graph_1_1_graph_a1a2348161324e99160c45ae61da17db9}{Have\+Connection}} (T nodeA, T nodeB)
+\begin{DoxyCompactList}\small\item\em Test if the provided nodes have a connection in the graph. Returns true if yes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_m_g_t_graph_1_1_graph_a323e9110133f51f19af116d1f080c445}{Clear}} ()
+\begin{DoxyCompactList}\small\item\em Delete all nodes and connections from the graph. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_m_g_t_graph_1_1_graph_adcf64c83f85f1f0c4da4e2cc6ae2c3d8}\label{class_c_m_g_t_graph_1_1_graph_adcf64c83f85f1f0c4da4e2cc6ae2c3d8}} 
+override string \mbox{\hyperlink{class_c_m_g_t_graph_1_1_graph_adcf64c83f85f1f0c4da4e2cc6ae2c3d8}{To\+String}} ()
+\item 
+bool \mbox{\hyperlink{class_c_m_g_t_graph_1_1_graph_a751bfb39ca1bd427fa37b5103262d0ff}{Contains}} (T value)
+\begin{DoxyCompactList}\small\item\em Is a specific node in the \mbox{\hyperlink{class_c_m_g_t_graph_1_1_graph}{Graph}}? \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_m_g_t_graph_1_1_graph_acf9379a9e014e9ccd6d472d678d5d41d}\label{class_c_m_g_t_graph_1_1_graph_acf9379a9e014e9ccd6d472d678d5d41d}} 
+bool \mbox{\hyperlink{class_c_m_g_t_graph_1_1_graph_acf9379a9e014e9ccd6d472d678d5d41d}{Node\+Is\+Passable}} (T node)
+\begin{DoxyCompactList}\small\item\em Check if a node is passable. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_m_g_t_graph_1_1_graph_aefc7d8b6960884cadc84dab0fcff4203}{Make\+Impassable}} (T node)
+\begin{DoxyCompactList}\small\item\em Make a node impassable. Has no effect, if the node is already impassable. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_m_g_t_graph_1_1_graph_a755ce61180945d21671bd68d3d6a0aa2}{Make\+Passable}} (T node)
+\begin{DoxyCompactList}\small\item\em Make a node passable. Has no effect, if the node is already passable. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_m_g_t_graph_1_1_graph_a93a970c5a14267a8e350bf13197199f0}{Toggle\+Passable}} (T node)
+\begin{DoxyCompactList}\small\item\em Toggle, if a node is passable or not, i.\+e. make it passable when it\textquotesingle{}s not and make it impassable when it is. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_m_g_t_graph_1_1_graph_a85d32280b1ff83c8bd23b801122133ad}\label{class_c_m_g_t_graph_1_1_graph_a85d32280b1ff83c8bd23b801122133ad}} 
+bool \mbox{\hyperlink{class_c_m_g_t_graph_1_1_graph_a85d32280b1ff83c8bd23b801122133ad}{Is\+Connected}} ()
+\begin{DoxyCompactList}\small\item\em Check if the graph is connected (every node has a path to every other node). This takes into account, if the node is passable. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_c_m_g_t_graph_1_1_graph_aecfb59a6d5ed7951737fafac2489809e}\label{class_c_m_g_t_graph_1_1_graph_aecfb59a6d5ed7951737fafac2489809e}} 
+int \mbox{\hyperlink{class_c_m_g_t_graph_1_1_graph_aecfb59a6d5ed7951737fafac2489809e}{Node\+Count}} =$>$ \+\_\+connections.\+Count
+\item 
+\mbox{\Hypertarget{class_c_m_g_t_graph_1_1_graph_ace1c79f9db075a97816b4c51dac49c54}\label{class_c_m_g_t_graph_1_1_graph_ace1c79f9db075a97816b4c51dac49c54}} 
+Hash\+Set$<$ T $>$ \mbox{\hyperlink{class_c_m_g_t_graph_1_1_graph_ace1c79f9db075a97816b4c51dac49c54}{Nodes}} =$>$ new Hash\+Set$<$T$>$(\+\_\+connections.\+Keys)
+\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_c_m_g_t_graph_1_1_graph_a7e644c44b89f3bd3e439ad5f2dab720c}\label{class_c_m_g_t_graph_1_1_graph_a7e644c44b89f3bd3e439ad5f2dab720c}} 
+\mbox{\hyperlink{interface_c_m_g_t_graph_1_1_calculators_1_1_i_calculator}{I\+Calculator}}$<$ T $>$ \mbox{\hyperlink{class_c_m_g_t_graph_1_1_graph_a7e644c44b89f3bd3e439ad5f2dab720c}{Calculator}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+readonly Dictionary$<$ T, Hash\+Set$<$ T $>$ $>$ \mbox{\hyperlink{class_c_m_g_t_graph_1_1_graph_a962272d935939d1ec1aee2e62dd56bdf}{\+\_\+connections}}
+\begin{DoxyCompactList}\small\item\em The underlying representation of the graph as an adjacency list. \end{DoxyCompactList}\item 
+readonly Hash\+Set$<$ T $>$ \mbox{\hyperlink{class_c_m_g_t_graph_1_1_graph_a2df3b7e18e0609ea535a3abb9a4abc90}{\+\_\+impassable}}
+\begin{DoxyCompactList}\small\item\em The collection of nodes that is not passable. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The representation of a graph. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & T needs to have a robust Get\+Hash\+Code() implementation, as many operations rely on it in here\\
+\hline
+\end{DoxyTemplParams}
+\begin{Desc}
+\item[Type Constraints]\begin{description}
+\item[{\em T} : {\em I\+Equatable$<$T$>$}]\end{description}
+\end{Desc}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_c_m_g_t_graph_1_1_graph_a66f3109bc0eef6440ea2f488368a9230}\label{class_c_m_g_t_graph_1_1_graph_a66f3109bc0eef6440ea2f488368a9230}} 
+\index{CMGTGraph.Graph$<$ T $>$@{CMGTGraph.Graph$<$ T $>$}!Graph@{Graph}}
+\index{Graph@{Graph}!CMGTGraph.Graph$<$ T $>$@{CMGTGraph.Graph$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Graph()}{Graph()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_c_m_g_t_graph_1_1_graph}{C\+M\+G\+T\+Graph.\+Graph}}$<$ T $>$.\mbox{\hyperlink{class_c_m_g_t_graph_1_1_graph}{Graph}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interface_c_m_g_t_graph_1_1_calculators_1_1_i_calculator}{I\+Calculator}}$<$ T $>$}]{calculator }\end{DoxyParamCaption})}
+
+
+
+Create a new graph. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em calculator} & The calculator that can be used to calculate useful things for the specified type\\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_c_m_g_t_graph_1_1_graph_af6ba39c0042d188a4286009c94a93c5c}\label{class_c_m_g_t_graph_1_1_graph_af6ba39c0042d188a4286009c94a93c5c}} 
+\index{CMGTGraph.Graph$<$ T $>$@{CMGTGraph.Graph$<$ T $>$}!Add@{Add}}
+\index{Add@{Add}!CMGTGraph.Graph$<$ T $>$@{CMGTGraph.Graph$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Add()}{Add()}}
+{\footnotesize\ttfamily void \mbox{\hyperlink{class_c_m_g_t_graph_1_1_graph}{C\+M\+G\+T\+Graph.\+Graph}}$<$ T $>$.Add (\begin{DoxyParamCaption}\item[{T}]{node }\end{DoxyParamCaption})}
+
+
+
+Add a node to the graph. If the node is already in the graph, nothing happens. 
+
+\mbox{\Hypertarget{class_c_m_g_t_graph_1_1_graph_abdbf859e28c2257dbd05dd64eab6f2cd}\label{class_c_m_g_t_graph_1_1_graph_abdbf859e28c2257dbd05dd64eab6f2cd}} 
+\index{CMGTGraph.Graph$<$ T $>$@{CMGTGraph.Graph$<$ T $>$}!AddConnection@{AddConnection}}
+\index{AddConnection@{AddConnection}!CMGTGraph.Graph$<$ T $>$@{CMGTGraph.Graph$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{AddConnection()}{AddConnection()}}
+{\footnotesize\ttfamily void \mbox{\hyperlink{class_c_m_g_t_graph_1_1_graph}{C\+M\+G\+T\+Graph.\+Graph}}$<$ T $>$.Add\+Connection (\begin{DoxyParamCaption}\item[{T}]{nodeA,  }\item[{T}]{nodeB }\end{DoxyParamCaption})}
+
+
+
+Add a connection between two nodes. If one or both of the nodes don\textquotesingle{}t/doesn\textquotesingle{}t exist in the graph, it/they will be added to the graph. If you pass the same node twice, it will be added to the graph but no connections will be added as to not create loops. 
+
+\mbox{\Hypertarget{class_c_m_g_t_graph_1_1_graph_a323e9110133f51f19af116d1f080c445}\label{class_c_m_g_t_graph_1_1_graph_a323e9110133f51f19af116d1f080c445}} 
+\index{CMGTGraph.Graph$<$ T $>$@{CMGTGraph.Graph$<$ T $>$}!Clear@{Clear}}
+\index{Clear@{Clear}!CMGTGraph.Graph$<$ T $>$@{CMGTGraph.Graph$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Clear()}{Clear()}}
+{\footnotesize\ttfamily void \mbox{\hyperlink{class_c_m_g_t_graph_1_1_graph}{C\+M\+G\+T\+Graph.\+Graph}}$<$ T $>$.Clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Delete all nodes and connections from the graph. 
+
+\mbox{\Hypertarget{class_c_m_g_t_graph_1_1_graph_a751bfb39ca1bd427fa37b5103262d0ff}\label{class_c_m_g_t_graph_1_1_graph_a751bfb39ca1bd427fa37b5103262d0ff}} 
+\index{CMGTGraph.Graph$<$ T $>$@{CMGTGraph.Graph$<$ T $>$}!Contains@{Contains}}
+\index{Contains@{Contains}!CMGTGraph.Graph$<$ T $>$@{CMGTGraph.Graph$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Contains()}{Contains()}}
+{\footnotesize\ttfamily bool \mbox{\hyperlink{class_c_m_g_t_graph_1_1_graph}{C\+M\+G\+T\+Graph.\+Graph}}$<$ T $>$.Contains (\begin{DoxyParamCaption}\item[{T}]{value }\end{DoxyParamCaption})}
+
+
+
+Is a specific node in the \mbox{\hyperlink{class_c_m_g_t_graph_1_1_graph}{Graph}}? 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & The node to check\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns true, if the passed node is in the graph
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interface_c_m_g_t_graph_1_1_i_read_only_graph_a9b8bf263511243528c33096933ff48a0}{C\+M\+G\+T\+Graph.\+I\+Read\+Only\+Graph$<$ T $>$}}.
+
+\mbox{\Hypertarget{class_c_m_g_t_graph_1_1_graph_a1a2348161324e99160c45ae61da17db9}\label{class_c_m_g_t_graph_1_1_graph_a1a2348161324e99160c45ae61da17db9}} 
+\index{CMGTGraph.Graph$<$ T $>$@{CMGTGraph.Graph$<$ T $>$}!HaveConnection@{HaveConnection}}
+\index{HaveConnection@{HaveConnection}!CMGTGraph.Graph$<$ T $>$@{CMGTGraph.Graph$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{HaveConnection()}{HaveConnection()}}
+{\footnotesize\ttfamily bool \mbox{\hyperlink{class_c_m_g_t_graph_1_1_graph}{C\+M\+G\+T\+Graph.\+Graph}}$<$ T $>$.Have\+Connection (\begin{DoxyParamCaption}\item[{T}]{nodeA,  }\item[{T}]{nodeB }\end{DoxyParamCaption})}
+
+
+
+Test if the provided nodes have a connection in the graph. Returns true if yes. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \mbox{\hyperlink{class_c_m_g_t_graph_1_1_graph_1_1_node_not_found_exception}{Node\+Not\+Found\+Exception}}} & Thrown when one of the provided nodes is not in the graph\\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{interface_c_m_g_t_graph_1_1_i_read_only_graph_ae7474c3669dd21c56f2dfc241c9f45de}{C\+M\+G\+T\+Graph.\+I\+Read\+Only\+Graph$<$ T $>$}}.
+
+\mbox{\Hypertarget{class_c_m_g_t_graph_1_1_graph_aefc7d8b6960884cadc84dab0fcff4203}\label{class_c_m_g_t_graph_1_1_graph_aefc7d8b6960884cadc84dab0fcff4203}} 
+\index{CMGTGraph.Graph$<$ T $>$@{CMGTGraph.Graph$<$ T $>$}!MakeImpassable@{MakeImpassable}}
+\index{MakeImpassable@{MakeImpassable}!CMGTGraph.Graph$<$ T $>$@{CMGTGraph.Graph$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{MakeImpassable()}{MakeImpassable()}}
+{\footnotesize\ttfamily void \mbox{\hyperlink{class_c_m_g_t_graph_1_1_graph}{C\+M\+G\+T\+Graph.\+Graph}}$<$ T $>$.Make\+Impassable (\begin{DoxyParamCaption}\item[{T}]{node }\end{DoxyParamCaption})}
+
+
+
+Make a node impassable. Has no effect, if the node is already impassable. 
+
+\mbox{\Hypertarget{class_c_m_g_t_graph_1_1_graph_a755ce61180945d21671bd68d3d6a0aa2}\label{class_c_m_g_t_graph_1_1_graph_a755ce61180945d21671bd68d3d6a0aa2}} 
+\index{CMGTGraph.Graph$<$ T $>$@{CMGTGraph.Graph$<$ T $>$}!MakePassable@{MakePassable}}
+\index{MakePassable@{MakePassable}!CMGTGraph.Graph$<$ T $>$@{CMGTGraph.Graph$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{MakePassable()}{MakePassable()}}
+{\footnotesize\ttfamily void \mbox{\hyperlink{class_c_m_g_t_graph_1_1_graph}{C\+M\+G\+T\+Graph.\+Graph}}$<$ T $>$.Make\+Passable (\begin{DoxyParamCaption}\item[{T}]{node }\end{DoxyParamCaption})}
+
+
+
+Make a node passable. Has no effect, if the node is already passable. 
+
+\mbox{\Hypertarget{class_c_m_g_t_graph_1_1_graph_a0ca0fa22ed4e604e2d03f79d6582faba}\label{class_c_m_g_t_graph_1_1_graph_a0ca0fa22ed4e604e2d03f79d6582faba}} 
+\index{CMGTGraph.Graph$<$ T $>$@{CMGTGraph.Graph$<$ T $>$}!RemoveConnection@{RemoveConnection}}
+\index{RemoveConnection@{RemoveConnection}!CMGTGraph.Graph$<$ T $>$@{CMGTGraph.Graph$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{RemoveConnection()}{RemoveConnection()}}
+{\footnotesize\ttfamily bool \mbox{\hyperlink{class_c_m_g_t_graph_1_1_graph}{C\+M\+G\+T\+Graph.\+Graph}}$<$ T $>$.Remove\+Connection (\begin{DoxyParamCaption}\item[{T}]{nodeA,  }\item[{T}]{nodeB }\end{DoxyParamCaption})}
+
+
+
+Remove the connection between the two nodes. 
+
+\begin{DoxyReturn}{Returns}
+Returns false, if one of the nodes isn\textquotesingle{}t in the graph or if no connection has been removed.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_c_m_g_t_graph_1_1_graph_a078399f0ecf64be5ba1f1077e5e80629}\label{class_c_m_g_t_graph_1_1_graph_a078399f0ecf64be5ba1f1077e5e80629}} 
+\index{CMGTGraph.Graph$<$ T $>$@{CMGTGraph.Graph$<$ T $>$}!RemoveNode@{RemoveNode}}
+\index{RemoveNode@{RemoveNode}!CMGTGraph.Graph$<$ T $>$@{CMGTGraph.Graph$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{RemoveNode()}{RemoveNode()}}
+{\footnotesize\ttfamily bool \mbox{\hyperlink{class_c_m_g_t_graph_1_1_graph}{C\+M\+G\+T\+Graph.\+Graph}}$<$ T $>$.Remove\+Node (\begin{DoxyParamCaption}\item[{T}]{node }\end{DoxyParamCaption})}
+
+
+
+Remove the provided node and all connections to that node. 
+
+\begin{DoxyReturn}{Returns}
+Returns true, if the node could be removed successfully.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_c_m_g_t_graph_1_1_graph_a93a970c5a14267a8e350bf13197199f0}\label{class_c_m_g_t_graph_1_1_graph_a93a970c5a14267a8e350bf13197199f0}} 
+\index{CMGTGraph.Graph$<$ T $>$@{CMGTGraph.Graph$<$ T $>$}!TogglePassable@{TogglePassable}}
+\index{TogglePassable@{TogglePassable}!CMGTGraph.Graph$<$ T $>$@{CMGTGraph.Graph$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{TogglePassable()}{TogglePassable()}}
+{\footnotesize\ttfamily void \mbox{\hyperlink{class_c_m_g_t_graph_1_1_graph}{C\+M\+G\+T\+Graph.\+Graph}}$<$ T $>$.Toggle\+Passable (\begin{DoxyParamCaption}\item[{T}]{node }\end{DoxyParamCaption})}
+
+
+
+Toggle, if a node is passable or not, i.\+e. make it passable when it\textquotesingle{}s not and make it impassable when it is. 
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_c_m_g_t_graph_1_1_graph_a962272d935939d1ec1aee2e62dd56bdf}\label{class_c_m_g_t_graph_1_1_graph_a962272d935939d1ec1aee2e62dd56bdf}} 
+\index{CMGTGraph.Graph$<$ T $>$@{CMGTGraph.Graph$<$ T $>$}!\_connections@{\_connections}}
+\index{\_connections@{\_connections}!CMGTGraph.Graph$<$ T $>$@{CMGTGraph.Graph$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{\_connections}{\_connections}}
+{\footnotesize\ttfamily readonly Dictionary$<$T, Hash\+Set$<$T$>$ $>$ \mbox{\hyperlink{class_c_m_g_t_graph_1_1_graph}{C\+M\+G\+T\+Graph.\+Graph}}$<$ T $>$.\+\_\+connections\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The underlying representation of the graph as an adjacency list. 
+
+\mbox{\Hypertarget{class_c_m_g_t_graph_1_1_graph_a2df3b7e18e0609ea535a3abb9a4abc90}\label{class_c_m_g_t_graph_1_1_graph_a2df3b7e18e0609ea535a3abb9a4abc90}} 
+\index{CMGTGraph.Graph$<$ T $>$@{CMGTGraph.Graph$<$ T $>$}!\_impassable@{\_impassable}}
+\index{\_impassable@{\_impassable}!CMGTGraph.Graph$<$ T $>$@{CMGTGraph.Graph$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{\_impassable}{\_impassable}}
+{\footnotesize\ttfamily readonly Hash\+Set$<$T$>$ \mbox{\hyperlink{class_c_m_g_t_graph_1_1_graph}{C\+M\+G\+T\+Graph.\+Graph}}$<$ T $>$.\+\_\+impassable\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The collection of nodes that is not passable. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+M\+G\+T\+Graph/Graph.\+cs\end{DoxyCompactItemize}

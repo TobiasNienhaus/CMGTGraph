@@ -1,0 +1,220 @@
+\hypertarget{class_c_m_g_t_graph_1_1_logging_1_1_logger}{}\doxysection{C\+M\+G\+T\+Graph.\+Logging.\+Logger Class Reference}
+\label{class_c_m_g_t_graph_1_1_logging_1_1_logger}\index{CMGTGraph.Logging.Logger@{CMGTGraph.Logging.Logger}}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_c_m_g_t_graph_1_1_logging_1_1_logger_a9127bb33520e991c4b631f9e86a5c598}{Log\+Level}} \{ \newline
+\mbox{\hyperlink{class_c_m_g_t_graph_1_1_logging_1_1_logger_a9127bb33520e991c4b631f9e86a5c598a6adf97f83acf6453d4a6a4b1070f3754}{Log\+Level.\+None}}, 
+\mbox{\hyperlink{class_c_m_g_t_graph_1_1_logging_1_1_logger_a9127bb33520e991c4b631f9e86a5c598a902b0d55fddef6f8d651fe1035b7d4bd}{Log\+Level.\+Error}}, 
+\mbox{\hyperlink{class_c_m_g_t_graph_1_1_logging_1_1_logger_a9127bb33520e991c4b631f9e86a5c598a0eaadb4fcb48a0a0ed7bc9868be9fbaa}{Log\+Level.\+Warning}}, 
+\mbox{\hyperlink{class_c_m_g_t_graph_1_1_logging_1_1_logger_a9127bb33520e991c4b631f9e86a5c598ad4a9fa383ab700c5bdd6f31cf7df0faf}{Log\+Level.\+Verbose}}, 
+\newline
+\mbox{\hyperlink{class_c_m_g_t_graph_1_1_logging_1_1_logger_a9127bb33520e991c4b631f9e86a5c598ae9dfd31cc505d51fc26975250750deab}{Log\+Level.\+Spam}}
+ \}
+\begin{DoxyCompactList}\small\item\em The log level of the logger. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_c_m_g_t_graph_1_1_logging_1_1_logger_a110c34877fdc225fe632fbe0f747fcd9}{Reset\+Writer}} ()
+\begin{DoxyCompactList}\small\item\em Reset the text writer to point to the one it was when changing the text writer through \mbox{\hyperlink{class_c_m_g_t_graph_1_1_logging_1_1_logger_ad49636614eaa9eed7aaa6ff13064ddbb}{Writer}}. If the text writer hasn\textquotesingle{}t been changed, this function does nothing. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_c_m_g_t_graph_1_1_logging_1_1_logger_a209efedb37bf5502359a1e43cc233e9d}{Spam}} (string text)
+\begin{DoxyCompactList}\small\item\em Spam something to the console in white with the prefix \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_c_m_g_t_graph_1_1_logging_1_1_logger_a57fe880d96edfd1fa8e7c193d9d6c072}{Log}} (string text)
+\begin{DoxyCompactList}\small\item\em Log something to the console in dark blue with the prefix \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_c_m_g_t_graph_1_1_logging_1_1_logger_ae55ddb5a1924d75bf4e76bf9d40357f4}{Warn}} (string text)
+\begin{DoxyCompactList}\small\item\em Log something to the console in yellow with the prefix \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_c_m_g_t_graph_1_1_logging_1_1_logger_a7b5be1b7079a18dcf88451842510bd69}{Error}} (string text)
+\begin{DoxyCompactList}\small\item\em Log something to the console in red with the prefix \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_c_m_g_t_graph_1_1_logging_1_1_logger_a5fee749e00575543fc401195b756c9f9}{Color\+Log}} (string text, Console\+Color color=Console\+Color.\+White)
+\begin{DoxyCompactList}\small\item\em Log something in the specified console color to the current output text writer. The default color is white. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_c_m_g_t_graph_1_1_logging_1_1_logger_a9127bb33520e991c4b631f9e86a5c598}{Log\+Level}} \mbox{\hyperlink{class_c_m_g_t_graph_1_1_logging_1_1_logger_a2f79d3a16eee69058bda9b5bea0d0f6a}{Logging\+Level}} = \mbox{\hyperlink{class_c_m_g_t_graph_1_1_logging_1_1_logger_a9127bb33520e991c4b631f9e86a5c598a902b0d55fddef6f8d651fe1035b7d4bd}{Log\+Level.\+Error}}
+\begin{DoxyCompactList}\small\item\em The current logging level, the logger is operating at. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+static Text\+Writer \mbox{\hyperlink{class_c_m_g_t_graph_1_1_logging_1_1_logger_ad49636614eaa9eed7aaa6ff13064ddbb}{Writer}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em When you get it, you get the current text writer of this logger. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static Text\+Writer \mbox{\hyperlink{class_c_m_g_t_graph_1_1_logging_1_1_logger_a4c51cb2f78ad0beb21bcdae211d2b36b}{\+\_\+default\+Out}}
+\begin{DoxyCompactList}\small\item\em The default text writer that is saved when the output text writer is changed (e.\+g. through \mbox{\hyperlink{class_c_m_g_t_graph_1_1_logging_1_1_logger_ad49636614eaa9eed7aaa6ff13064ddbb}{Writer}}) to be able to reset it later. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_c_m_g_t_graph_1_1_logging_1_1_logger_a9127bb33520e991c4b631f9e86a5c598}\label{class_c_m_g_t_graph_1_1_logging_1_1_logger_a9127bb33520e991c4b631f9e86a5c598}} 
+\index{CMGTGraph.Logging.Logger@{CMGTGraph.Logging.Logger}!LogLevel@{LogLevel}}
+\index{LogLevel@{LogLevel}!CMGTGraph.Logging.Logger@{CMGTGraph.Logging.Logger}}
+\doxysubsubsection{\texorpdfstring{LogLevel}{LogLevel}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_c_m_g_t_graph_1_1_logging_1_1_logger_a9127bb33520e991c4b631f9e86a5c598}{C\+M\+G\+T\+Graph.\+Logging.\+Logger.\+Log\+Level}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+The log level of the logger. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{None@{None}!CMGTGraph.Logging.Logger@{CMGTGraph.Logging.Logger}}\index{CMGTGraph.Logging.Logger@{CMGTGraph.Logging.Logger}!None@{None}}}\mbox{\Hypertarget{class_c_m_g_t_graph_1_1_logging_1_1_logger_a9127bb33520e991c4b631f9e86a5c598a6adf97f83acf6453d4a6a4b1070f3754}\label{class_c_m_g_t_graph_1_1_logging_1_1_logger_a9127bb33520e991c4b631f9e86a5c598a6adf97f83acf6453d4a6a4b1070f3754}} 
+None&Print nothing at all. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Error@{Error}!CMGTGraph.Logging.Logger@{CMGTGraph.Logging.Logger}}\index{CMGTGraph.Logging.Logger@{CMGTGraph.Logging.Logger}!Error@{Error}}}\mbox{\Hypertarget{class_c_m_g_t_graph_1_1_logging_1_1_logger_a9127bb33520e991c4b631f9e86a5c598a902b0d55fddef6f8d651fe1035b7d4bd}\label{class_c_m_g_t_graph_1_1_logging_1_1_logger_a9127bb33520e991c4b631f9e86a5c598a902b0d55fddef6f8d651fe1035b7d4bd}} 
+Error&Print only errors. (\mbox{\hyperlink{class_c_m_g_t_graph_1_1_logging_1_1_logger_a7b5be1b7079a18dcf88451842510bd69}{Logger.\+Error}}) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Warning@{Warning}!CMGTGraph.Logging.Logger@{CMGTGraph.Logging.Logger}}\index{CMGTGraph.Logging.Logger@{CMGTGraph.Logging.Logger}!Warning@{Warning}}}\mbox{\Hypertarget{class_c_m_g_t_graph_1_1_logging_1_1_logger_a9127bb33520e991c4b631f9e86a5c598a0eaadb4fcb48a0a0ed7bc9868be9fbaa}\label{class_c_m_g_t_graph_1_1_logging_1_1_logger_a9127bb33520e991c4b631f9e86a5c598a0eaadb4fcb48a0a0ed7bc9868be9fbaa}} 
+Warning&Print errors (\mbox{\hyperlink{class_c_m_g_t_graph_1_1_logging_1_1_logger_a7b5be1b7079a18dcf88451842510bd69}{Logger.\+Error}}) and warnings (\mbox{\hyperlink{class_c_m_g_t_graph_1_1_logging_1_1_logger_ae55ddb5a1924d75bf4e76bf9d40357f4}{Logger.\+Warn}}) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Verbose@{Verbose}!CMGTGraph.Logging.Logger@{CMGTGraph.Logging.Logger}}\index{CMGTGraph.Logging.Logger@{CMGTGraph.Logging.Logger}!Verbose@{Verbose}}}\mbox{\Hypertarget{class_c_m_g_t_graph_1_1_logging_1_1_logger_a9127bb33520e991c4b631f9e86a5c598ad4a9fa383ab700c5bdd6f31cf7df0faf}\label{class_c_m_g_t_graph_1_1_logging_1_1_logger_a9127bb33520e991c4b631f9e86a5c598ad4a9fa383ab700c5bdd6f31cf7df0faf}} 
+Verbose&Print errors (\mbox{\hyperlink{class_c_m_g_t_graph_1_1_logging_1_1_logger_a7b5be1b7079a18dcf88451842510bd69}{Logger.\+Error}}), warnings (\mbox{\hyperlink{class_c_m_g_t_graph_1_1_logging_1_1_logger_ae55ddb5a1924d75bf4e76bf9d40357f4}{Logger.\+Warn}}) and logs (\mbox{\hyperlink{class_c_m_g_t_graph_1_1_logging_1_1_logger_a57fe880d96edfd1fa8e7c193d9d6c072}{Logger.\+Log}}). \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Spam@{Spam}!CMGTGraph.Logging.Logger@{CMGTGraph.Logging.Logger}}\index{CMGTGraph.Logging.Logger@{CMGTGraph.Logging.Logger}!Spam@{Spam}}}\mbox{\Hypertarget{class_c_m_g_t_graph_1_1_logging_1_1_logger_a9127bb33520e991c4b631f9e86a5c598ae9dfd31cc505d51fc26975250750deab}\label{class_c_m_g_t_graph_1_1_logging_1_1_logger_a9127bb33520e991c4b631f9e86a5c598ae9dfd31cc505d51fc26975250750deab}} 
+Spam&Print everything from every function in this static class. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_c_m_g_t_graph_1_1_logging_1_1_logger_a5fee749e00575543fc401195b756c9f9}\label{class_c_m_g_t_graph_1_1_logging_1_1_logger_a5fee749e00575543fc401195b756c9f9}} 
+\index{CMGTGraph.Logging.Logger@{CMGTGraph.Logging.Logger}!ColorLog@{ColorLog}}
+\index{ColorLog@{ColorLog}!CMGTGraph.Logging.Logger@{CMGTGraph.Logging.Logger}}
+\doxysubsubsection{\texorpdfstring{ColorLog()}{ColorLog()}}
+{\footnotesize\ttfamily static void C\+M\+G\+T\+Graph.\+Logging.\+Logger.\+Color\+Log (\begin{DoxyParamCaption}\item[{string}]{text,  }\item[{Console\+Color}]{color = {\ttfamily ConsoleColor.White} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Log something in the specified console color to the current output text writer. The default color is white. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em text} & The text to log\\
+\hline
+{\em color} & The color to log in\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_c_m_g_t_graph_1_1_logging_1_1_logger_a7b5be1b7079a18dcf88451842510bd69}\label{class_c_m_g_t_graph_1_1_logging_1_1_logger_a7b5be1b7079a18dcf88451842510bd69}} 
+\index{CMGTGraph.Logging.Logger@{CMGTGraph.Logging.Logger}!Error@{Error}}
+\index{Error@{Error}!CMGTGraph.Logging.Logger@{CMGTGraph.Logging.Logger}}
+\doxysubsubsection{\texorpdfstring{Error()}{Error()}}
+{\footnotesize\ttfamily static void C\+M\+G\+T\+Graph.\+Logging.\+Logger.\+Error (\begin{DoxyParamCaption}\item[{string}]{text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Log something to the console in red with the prefix 
+
+{\ttfamily \mbox{\hyperlink{namespace_c_m_g_t_graph}{C\+M\+G\+T\+Graph}} \mbox{[}Error\mbox{]}\+: }.
+
+
+\begin{DoxyParams}{Parameters}
+{\em text} & The text to log as an error\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_c_m_g_t_graph_1_1_logging_1_1_logger_a57fe880d96edfd1fa8e7c193d9d6c072}\label{class_c_m_g_t_graph_1_1_logging_1_1_logger_a57fe880d96edfd1fa8e7c193d9d6c072}} 
+\index{CMGTGraph.Logging.Logger@{CMGTGraph.Logging.Logger}!Log@{Log}}
+\index{Log@{Log}!CMGTGraph.Logging.Logger@{CMGTGraph.Logging.Logger}}
+\doxysubsubsection{\texorpdfstring{Log()}{Log()}}
+{\footnotesize\ttfamily static void C\+M\+G\+T\+Graph.\+Logging.\+Logger.\+Log (\begin{DoxyParamCaption}\item[{string}]{text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Log something to the console in dark blue with the prefix 
+
+{\ttfamily \mbox{\hyperlink{namespace_c_m_g_t_graph}{C\+M\+G\+T\+Graph}}\+: }.
+
+
+\begin{DoxyParams}{Parameters}
+{\em text} & The text to log\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_c_m_g_t_graph_1_1_logging_1_1_logger_a110c34877fdc225fe632fbe0f747fcd9}\label{class_c_m_g_t_graph_1_1_logging_1_1_logger_a110c34877fdc225fe632fbe0f747fcd9}} 
+\index{CMGTGraph.Logging.Logger@{CMGTGraph.Logging.Logger}!ResetWriter@{ResetWriter}}
+\index{ResetWriter@{ResetWriter}!CMGTGraph.Logging.Logger@{CMGTGraph.Logging.Logger}}
+\doxysubsubsection{\texorpdfstring{ResetWriter()}{ResetWriter()}}
+{\footnotesize\ttfamily static void C\+M\+G\+T\+Graph.\+Logging.\+Logger.\+Reset\+Writer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Reset the text writer to point to the one it was when changing the text writer through \mbox{\hyperlink{class_c_m_g_t_graph_1_1_logging_1_1_logger_ad49636614eaa9eed7aaa6ff13064ddbb}{Writer}}. If the text writer hasn\textquotesingle{}t been changed, this function does nothing. 
+
+\mbox{\Hypertarget{class_c_m_g_t_graph_1_1_logging_1_1_logger_a209efedb37bf5502359a1e43cc233e9d}\label{class_c_m_g_t_graph_1_1_logging_1_1_logger_a209efedb37bf5502359a1e43cc233e9d}} 
+\index{CMGTGraph.Logging.Logger@{CMGTGraph.Logging.Logger}!Spam@{Spam}}
+\index{Spam@{Spam}!CMGTGraph.Logging.Logger@{CMGTGraph.Logging.Logger}}
+\doxysubsubsection{\texorpdfstring{Spam()}{Spam()}}
+{\footnotesize\ttfamily static void C\+M\+G\+T\+Graph.\+Logging.\+Logger.\+Spam (\begin{DoxyParamCaption}\item[{string}]{text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Spam something to the console in white with the prefix 
+
+{\ttfamily Spam\+: }.
+
+
+\begin{DoxyParams}{Parameters}
+{\em text} & The text to spam\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_c_m_g_t_graph_1_1_logging_1_1_logger_ae55ddb5a1924d75bf4e76bf9d40357f4}\label{class_c_m_g_t_graph_1_1_logging_1_1_logger_ae55ddb5a1924d75bf4e76bf9d40357f4}} 
+\index{CMGTGraph.Logging.Logger@{CMGTGraph.Logging.Logger}!Warn@{Warn}}
+\index{Warn@{Warn}!CMGTGraph.Logging.Logger@{CMGTGraph.Logging.Logger}}
+\doxysubsubsection{\texorpdfstring{Warn()}{Warn()}}
+{\footnotesize\ttfamily static void C\+M\+G\+T\+Graph.\+Logging.\+Logger.\+Warn (\begin{DoxyParamCaption}\item[{string}]{text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Log something to the console in yellow with the prefix 
+
+{\ttfamily \mbox{\hyperlink{namespace_c_m_g_t_graph}{C\+M\+G\+T\+Graph}} \mbox{[}Warning\mbox{]}\+: }.
+
+
+\begin{DoxyParams}{Parameters}
+{\em text} & The text to log as a warning\\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_c_m_g_t_graph_1_1_logging_1_1_logger_a4c51cb2f78ad0beb21bcdae211d2b36b}\label{class_c_m_g_t_graph_1_1_logging_1_1_logger_a4c51cb2f78ad0beb21bcdae211d2b36b}} 
+\index{CMGTGraph.Logging.Logger@{CMGTGraph.Logging.Logger}!\_defaultOut@{\_defaultOut}}
+\index{\_defaultOut@{\_defaultOut}!CMGTGraph.Logging.Logger@{CMGTGraph.Logging.Logger}}
+\doxysubsubsection{\texorpdfstring{\_defaultOut}{\_defaultOut}}
+{\footnotesize\ttfamily Text\+Writer C\+M\+G\+T\+Graph.\+Logging.\+Logger.\+\_\+default\+Out\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+The default text writer that is saved when the output text writer is changed (e.\+g. through \mbox{\hyperlink{class_c_m_g_t_graph_1_1_logging_1_1_logger_ad49636614eaa9eed7aaa6ff13064ddbb}{Writer}}) to be able to reset it later. 
+
+\mbox{\Hypertarget{class_c_m_g_t_graph_1_1_logging_1_1_logger_a2f79d3a16eee69058bda9b5bea0d0f6a}\label{class_c_m_g_t_graph_1_1_logging_1_1_logger_a2f79d3a16eee69058bda9b5bea0d0f6a}} 
+\index{CMGTGraph.Logging.Logger@{CMGTGraph.Logging.Logger}!LoggingLevel@{LoggingLevel}}
+\index{LoggingLevel@{LoggingLevel}!CMGTGraph.Logging.Logger@{CMGTGraph.Logging.Logger}}
+\doxysubsubsection{\texorpdfstring{LoggingLevel}{LoggingLevel}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_c_m_g_t_graph_1_1_logging_1_1_logger_a9127bb33520e991c4b631f9e86a5c598}{Log\+Level}} C\+M\+G\+T\+Graph.\+Logging.\+Logger.\+Logging\+Level = \mbox{\hyperlink{class_c_m_g_t_graph_1_1_logging_1_1_logger_a9127bb33520e991c4b631f9e86a5c598a902b0d55fddef6f8d651fe1035b7d4bd}{Log\+Level.\+Error}}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The current logging level, the logger is operating at. 
+
+
+
+\doxysubsection{Property Documentation}
+\mbox{\Hypertarget{class_c_m_g_t_graph_1_1_logging_1_1_logger_ad49636614eaa9eed7aaa6ff13064ddbb}\label{class_c_m_g_t_graph_1_1_logging_1_1_logger_ad49636614eaa9eed7aaa6ff13064ddbb}} 
+\index{CMGTGraph.Logging.Logger@{CMGTGraph.Logging.Logger}!Writer@{Writer}}
+\index{Writer@{Writer}!CMGTGraph.Logging.Logger@{CMGTGraph.Logging.Logger}}
+\doxysubsubsection{\texorpdfstring{Writer}{Writer}}
+{\footnotesize\ttfamily Text\+Writer C\+M\+G\+T\+Graph.\+Logging.\+Logger.\+Writer\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+When you get it, you get the current text writer of this logger. 
+
+When you set it, the default text writer will be saved in \mbox{\hyperlink{class_c_m_g_t_graph_1_1_logging_1_1_logger_a4c51cb2f78ad0beb21bcdae211d2b36b}{\+\_\+default\+Out}} (to be able to reset it) and the out will be set. If the provided value is null, nothing happens. 
+
+In the current implementation, \mbox{\hyperlink{class_c_m_g_t_graph_1_1_logging_1_1_logger_ad49636614eaa9eed7aaa6ff13064ddbb}{Writer}} is always equal to Console.\+Out, as it simply sets the out of the console. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+M\+G\+T\+Graph/\+Logging/Logger.\+cs\end{DoxyCompactItemize}

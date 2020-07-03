@@ -1,0 +1,81 @@
+\hypertarget{class_c_m_g_t_graph_1_1_algorithms_1_1_algorithms_1_1_a_star_node}{}\doxysection{C\+M\+G\+T\+Graph.\+Algorithms.\+Algorithms.\+A\+Star\+Node$<$ T $>$ Class Template Reference}
+\label{class_c_m_g_t_graph_1_1_algorithms_1_1_algorithms_1_1_a_star_node}\index{CMGTGraph.Algorithms.Algorithms.AStarNode$<$ T $>$@{CMGTGraph.Algorithms.Algorithms.AStarNode$<$ T $>$}}
+
+
+A \mbox{\hyperlink{class_c_m_g_t_graph_1_1_algorithms_1_1_algorithms_1_1_node}{Node}} specifically built for the purposes of the A$\ast$ algorithm. It saves the current data it represents (the thing from the graph), the predecessor of this node in the current run of the algorithm, the accumulated path length to this node currently, the estimated distance from this node to the finish and an option to get the estimated complete path length going through this node.  
+
+
+Inheritance diagram for C\+M\+G\+T\+Graph.\+Algorithms.\+Algorithms.\+A\+Star\+Node$<$ T $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_c_m_g_t_graph_1_1_algorithms_1_1_algorithms_1_1_a_star_node}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_c_m_g_t_graph_1_1_algorithms_1_1_algorithms_1_1_a_star_node_accc3d8ef2cb364cb989929842179c2c0}{A\+Star\+Node}} (T data, T predecessor=default, float current\+Path\+Length=0f, float distance\+To\+Finish=float.\+Max\+Value)
+\begin{DoxyCompactList}\small\item\em Create a new \mbox{\hyperlink{class_c_m_g_t_graph_1_1_algorithms_1_1_algorithms_1_1_a_star_node}{A\+Star\+Node}}. You don\textquotesingle{}t need to specify any values apart from the actual data. They can all be set later. {\itshape predecessor}  will by default initialize to \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{class_c_m_g_t_graph_1_1_algorithms_1_1_algorithms_1_1_a_star_node_a4ce9036986b765cdef204c8a146479c6}{Distance\+To\+Finish}}
+\begin{DoxyCompactList}\small\item\em The estimated distance of this node to the finish. In formal definitions this is often called H or h(x) standing for heuristic. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_c_m_g_t_graph_1_1_algorithms_1_1_algorithms_1_1_a_star_node_a287d611297fcd9a4f9ede4b018ecbe21}{Estimated\+Complete\+Path\+Length}} =$>$ \mbox{\hyperlink{class_c_m_g_t_graph_1_1_algorithms_1_1_algorithms_1_1_dijkstra_node_ab19a8c75c5694a141001b01ea5f05b12}{Current\+Path\+Length}} + \mbox{\hyperlink{class_c_m_g_t_graph_1_1_algorithms_1_1_algorithms_1_1_a_star_node_a4ce9036986b765cdef204c8a146479c6}{Distance\+To\+Finish}}
+\begin{DoxyCompactList}\small\item\em The estimated complete path length that would go through this node. It is the length to this node (\mbox{\hyperlink{class_c_m_g_t_graph_1_1_algorithms_1_1_algorithms_1_1_dijkstra_node_ab19a8c75c5694a141001b01ea5f05b12}{Dijkstra\+Node$<$\+T$>$.\+Current\+Path\+Length}}) plus the estimated distance to the finish. In formal definitions, this is often called F or f(x) and defined as f(x) = g(x) + h(x) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A \mbox{\hyperlink{class_c_m_g_t_graph_1_1_algorithms_1_1_algorithms_1_1_node}{Node}} specifically built for the purposes of the A$\ast$ algorithm. It saves the current data it represents (the thing from the graph), the predecessor of this node in the current run of the algorithm, the accumulated path length to this node currently, the estimated distance from this node to the finish and an option to get the estimated complete path length going through this node. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & \\
+\hline
+\end{DoxyTemplParams}
+\begin{Desc}
+\item[Type Constraints]\begin{description}
+\item[{\em T} : {\em I\+Equatable$<$T$>$}]\end{description}
+\end{Desc}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_c_m_g_t_graph_1_1_algorithms_1_1_algorithms_1_1_a_star_node_accc3d8ef2cb364cb989929842179c2c0}\label{class_c_m_g_t_graph_1_1_algorithms_1_1_algorithms_1_1_a_star_node_accc3d8ef2cb364cb989929842179c2c0}} 
+\index{CMGTGraph.Algorithms.Algorithms.AStarNode$<$ T $>$@{CMGTGraph.Algorithms.Algorithms.AStarNode$<$ T $>$}!AStarNode@{AStarNode}}
+\index{AStarNode@{AStarNode}!CMGTGraph.Algorithms.Algorithms.AStarNode$<$ T $>$@{CMGTGraph.Algorithms.Algorithms.AStarNode$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{AStarNode()}{AStarNode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_c_m_g_t_graph_1_1_algorithms_1_1_algorithms_1_1_a_star_node}{C\+M\+G\+T\+Graph.\+Algorithms.\+Algorithms.\+A\+Star\+Node}}$<$ T $>$.\mbox{\hyperlink{class_c_m_g_t_graph_1_1_algorithms_1_1_algorithms_1_1_a_star_node}{A\+Star\+Node}} (\begin{DoxyParamCaption}\item[{T}]{data,  }\item[{T}]{predecessor = {\ttfamily default},  }\item[{float}]{current\+Path\+Length = {\ttfamily 0f},  }\item[{float}]{distance\+To\+Finish = {\ttfamily float.MaxValue} }\end{DoxyParamCaption})}
+
+
+
+Create a new \mbox{\hyperlink{class_c_m_g_t_graph_1_1_algorithms_1_1_algorithms_1_1_a_star_node}{A\+Star\+Node}}. You don\textquotesingle{}t need to specify any values apart from the actual data. They can all be set later. {\itshape predecessor}  will by default initialize to 
+
+{\ttfamily default}, {\itshape current\+Path\+Length}  will default to zero and {\itshape distance\+To\+Finish}  will default to float.\+Max\+Value.
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_c_m_g_t_graph_1_1_algorithms_1_1_algorithms_1_1_a_star_node_a4ce9036986b765cdef204c8a146479c6}\label{class_c_m_g_t_graph_1_1_algorithms_1_1_algorithms_1_1_a_star_node_a4ce9036986b765cdef204c8a146479c6}} 
+\index{CMGTGraph.Algorithms.Algorithms.AStarNode$<$ T $>$@{CMGTGraph.Algorithms.Algorithms.AStarNode$<$ T $>$}!DistanceToFinish@{DistanceToFinish}}
+\index{DistanceToFinish@{DistanceToFinish}!CMGTGraph.Algorithms.Algorithms.AStarNode$<$ T $>$@{CMGTGraph.Algorithms.Algorithms.AStarNode$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{DistanceToFinish}{DistanceToFinish}}
+{\footnotesize\ttfamily float \mbox{\hyperlink{class_c_m_g_t_graph_1_1_algorithms_1_1_algorithms_1_1_a_star_node}{C\+M\+G\+T\+Graph.\+Algorithms.\+Algorithms.\+A\+Star\+Node}}$<$ T $>$.Distance\+To\+Finish}
+
+
+
+The estimated distance of this node to the finish. In formal definitions this is often called H or h(x) standing for heuristic. 
+
+\mbox{\Hypertarget{class_c_m_g_t_graph_1_1_algorithms_1_1_algorithms_1_1_a_star_node_a287d611297fcd9a4f9ede4b018ecbe21}\label{class_c_m_g_t_graph_1_1_algorithms_1_1_algorithms_1_1_a_star_node_a287d611297fcd9a4f9ede4b018ecbe21}} 
+\index{CMGTGraph.Algorithms.Algorithms.AStarNode$<$ T $>$@{CMGTGraph.Algorithms.Algorithms.AStarNode$<$ T $>$}!EstimatedCompletePathLength@{EstimatedCompletePathLength}}
+\index{EstimatedCompletePathLength@{EstimatedCompletePathLength}!CMGTGraph.Algorithms.Algorithms.AStarNode$<$ T $>$@{CMGTGraph.Algorithms.Algorithms.AStarNode$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{EstimatedCompletePathLength}{EstimatedCompletePathLength}}
+{\footnotesize\ttfamily float \mbox{\hyperlink{class_c_m_g_t_graph_1_1_algorithms_1_1_algorithms_1_1_a_star_node}{C\+M\+G\+T\+Graph.\+Algorithms.\+Algorithms.\+A\+Star\+Node}}$<$ T $>$.Estimated\+Complete\+Path\+Length =$>$ \mbox{\hyperlink{class_c_m_g_t_graph_1_1_algorithms_1_1_algorithms_1_1_dijkstra_node_ab19a8c75c5694a141001b01ea5f05b12}{Current\+Path\+Length}} + \mbox{\hyperlink{class_c_m_g_t_graph_1_1_algorithms_1_1_algorithms_1_1_a_star_node_a4ce9036986b765cdef204c8a146479c6}{Distance\+To\+Finish}}}
+
+
+
+The estimated complete path length that would go through this node. It is the length to this node (\mbox{\hyperlink{class_c_m_g_t_graph_1_1_algorithms_1_1_algorithms_1_1_dijkstra_node_ab19a8c75c5694a141001b01ea5f05b12}{Dijkstra\+Node$<$\+T$>$.\+Current\+Path\+Length}}) plus the estimated distance to the finish. In formal definitions, this is often called F or f(x) and defined as f(x) = g(x) + h(x) 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+M\+G\+T\+Graph/\+Algorithms/Algorithms-\/\+A\+Star.\+cs\end{DoxyCompactItemize}

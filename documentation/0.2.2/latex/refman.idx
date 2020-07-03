@@ -1,0 +1,187 @@
+\indexentry{CMGTGraph@{CMGTGraph}|hyperpage}{7}
+\indexentry{CMGTGraph.Algorithms@{CMGTGraph.Algorithms}|hyperpage}{7}
+\indexentry{CMGTGraph.Calculators@{CMGTGraph.Calculators}|hyperpage}{7}
+\indexentry{CMGTGraph.Logging@{CMGTGraph.Logging}|hyperpage}{8}
+\indexentry{CMGTGraph.Preprocessed@{CMGTGraph.Preprocessed}|hyperpage}{8}
+\indexentry{CMGTGraph.Types@{CMGTGraph.Types}|hyperpage}{8}
+\indexentry{CMGTGraph.Algorithms.Algorithms@{CMGTGraph.Algorithms.Algorithms}|hyperpage}{9}
+\indexentry{CMGTGraph.Algorithms.Algorithms@{CMGTGraph.Algorithms.Algorithms}!AStarExpandNode$<$ T $>$@{AStarExpandNode$<$ T $>$}|hyperpage}{10}
+\indexentry{AStarExpandNode$<$ T $>$@{AStarExpandNode$<$ T $>$}!CMGTGraph.Algorithms.Algorithms@{CMGTGraph.Algorithms.Algorithms}|hyperpage}{10}
+\indexentry{CMGTGraph.Algorithms.Algorithms@{CMGTGraph.Algorithms.Algorithms}!AStarGetMostPromisingNode$<$ T $>$@{AStarGetMostPromisingNode$<$ T $>$}|hyperpage}{11}
+\indexentry{AStarGetMostPromisingNode$<$ T $>$@{AStarGetMostPromisingNode$<$ T $>$}!CMGTGraph.Algorithms.Algorithms@{CMGTGraph.Algorithms.Algorithms}|hyperpage}{11}
+\indexentry{CMGTGraph.Algorithms.Algorithms@{CMGTGraph.Algorithms.Algorithms}!AStarSolve$<$ T $>$@{AStarSolve$<$ T $>$}|hyperpage}{11}
+\indexentry{AStarSolve$<$ T $>$@{AStarSolve$<$ T $>$}!CMGTGraph.Algorithms.Algorithms@{CMGTGraph.Algorithms.Algorithms}|hyperpage}{11}
+\indexentry{CMGTGraph.Algorithms.Algorithms@{CMGTGraph.Algorithms.Algorithms}!AStarSolveWithInfo$<$ T $>$@{AStarSolveWithInfo$<$ T $>$}|hyperpage}{11}
+\indexentry{AStarSolveWithInfo$<$ T $>$@{AStarSolveWithInfo$<$ T $>$}!CMGTGraph.Algorithms.Algorithms@{CMGTGraph.Algorithms.Algorithms}|hyperpage}{11}
+\indexentry{CMGTGraph.Algorithms.Algorithms@{CMGTGraph.Algorithms.Algorithms}!BuildPath$<$ T $>$@{BuildPath$<$ T $>$}|hyperpage}{11}
+\indexentry{BuildPath$<$ T $>$@{BuildPath$<$ T $>$}!CMGTGraph.Algorithms.Algorithms@{CMGTGraph.Algorithms.Algorithms}|hyperpage}{11}
+\indexentry{CMGTGraph.Algorithms.Algorithms@{CMGTGraph.Algorithms.Algorithms}!BuildRecursiveReversePath$<$ T $>$@{BuildRecursiveReversePath$<$ T $>$}|hyperpage}{12}
+\indexentry{BuildRecursiveReversePath$<$ T $>$@{BuildRecursiveReversePath$<$ T $>$}!CMGTGraph.Algorithms.Algorithms@{CMGTGraph.Algorithms.Algorithms}|hyperpage}{12}
+\indexentry{CMGTGraph.Algorithms.Algorithms@{CMGTGraph.Algorithms.Algorithms}!DijkstraExpandNode$<$ T $>$@{DijkstraExpandNode$<$ T $>$}|hyperpage}{12}
+\indexentry{DijkstraExpandNode$<$ T $>$@{DijkstraExpandNode$<$ T $>$}!CMGTGraph.Algorithms.Algorithms@{CMGTGraph.Algorithms.Algorithms}|hyperpage}{12}
+\indexentry{CMGTGraph.Algorithms.Algorithms@{CMGTGraph.Algorithms.Algorithms}!IterativeBfsSolve$<$ T $>$@{IterativeBfsSolve$<$ T $>$}|hyperpage}{13}
+\indexentry{IterativeBfsSolve$<$ T $>$@{IterativeBfsSolve$<$ T $>$}!CMGTGraph.Algorithms.Algorithms@{CMGTGraph.Algorithms.Algorithms}|hyperpage}{13}
+\indexentry{CMGTGraph.Algorithms.Algorithms@{CMGTGraph.Algorithms.Algorithms}!IterativeBfsSolveWithInfo$<$ T $>$@{IterativeBfsSolveWithInfo$<$ T $>$}|hyperpage}{13}
+\indexentry{IterativeBfsSolveWithInfo$<$ T $>$@{IterativeBfsSolveWithInfo$<$ T $>$}!CMGTGraph.Algorithms.Algorithms@{CMGTGraph.Algorithms.Algorithms}|hyperpage}{13}
+\indexentry{CMGTGraph.Algorithms.Algorithms@{CMGTGraph.Algorithms.Algorithms}!RecursiveSolve$<$ T $>$@{RecursiveSolve$<$ T $>$}|hyperpage}{14}
+\indexentry{RecursiveSolve$<$ T $>$@{RecursiveSolve$<$ T $>$}!CMGTGraph.Algorithms.Algorithms@{CMGTGraph.Algorithms.Algorithms}|hyperpage}{14}
+\indexentry{CMGTGraph.Algorithms.Algorithms@{CMGTGraph.Algorithms.Algorithms}!RecursiveSolve$<$ T $>$@{RecursiveSolve$<$ T $>$}|hyperpage}{14}
+\indexentry{RecursiveSolve$<$ T $>$@{RecursiveSolve$<$ T $>$}!CMGTGraph.Algorithms.Algorithms@{CMGTGraph.Algorithms.Algorithms}|hyperpage}{14}
+\indexentry{CMGTGraph.Algorithms.Algorithms@{CMGTGraph.Algorithms.Algorithms}!ThrowOnInvalidInput$<$ T $>$@{ThrowOnInvalidInput$<$ T $>$}|hyperpage}{15}
+\indexentry{ThrowOnInvalidInput$<$ T $>$@{ThrowOnInvalidInput$<$ T $>$}!CMGTGraph.Algorithms.Algorithms@{CMGTGraph.Algorithms.Algorithms}|hyperpage}{15}
+\indexentry{CMGTGraph.Algorithms.Algorithms.AStarNode$<$ T $>$@{CMGTGraph.Algorithms.Algorithms.AStarNode$<$ T $>$}|hyperpage}{16}
+\indexentry{CMGTGraph.Algorithms.Algorithms.AStarNode$<$ T $>$@{CMGTGraph.Algorithms.Algorithms.AStarNode$<$ T $>$}!AStarNode@{AStarNode}|hyperpage}{17}
+\indexentry{AStarNode@{AStarNode}!CMGTGraph.Algorithms.Algorithms.AStarNode$<$ T $>$@{CMGTGraph.Algorithms.Algorithms.AStarNode$<$ T $>$}|hyperpage}{17}
+\indexentry{CMGTGraph.Algorithms.Algorithms.AStarNode$<$ T $>$@{CMGTGraph.Algorithms.Algorithms.AStarNode$<$ T $>$}!DistanceToFinish@{DistanceToFinish}|hyperpage}{17}
+\indexentry{DistanceToFinish@{DistanceToFinish}!CMGTGraph.Algorithms.Algorithms.AStarNode$<$ T $>$@{CMGTGraph.Algorithms.Algorithms.AStarNode$<$ T $>$}|hyperpage}{17}
+\indexentry{CMGTGraph.Algorithms.Algorithms.AStarNode$<$ T $>$@{CMGTGraph.Algorithms.Algorithms.AStarNode$<$ T $>$}!EstimatedCompletePathLength@{EstimatedCompletePathLength}|hyperpage}{17}
+\indexentry{EstimatedCompletePathLength@{EstimatedCompletePathLength}!CMGTGraph.Algorithms.Algorithms.AStarNode$<$ T $>$@{CMGTGraph.Algorithms.Algorithms.AStarNode$<$ T $>$}|hyperpage}{17}
+\indexentry{CMGTGraph.Algorithms.Algorithms.DijkstraNode$<$ T $>$@{CMGTGraph.Algorithms.Algorithms.DijkstraNode$<$ T $>$}|hyperpage}{18}
+\indexentry{CMGTGraph.Algorithms.Algorithms.DijkstraNode$<$ T $>$@{CMGTGraph.Algorithms.Algorithms.DijkstraNode$<$ T $>$}!CurrentPathLength@{CurrentPathLength}|hyperpage}{18}
+\indexentry{CurrentPathLength@{CurrentPathLength}!CMGTGraph.Algorithms.Algorithms.DijkstraNode$<$ T $>$@{CMGTGraph.Algorithms.Algorithms.DijkstraNode$<$ T $>$}|hyperpage}{18}
+\indexentry{CMGTGraph.Graph$<$ T $>$@{CMGTGraph.Graph$<$ T $>$}|hyperpage}{19}
+\indexentry{CMGTGraph.Graph$<$ T $>$@{CMGTGraph.Graph$<$ T $>$}!Graph@{Graph}|hyperpage}{20}
+\indexentry{Graph@{Graph}!CMGTGraph.Graph$<$ T $>$@{CMGTGraph.Graph$<$ T $>$}|hyperpage}{20}
+\indexentry{CMGTGraph.Graph$<$ T $>$@{CMGTGraph.Graph$<$ T $>$}!Add@{Add}|hyperpage}{21}
+\indexentry{Add@{Add}!CMGTGraph.Graph$<$ T $>$@{CMGTGraph.Graph$<$ T $>$}|hyperpage}{21}
+\indexentry{CMGTGraph.Graph$<$ T $>$@{CMGTGraph.Graph$<$ T $>$}!AddConnection@{AddConnection}|hyperpage}{21}
+\indexentry{AddConnection@{AddConnection}!CMGTGraph.Graph$<$ T $>$@{CMGTGraph.Graph$<$ T $>$}|hyperpage}{21}
+\indexentry{CMGTGraph.Graph$<$ T $>$@{CMGTGraph.Graph$<$ T $>$}!Clear@{Clear}|hyperpage}{21}
+\indexentry{Clear@{Clear}!CMGTGraph.Graph$<$ T $>$@{CMGTGraph.Graph$<$ T $>$}|hyperpage}{21}
+\indexentry{CMGTGraph.Graph$<$ T $>$@{CMGTGraph.Graph$<$ T $>$}!Contains@{Contains}|hyperpage}{21}
+\indexentry{Contains@{Contains}!CMGTGraph.Graph$<$ T $>$@{CMGTGraph.Graph$<$ T $>$}|hyperpage}{21}
+\indexentry{CMGTGraph.Graph$<$ T $>$@{CMGTGraph.Graph$<$ T $>$}!HaveConnection@{HaveConnection}|hyperpage}{22}
+\indexentry{HaveConnection@{HaveConnection}!CMGTGraph.Graph$<$ T $>$@{CMGTGraph.Graph$<$ T $>$}|hyperpage}{22}
+\indexentry{CMGTGraph.Graph$<$ T $>$@{CMGTGraph.Graph$<$ T $>$}!MakeImpassable@{MakeImpassable}|hyperpage}{22}
+\indexentry{MakeImpassable@{MakeImpassable}!CMGTGraph.Graph$<$ T $>$@{CMGTGraph.Graph$<$ T $>$}|hyperpage}{22}
+\indexentry{CMGTGraph.Graph$<$ T $>$@{CMGTGraph.Graph$<$ T $>$}!MakePassable@{MakePassable}|hyperpage}{22}
+\indexentry{MakePassable@{MakePassable}!CMGTGraph.Graph$<$ T $>$@{CMGTGraph.Graph$<$ T $>$}|hyperpage}{22}
+\indexentry{CMGTGraph.Graph$<$ T $>$@{CMGTGraph.Graph$<$ T $>$}!RemoveConnection@{RemoveConnection}|hyperpage}{22}
+\indexentry{RemoveConnection@{RemoveConnection}!CMGTGraph.Graph$<$ T $>$@{CMGTGraph.Graph$<$ T $>$}|hyperpage}{22}
+\indexentry{CMGTGraph.Graph$<$ T $>$@{CMGTGraph.Graph$<$ T $>$}!RemoveNode@{RemoveNode}|hyperpage}{22}
+\indexentry{RemoveNode@{RemoveNode}!CMGTGraph.Graph$<$ T $>$@{CMGTGraph.Graph$<$ T $>$}|hyperpage}{22}
+\indexentry{CMGTGraph.Graph$<$ T $>$@{CMGTGraph.Graph$<$ T $>$}!TogglePassable@{TogglePassable}|hyperpage}{23}
+\indexentry{TogglePassable@{TogglePassable}!CMGTGraph.Graph$<$ T $>$@{CMGTGraph.Graph$<$ T $>$}|hyperpage}{23}
+\indexentry{CMGTGraph.Graph$<$ T $>$@{CMGTGraph.Graph$<$ T $>$}!\_connections@{\_connections}|hyperpage}{23}
+\indexentry{\_connections@{\_connections}!CMGTGraph.Graph$<$ T $>$@{CMGTGraph.Graph$<$ T $>$}|hyperpage}{23}
+\indexentry{CMGTGraph.Graph$<$ T $>$@{CMGTGraph.Graph$<$ T $>$}!\_impassable@{\_impassable}|hyperpage}{23}
+\indexentry{\_impassable@{\_impassable}!CMGTGraph.Graph$<$ T $>$@{CMGTGraph.Graph$<$ T $>$}|hyperpage}{23}
+\indexentry{CMGTGraph.Preprocessed.IAltPreprocessedReadOnlyGraph$<$ T $>$@{CMGTGraph.Preprocessed.IAltPreprocessedReadOnlyGraph$<$ T $>$}|hyperpage}{24}
+\indexentry{CMGTGraph.Calculators.ICalculator$<$ in in T $>$@{CMGTGraph.Calculators.ICalculator$<$ in in T $>$}|hyperpage}{24}
+\indexentry{CMGTGraph.Calculators.ICalculator$<$ in in T $>$@{CMGTGraph.Calculators.ICalculator$<$ in in T $>$}!Distance@{Distance}|hyperpage}{25}
+\indexentry{Distance@{Distance}!CMGTGraph.Calculators.ICalculator$<$ in in T $>$@{CMGTGraph.Calculators.ICalculator$<$ in in T $>$}|hyperpage}{25}
+\indexentry{CMGTGraph.Calculators.ICalculator$<$ in in T $>$@{CMGTGraph.Calculators.ICalculator$<$ in in T $>$}!SqrDistance@{SqrDistance}|hyperpage}{25}
+\indexentry{SqrDistance@{SqrDistance}!CMGTGraph.Calculators.ICalculator$<$ in in T $>$@{CMGTGraph.Calculators.ICalculator$<$ in in T $>$}|hyperpage}{25}
+\indexentry{CMGTGraph.IReadOnlyGraph$<$ T $>$@{CMGTGraph.IReadOnlyGraph$<$ T $>$}|hyperpage}{25}
+\indexentry{CMGTGraph.IReadOnlyGraph$<$ T $>$@{CMGTGraph.IReadOnlyGraph$<$ T $>$}!Contains@{Contains}|hyperpage}{26}
+\indexentry{Contains@{Contains}!CMGTGraph.IReadOnlyGraph$<$ T $>$@{CMGTGraph.IReadOnlyGraph$<$ T $>$}|hyperpage}{26}
+\indexentry{CMGTGraph.IReadOnlyGraph$<$ T $>$@{CMGTGraph.IReadOnlyGraph$<$ T $>$}!GetPassableConnections@{GetPassableConnections}|hyperpage}{26}
+\indexentry{GetPassableConnections@{GetPassableConnections}!CMGTGraph.IReadOnlyGraph$<$ T $>$@{CMGTGraph.IReadOnlyGraph$<$ T $>$}|hyperpage}{26}
+\indexentry{CMGTGraph.IReadOnlyGraph$<$ T $>$@{CMGTGraph.IReadOnlyGraph$<$ T $>$}!HaveConnection@{HaveConnection}|hyperpage}{26}
+\indexentry{HaveConnection@{HaveConnection}!CMGTGraph.IReadOnlyGraph$<$ T $>$@{CMGTGraph.IReadOnlyGraph$<$ T $>$}|hyperpage}{26}
+\indexentry{CMGTGraph.IReadOnlyGraph$<$ T $>$@{CMGTGraph.IReadOnlyGraph$<$ T $>$}!IsConnected@{IsConnected}|hyperpage}{27}
+\indexentry{IsConnected@{IsConnected}!CMGTGraph.IReadOnlyGraph$<$ T $>$@{CMGTGraph.IReadOnlyGraph$<$ T $>$}|hyperpage}{27}
+\indexentry{CMGTGraph.IReadOnlyGraph$<$ T $>$@{CMGTGraph.IReadOnlyGraph$<$ T $>$}!NodeIsPassable@{NodeIsPassable}|hyperpage}{27}
+\indexentry{NodeIsPassable@{NodeIsPassable}!CMGTGraph.IReadOnlyGraph$<$ T $>$@{CMGTGraph.IReadOnlyGraph$<$ T $>$}|hyperpage}{27}
+\indexentry{CMGTGraph.IReadOnlyGraph$<$ T $>$@{CMGTGraph.IReadOnlyGraph$<$ T $>$}!Calculator@{Calculator}|hyperpage}{27}
+\indexentry{Calculator@{Calculator}!CMGTGraph.IReadOnlyGraph$<$ T $>$@{CMGTGraph.IReadOnlyGraph$<$ T $>$}|hyperpage}{27}
+\indexentry{CMGTGraph.IReadOnlyGraph$<$ T $>$@{CMGTGraph.IReadOnlyGraph$<$ T $>$}!NodeCount@{NodeCount}|hyperpage}{27}
+\indexentry{NodeCount@{NodeCount}!CMGTGraph.IReadOnlyGraph$<$ T $>$@{CMGTGraph.IReadOnlyGraph$<$ T $>$}|hyperpage}{27}
+\indexentry{CMGTGraph.IReadOnlyGraph$<$ T $>$@{CMGTGraph.IReadOnlyGraph$<$ T $>$}!Nodes@{Nodes}|hyperpage}{28}
+\indexentry{Nodes@{Nodes}!CMGTGraph.IReadOnlyGraph$<$ T $>$@{CMGTGraph.IReadOnlyGraph$<$ T $>$}|hyperpage}{28}
+\indexentry{CMGTGraph.Logging.Logger@{CMGTGraph.Logging.Logger}|hyperpage}{28}
+\indexentry{CMGTGraph.Logging.Logger@{CMGTGraph.Logging.Logger}!LogLevel@{LogLevel}|hyperpage}{29}
+\indexentry{LogLevel@{LogLevel}!CMGTGraph.Logging.Logger@{CMGTGraph.Logging.Logger}|hyperpage}{29}
+\indexentry{None@{None}!CMGTGraph.Logging.Logger@{CMGTGraph.Logging.Logger}|hyperpage}{29}
+\indexentry{CMGTGraph.Logging.Logger@{CMGTGraph.Logging.Logger}!None@{None}|hyperpage}{29}
+\indexentry{Error@{Error}!CMGTGraph.Logging.Logger@{CMGTGraph.Logging.Logger}|hyperpage}{29}
+\indexentry{CMGTGraph.Logging.Logger@{CMGTGraph.Logging.Logger}!Error@{Error}|hyperpage}{29}
+\indexentry{Warning@{Warning}!CMGTGraph.Logging.Logger@{CMGTGraph.Logging.Logger}|hyperpage}{29}
+\indexentry{CMGTGraph.Logging.Logger@{CMGTGraph.Logging.Logger}!Warning@{Warning}|hyperpage}{29}
+\indexentry{Verbose@{Verbose}!CMGTGraph.Logging.Logger@{CMGTGraph.Logging.Logger}|hyperpage}{29}
+\indexentry{CMGTGraph.Logging.Logger@{CMGTGraph.Logging.Logger}!Verbose@{Verbose}|hyperpage}{29}
+\indexentry{Spam@{Spam}!CMGTGraph.Logging.Logger@{CMGTGraph.Logging.Logger}|hyperpage}{29}
+\indexentry{CMGTGraph.Logging.Logger@{CMGTGraph.Logging.Logger}!Spam@{Spam}|hyperpage}{29}
+\indexentry{CMGTGraph.Logging.Logger@{CMGTGraph.Logging.Logger}!ColorLog@{ColorLog}|hyperpage}{29}
+\indexentry{ColorLog@{ColorLog}!CMGTGraph.Logging.Logger@{CMGTGraph.Logging.Logger}|hyperpage}{29}
+\indexentry{CMGTGraph.Logging.Logger@{CMGTGraph.Logging.Logger}!Error@{Error}|hyperpage}{30}
+\indexentry{Error@{Error}!CMGTGraph.Logging.Logger@{CMGTGraph.Logging.Logger}|hyperpage}{30}
+\indexentry{CMGTGraph.Logging.Logger@{CMGTGraph.Logging.Logger}!Log@{Log}|hyperpage}{30}
+\indexentry{Log@{Log}!CMGTGraph.Logging.Logger@{CMGTGraph.Logging.Logger}|hyperpage}{30}
+\indexentry{CMGTGraph.Logging.Logger@{CMGTGraph.Logging.Logger}!ResetWriter@{ResetWriter}|hyperpage}{30}
+\indexentry{ResetWriter@{ResetWriter}!CMGTGraph.Logging.Logger@{CMGTGraph.Logging.Logger}|hyperpage}{30}
+\indexentry{CMGTGraph.Logging.Logger@{CMGTGraph.Logging.Logger}!Spam@{Spam}|hyperpage}{30}
+\indexentry{Spam@{Spam}!CMGTGraph.Logging.Logger@{CMGTGraph.Logging.Logger}|hyperpage}{30}
+\indexentry{CMGTGraph.Logging.Logger@{CMGTGraph.Logging.Logger}!Warn@{Warn}|hyperpage}{31}
+\indexentry{Warn@{Warn}!CMGTGraph.Logging.Logger@{CMGTGraph.Logging.Logger}|hyperpage}{31}
+\indexentry{CMGTGraph.Logging.Logger@{CMGTGraph.Logging.Logger}!\_defaultOut@{\_defaultOut}|hyperpage}{31}
+\indexentry{\_defaultOut@{\_defaultOut}!CMGTGraph.Logging.Logger@{CMGTGraph.Logging.Logger}|hyperpage}{31}
+\indexentry{CMGTGraph.Logging.Logger@{CMGTGraph.Logging.Logger}!LoggingLevel@{LoggingLevel}|hyperpage}{31}
+\indexentry{LoggingLevel@{LoggingLevel}!CMGTGraph.Logging.Logger@{CMGTGraph.Logging.Logger}|hyperpage}{31}
+\indexentry{CMGTGraph.Logging.Logger@{CMGTGraph.Logging.Logger}!Writer@{Writer}|hyperpage}{31}
+\indexentry{Writer@{Writer}!CMGTGraph.Logging.Logger@{CMGTGraph.Logging.Logger}|hyperpage}{31}
+\indexentry{CMGTGraph.Algorithms.Algorithms.Node$<$ T $>$@{CMGTGraph.Algorithms.Algorithms.Node$<$ T $>$}|hyperpage}{32}
+\indexentry{CMGTGraph.Algorithms.Algorithms.Node$<$ T $>$@{CMGTGraph.Algorithms.Algorithms.Node$<$ T $>$}!Data@{Data}|hyperpage}{33}
+\indexentry{Data@{Data}!CMGTGraph.Algorithms.Algorithms.Node$<$ T $>$@{CMGTGraph.Algorithms.Algorithms.Node$<$ T $>$}|hyperpage}{33}
+\indexentry{CMGTGraph.Algorithms.Algorithms.Node$<$ T $>$@{CMGTGraph.Algorithms.Algorithms.Node$<$ T $>$}!Predecessor@{Predecessor}|hyperpage}{33}
+\indexentry{Predecessor@{Predecessor}!CMGTGraph.Algorithms.Algorithms.Node$<$ T $>$@{CMGTGraph.Algorithms.Algorithms.Node$<$ T $>$}|hyperpage}{33}
+\indexentry{CMGTGraph.Graph$<$ T $>$.NodeNotFoundException@{CMGTGraph.Graph$<$ T $>$.NodeNotFoundException}|hyperpage}{33}
+\indexentry{CMGTGraph.Graph$<$ T $>$.NodeNotFoundException@{CMGTGraph.Graph$<$ T $>$.NodeNotFoundException}!NodeNotFoundException@{NodeNotFoundException}|hyperpage}{34}
+\indexentry{NodeNotFoundException@{NodeNotFoundException}!CMGTGraph.Graph$<$ T $>$.NodeNotFoundException@{CMGTGraph.Graph$<$ T $>$.NodeNotFoundException}|hyperpage}{34}
+\indexentry{CMGTGraph.Algorithms.Algorithms.PathFindingResult$<$ T $>$@{CMGTGraph.Algorithms.Algorithms.PathFindingResult$<$ T $>$}|hyperpage}{34}
+\indexentry{CMGTGraph.Algorithms.Algorithms.PathFindingResult$<$ T $>$@{CMGTGraph.Algorithms.Algorithms.PathFindingResult$<$ T $>$}!Empty@{Empty}|hyperpage}{35}
+\indexentry{Empty@{Empty}!CMGTGraph.Algorithms.Algorithms.PathFindingResult$<$ T $>$@{CMGTGraph.Algorithms.Algorithms.PathFindingResult$<$ T $>$}|hyperpage}{35}
+\indexentry{CMGTGraph.Types.Point@{CMGTGraph.Types.Point}|hyperpage}{35}
+\indexentry{CMGTGraph.Types.Point@{CMGTGraph.Types.Point}!Point@{Point}|hyperpage}{36}
+\indexentry{Point@{Point}!CMGTGraph.Types.Point@{CMGTGraph.Types.Point}|hyperpage}{36}
+\indexentry{CMGTGraph.Calculators.PointCalculator@{CMGTGraph.Calculators.PointCalculator}|hyperpage}{37}
+\indexentry{CMGTGraph.Calculators.PointCalculator@{CMGTGraph.Calculators.PointCalculator}!PointCalculator@{PointCalculator}|hyperpage}{37}
+\indexentry{PointCalculator@{PointCalculator}!CMGTGraph.Calculators.PointCalculator@{CMGTGraph.Calculators.PointCalculator}|hyperpage}{37}
+\indexentry{CMGTGraph.Calculators.PointCalculator@{CMGTGraph.Calculators.PointCalculator}!Distance@{Distance}|hyperpage}{38}
+\indexentry{Distance@{Distance}!CMGTGraph.Calculators.PointCalculator@{CMGTGraph.Calculators.PointCalculator}|hyperpage}{38}
+\indexentry{CMGTGraph.Calculators.PointCalculator@{CMGTGraph.Calculators.PointCalculator}!SqrDistance@{SqrDistance}|hyperpage}{39}
+\indexentry{SqrDistance@{SqrDistance}!CMGTGraph.Calculators.PointCalculator@{CMGTGraph.Calculators.PointCalculator}|hyperpage}{39}
+\indexentry{CMGTGraph.Calculators.PointCalculator@{CMGTGraph.Calculators.PointCalculator}!ThrowIfNull@{ThrowIfNull}|hyperpage}{39}
+\indexentry{ThrowIfNull@{ThrowIfNull}!CMGTGraph.Calculators.PointCalculator@{CMGTGraph.Calculators.PointCalculator}|hyperpage}{39}
+\indexentry{CMGTGraph.Calculators.PointCalculator@{CMGTGraph.Calculators.PointCalculator}!This@{This}|hyperpage}{39}
+\indexentry{This@{This}!CMGTGraph.Calculators.PointCalculator@{CMGTGraph.Calculators.PointCalculator}|hyperpage}{39}
+\indexentry{CMGTGraph.Calculators.PointDiagonalCalculator@{CMGTGraph.Calculators.PointDiagonalCalculator}|hyperpage}{39}
+\indexentry{CMGTGraph.Calculators.PointDiagonalCalculator@{CMGTGraph.Calculators.PointDiagonalCalculator}!PointDiagonalCalculator@{PointDiagonalCalculator}|hyperpage}{40}
+\indexentry{PointDiagonalCalculator@{PointDiagonalCalculator}!CMGTGraph.Calculators.PointDiagonalCalculator@{CMGTGraph.Calculators.PointDiagonalCalculator}|hyperpage}{40}
+\indexentry{CMGTGraph.Calculators.PointDiagonalCalculator@{CMGTGraph.Calculators.PointDiagonalCalculator}!\_diagonal@{\_diagonal}|hyperpage}{40}
+\indexentry{\_diagonal@{\_diagonal}!CMGTGraph.Calculators.PointDiagonalCalculator@{CMGTGraph.Calculators.PointDiagonalCalculator}|hyperpage}{40}
+\indexentry{CMGTGraph.Calculators.PointDiagonalCalculator@{CMGTGraph.Calculators.PointDiagonalCalculator}!\_straight@{\_straight}|hyperpage}{41}
+\indexentry{\_straight@{\_straight}!CMGTGraph.Calculators.PointDiagonalCalculator@{CMGTGraph.Calculators.PointDiagonalCalculator}|hyperpage}{41}
+\indexentry{CMGTGraph.Calculators.PointDiagonalCalculator@{CMGTGraph.Calculators.PointDiagonalCalculator}!Chebyshev@{Chebyshev}|hyperpage}{41}
+\indexentry{Chebyshev@{Chebyshev}!CMGTGraph.Calculators.PointDiagonalCalculator@{CMGTGraph.Calculators.PointDiagonalCalculator}|hyperpage}{41}
+\indexentry{CMGTGraph.Calculators.PointDiagonalCalculator@{CMGTGraph.Calculators.PointDiagonalCalculator}!Octile@{Octile}|hyperpage}{41}
+\indexentry{Octile@{Octile}!CMGTGraph.Calculators.PointDiagonalCalculator@{CMGTGraph.Calculators.PointDiagonalCalculator}|hyperpage}{41}
+\indexentry{CMGTGraph.Types.PointF@{CMGTGraph.Types.PointF}|hyperpage}{41}
+\indexentry{CMGTGraph.Types.PointF@{CMGTGraph.Types.PointF}!PointF@{PointF}|hyperpage}{42}
+\indexentry{PointF@{PointF}!CMGTGraph.Types.PointF@{CMGTGraph.Types.PointF}|hyperpage}{42}
+\indexentry{CMGTGraph.Calculators.PointFCalculator@{CMGTGraph.Calculators.PointFCalculator}|hyperpage}{43}
+\indexentry{CMGTGraph.Calculators.PointFCalculator@{CMGTGraph.Calculators.PointFCalculator}!ThrowIfNull@{ThrowIfNull}|hyperpage}{43}
+\indexentry{ThrowIfNull@{ThrowIfNull}!CMGTGraph.Calculators.PointFCalculator@{CMGTGraph.Calculators.PointFCalculator}|hyperpage}{43}
+\indexentry{CMGTGraph.Calculators.PointFCalculator@{CMGTGraph.Calculators.PointFCalculator}!This@{This}|hyperpage}{43}
+\indexentry{This@{This}!CMGTGraph.Calculators.PointFCalculator@{CMGTGraph.Calculators.PointFCalculator}|hyperpage}{43}
+\indexentry{CMGTGraph.Calculators.PointFDiagonalCalculator@{CMGTGraph.Calculators.PointFDiagonalCalculator}|hyperpage}{44}
+\indexentry{CMGTGraph.Calculators.PointFDiagonalCalculator@{CMGTGraph.Calculators.PointFDiagonalCalculator}!PointFDiagonalCalculator@{PointFDiagonalCalculator}|hyperpage}{45}
+\indexentry{PointFDiagonalCalculator@{PointFDiagonalCalculator}!CMGTGraph.Calculators.PointFDiagonalCalculator@{CMGTGraph.Calculators.PointFDiagonalCalculator}|hyperpage}{45}
+\indexentry{CMGTGraph.Calculators.PointFDiagonalCalculator@{CMGTGraph.Calculators.PointFDiagonalCalculator}!\_diagonal@{\_diagonal}|hyperpage}{45}
+\indexentry{\_diagonal@{\_diagonal}!CMGTGraph.Calculators.PointFDiagonalCalculator@{CMGTGraph.Calculators.PointFDiagonalCalculator}|hyperpage}{45}
+\indexentry{CMGTGraph.Calculators.PointFDiagonalCalculator@{CMGTGraph.Calculators.PointFDiagonalCalculator}!\_straight@{\_straight}|hyperpage}{45}
+\indexentry{\_straight@{\_straight}!CMGTGraph.Calculators.PointFDiagonalCalculator@{CMGTGraph.Calculators.PointFDiagonalCalculator}|hyperpage}{45}
+\indexentry{CMGTGraph.Calculators.PointFDiagonalCalculator@{CMGTGraph.Calculators.PointFDiagonalCalculator}!Chebyshev@{Chebyshev}|hyperpage}{45}
+\indexentry{Chebyshev@{Chebyshev}!CMGTGraph.Calculators.PointFDiagonalCalculator@{CMGTGraph.Calculators.PointFDiagonalCalculator}|hyperpage}{45}
+\indexentry{CMGTGraph.Calculators.PointFDiagonalCalculator@{CMGTGraph.Calculators.PointFDiagonalCalculator}!Octile@{Octile}|hyperpage}{45}
+\indexentry{Octile@{Octile}!CMGTGraph.Calculators.PointFDiagonalCalculator@{CMGTGraph.Calculators.PointFDiagonalCalculator}|hyperpage}{45}
+\indexentry{CMGTGraph.Calculators.PointFManhattanCalculator@{CMGTGraph.Calculators.PointFManhattanCalculator}|hyperpage}{46}
+\indexentry{CMGTGraph.Calculators.PointFManhattanCalculator@{CMGTGraph.Calculators.PointFManhattanCalculator}!PointFManhattanCalculator@{PointFManhattanCalculator}|hyperpage}{47}
+\indexentry{PointFManhattanCalculator@{PointFManhattanCalculator}!CMGTGraph.Calculators.PointFManhattanCalculator@{CMGTGraph.Calculators.PointFManhattanCalculator}|hyperpage}{47}
+\indexentry{CMGTGraph.Calculators.PointFManhattanCalculator@{CMGTGraph.Calculators.PointFManhattanCalculator}!This@{This}|hyperpage}{47}
+\indexentry{This@{This}!CMGTGraph.Calculators.PointFManhattanCalculator@{CMGTGraph.Calculators.PointFManhattanCalculator}|hyperpage}{47}
+\indexentry{CMGTGraph.Calculators.PointManhattanCalculator@{CMGTGraph.Calculators.PointManhattanCalculator}|hyperpage}{47}
+\indexentry{CMGTGraph.Calculators.PointManhattanCalculator@{CMGTGraph.Calculators.PointManhattanCalculator}!PointManhattanCalculator@{PointManhattanCalculator}|hyperpage}{48}
+\indexentry{PointManhattanCalculator@{PointManhattanCalculator}!CMGTGraph.Calculators.PointManhattanCalculator@{CMGTGraph.Calculators.PointManhattanCalculator}|hyperpage}{48}
+\indexentry{CMGTGraph.Calculators.PointManhattanCalculator@{CMGTGraph.Calculators.PointManhattanCalculator}!This@{This}|hyperpage}{48}
+\indexentry{This@{This}!CMGTGraph.Calculators.PointManhattanCalculator@{CMGTGraph.Calculators.PointManhattanCalculator}|hyperpage}{48}

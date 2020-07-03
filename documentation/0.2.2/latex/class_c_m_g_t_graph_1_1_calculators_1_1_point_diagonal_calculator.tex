@@ -1,0 +1,113 @@
+\hypertarget{class_c_m_g_t_graph_1_1_calculators_1_1_point_diagonal_calculator}{}\doxysection{C\+M\+G\+T\+Graph.\+Calculators.\+Point\+Diagonal\+Calculator Class Reference}
+\label{class_c_m_g_t_graph_1_1_calculators_1_1_point_diagonal_calculator}\index{CMGTGraph.Calculators.PointDiagonalCalculator@{CMGTGraph.Calculators.PointDiagonalCalculator}}
+
+
+A special calculator using Diagonal distance on integer points (Point). Use this if you can move in 8 directions.  
+
+
+Inheritance diagram for C\+M\+G\+T\+Graph.\+Calculators.\+Point\+Diagonal\+Calculator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_c_m_g_t_graph_1_1_calculators_1_1_point_diagonal_calculator}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_c_m_g_t_graph_1_1_calculators_1_1_point_diagonal_calculator_ab21829bfe83b2ed7674a0a255916f5f8}\label{class_c_m_g_t_graph_1_1_calculators_1_1_point_diagonal_calculator_ab21829bfe83b2ed7674a0a255916f5f8}} 
+float \mbox{\hyperlink{class_c_m_g_t_graph_1_1_calculators_1_1_point_diagonal_calculator_ab21829bfe83b2ed7674a0a255916f5f8}{Sqr\+Distance}} (\mbox{\hyperlink{class_c_m_g_t_graph_1_1_types_1_1_point}{Point}} a, \mbox{\hyperlink{class_c_m_g_t_graph_1_1_types_1_1_point}{Point}} b)
+\item 
+\mbox{\Hypertarget{class_c_m_g_t_graph_1_1_calculators_1_1_point_diagonal_calculator_a29c30bb0571744217da724525c3af9c6}\label{class_c_m_g_t_graph_1_1_calculators_1_1_point_diagonal_calculator_a29c30bb0571744217da724525c3af9c6}} 
+float \mbox{\hyperlink{class_c_m_g_t_graph_1_1_calculators_1_1_point_diagonal_calculator_a29c30bb0571744217da724525c3af9c6}{Distance}} (\mbox{\hyperlink{class_c_m_g_t_graph_1_1_types_1_1_point}{Point}} a, \mbox{\hyperlink{class_c_m_g_t_graph_1_1_types_1_1_point}{Point}} b)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static readonly \mbox{\hyperlink{class_c_m_g_t_graph_1_1_calculators_1_1_point_diagonal_calculator}{Point\+Diagonal\+Calculator}} \mbox{\hyperlink{class_c_m_g_t_graph_1_1_calculators_1_1_point_diagonal_calculator_a70bf7983ffb473bf210a877736e68ca9}{Octile}}
+\item 
+static readonly \mbox{\hyperlink{class_c_m_g_t_graph_1_1_calculators_1_1_point_diagonal_calculator}{Point\+Diagonal\+Calculator}} \mbox{\hyperlink{class_c_m_g_t_graph_1_1_calculators_1_1_point_diagonal_calculator_a06e701a9f2cda6a882ca5879f96e92e8}{Chebyshev}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_c_m_g_t_graph_1_1_calculators_1_1_point_diagonal_calculator_ab50ce95444af34df8138b0a3efb2defd}{Point\+Diagonal\+Calculator}} (float straight=1f, float diagonal=1.\+41421356237f)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+readonly float \mbox{\hyperlink{class_c_m_g_t_graph_1_1_calculators_1_1_point_diagonal_calculator_ad21a2cada8c9432c2dd0b785ef849c44}{\+\_\+straight}}
+\begin{DoxyCompactList}\small\item\em The value that is used to weigh straight edges. \end{DoxyCompactList}\item 
+readonly float \mbox{\hyperlink{class_c_m_g_t_graph_1_1_calculators_1_1_point_diagonal_calculator_af15ed5272ea0ddf4ef57bdea1a44806f}{\+\_\+diagonal}}
+\begin{DoxyCompactList}\small\item\em The value that is used to weigh diagonal edges. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A special calculator using Diagonal distance on integer points (Point). Use this if you can move in 8 directions. 
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_c_m_g_t_graph_1_1_calculators_1_1_point_diagonal_calculator_ab50ce95444af34df8138b0a3efb2defd}\label{class_c_m_g_t_graph_1_1_calculators_1_1_point_diagonal_calculator_ab50ce95444af34df8138b0a3efb2defd}} 
+\index{CMGTGraph.Calculators.PointDiagonalCalculator@{CMGTGraph.Calculators.PointDiagonalCalculator}!PointDiagonalCalculator@{PointDiagonalCalculator}}
+\index{PointDiagonalCalculator@{PointDiagonalCalculator}!CMGTGraph.Calculators.PointDiagonalCalculator@{CMGTGraph.Calculators.PointDiagonalCalculator}}
+\doxysubsubsection{\texorpdfstring{PointDiagonalCalculator()}{PointDiagonalCalculator()}}
+{\footnotesize\ttfamily C\+M\+G\+T\+Graph.\+Calculators.\+Point\+Diagonal\+Calculator.\+Point\+Diagonal\+Calculator (\begin{DoxyParamCaption}\item[{float}]{straight = {\ttfamily 1f},  }\item[{float}]{diagonal = {\ttfamily 1.41421356237f} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+
+
+Create a new calculator with new weights for straight and diagonal edges. The default values are 1 for straight edges and S\+Q\+R\+T(2) for diagonal ones. 
+
+This implicitly hides the constructor with default values, to prevent creating a new instance on the outside. 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_c_m_g_t_graph_1_1_calculators_1_1_point_diagonal_calculator_af15ed5272ea0ddf4ef57bdea1a44806f}\label{class_c_m_g_t_graph_1_1_calculators_1_1_point_diagonal_calculator_af15ed5272ea0ddf4ef57bdea1a44806f}} 
+\index{CMGTGraph.Calculators.PointDiagonalCalculator@{CMGTGraph.Calculators.PointDiagonalCalculator}!\_diagonal@{\_diagonal}}
+\index{\_diagonal@{\_diagonal}!CMGTGraph.Calculators.PointDiagonalCalculator@{CMGTGraph.Calculators.PointDiagonalCalculator}}
+\doxysubsubsection{\texorpdfstring{\_diagonal}{\_diagonal}}
+{\footnotesize\ttfamily readonly float C\+M\+G\+T\+Graph.\+Calculators.\+Point\+Diagonal\+Calculator.\+\_\+diagonal\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The value that is used to weigh diagonal edges. 
+
+\mbox{\Hypertarget{class_c_m_g_t_graph_1_1_calculators_1_1_point_diagonal_calculator_ad21a2cada8c9432c2dd0b785ef849c44}\label{class_c_m_g_t_graph_1_1_calculators_1_1_point_diagonal_calculator_ad21a2cada8c9432c2dd0b785ef849c44}} 
+\index{CMGTGraph.Calculators.PointDiagonalCalculator@{CMGTGraph.Calculators.PointDiagonalCalculator}!\_straight@{\_straight}}
+\index{\_straight@{\_straight}!CMGTGraph.Calculators.PointDiagonalCalculator@{CMGTGraph.Calculators.PointDiagonalCalculator}}
+\doxysubsubsection{\texorpdfstring{\_straight}{\_straight}}
+{\footnotesize\ttfamily readonly float C\+M\+G\+T\+Graph.\+Calculators.\+Point\+Diagonal\+Calculator.\+\_\+straight\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The value that is used to weigh straight edges. 
+
+\mbox{\Hypertarget{class_c_m_g_t_graph_1_1_calculators_1_1_point_diagonal_calculator_a06e701a9f2cda6a882ca5879f96e92e8}\label{class_c_m_g_t_graph_1_1_calculators_1_1_point_diagonal_calculator_a06e701a9f2cda6a882ca5879f96e92e8}} 
+\index{CMGTGraph.Calculators.PointDiagonalCalculator@{CMGTGraph.Calculators.PointDiagonalCalculator}!Chebyshev@{Chebyshev}}
+\index{Chebyshev@{Chebyshev}!CMGTGraph.Calculators.PointDiagonalCalculator@{CMGTGraph.Calculators.PointDiagonalCalculator}}
+\doxysubsubsection{\texorpdfstring{Chebyshev}{Chebyshev}}
+{\footnotesize\ttfamily readonly \mbox{\hyperlink{class_c_m_g_t_graph_1_1_calculators_1_1_point_diagonal_calculator}{Point\+Diagonal\+Calculator}} C\+M\+G\+T\+Graph.\+Calculators.\+Point\+Diagonal\+Calculator.\+Chebyshev\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+
+
+A calculator using chebyshev diagonal distance, which basically means diagonal and straight edges have the same weight, thus diagonal edges are preferred using this calculator as a heuristic, compared to using octile distance (with \mbox{\hyperlink{class_c_m_g_t_graph_1_1_calculators_1_1_point_diagonal_calculator_a70bf7983ffb473bf210a877736e68ca9}{Octile}}). 
+
+Read more on grid heuristics here\+: \href{http://theory.stanford.edu/~amitp/GameProgramming/Heuristics.html\#heuristics-for-grid-maps}{\texttt{ http\+://theory.\+stanford.\+edu/$\sim$amitp/\+Game\+Programming/\+Heuristics.\+html\#heuristics-\/for-\/grid-\/maps}} \mbox{\Hypertarget{class_c_m_g_t_graph_1_1_calculators_1_1_point_diagonal_calculator_a70bf7983ffb473bf210a877736e68ca9}\label{class_c_m_g_t_graph_1_1_calculators_1_1_point_diagonal_calculator_a70bf7983ffb473bf210a877736e68ca9}} 
+\index{CMGTGraph.Calculators.PointDiagonalCalculator@{CMGTGraph.Calculators.PointDiagonalCalculator}!Octile@{Octile}}
+\index{Octile@{Octile}!CMGTGraph.Calculators.PointDiagonalCalculator@{CMGTGraph.Calculators.PointDiagonalCalculator}}
+\doxysubsubsection{\texorpdfstring{Octile}{Octile}}
+{\footnotesize\ttfamily readonly \mbox{\hyperlink{class_c_m_g_t_graph_1_1_calculators_1_1_point_diagonal_calculator}{Point\+Diagonal\+Calculator}} C\+M\+G\+T\+Graph.\+Calculators.\+Point\+Diagonal\+Calculator.\+Octile\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+
+
+A calculator using octile diagonal distance. 
+
+Read more on grid heuristics here\+: \href{http://theory.stanford.edu/~amitp/GameProgramming/Heuristics.html\#heuristics-for-grid-maps}{\texttt{ http\+://theory.\+stanford.\+edu/$\sim$amitp/\+Game\+Programming/\+Heuristics.\+html\#heuristics-\/for-\/grid-\/maps}} 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+M\+G\+T\+Graph/\+Calculators/Point\+Diagonal\+Calculator.\+cs\end{DoxyCompactItemize}
