@@ -94,24 +94,24 @@ namespace CMGTGraph.Algorithms
             foreach (var nb in neighbors)
             {
                 var n = new DijkstraNode<T>(nb);
-                // TODO same as with A*, we don't actually get the values from the open/closed list
-                // -> they will be the default values
+                
                 if(closed.Contains(n)) continue;
 
+                var inOpen = false;
+                foreach (var dijkstraNode in open)
+                {
+                    if (!dijkstraNode.Data.Equals(nb)) continue;
+                    n = dijkstraNode;
+                    inOpen = true;
+                }
+
                 var currentPathLength = node.CurrentPathLength + calculator.Distance(node.Data, nb);
-                if (!open.Contains(n))
+                if (!inOpen || currentPathLength < n.CurrentPathLength)
                 {
                     n.Predecessor = node.Data;
                     n.CurrentPathLength = currentPathLength;
-                    open.Add(n);
-                    Logger.Spam($"Added new node: {n.Data.ToString()}");
                 }
-                else if(currentPathLength < n.CurrentPathLength)
-                {
-                    n.CurrentPathLength = currentPathLength;
-                    n.Predecessor = n.Data;
-                    Logger.Spam($"Reevaluated {n.Data.ToString()}");
-                }
+                if(!inOpen) open.Add(n);
             }
         }
     }
