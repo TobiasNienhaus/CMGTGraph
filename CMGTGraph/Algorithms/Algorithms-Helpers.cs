@@ -160,6 +160,7 @@ namespace CMGTGraph.Algorithms
             // TODO maybe make Open and Closed IEnumerable
             // TODO is it a good idea to make this a struct (has reference types)
             // TODO think about making this a class and subdivide it into multiple classes (for A*, Dijkstra, etc.)
+            // TODO maybe add "prefab" for error
             public readonly List<T> Path;
             public readonly HashSet<T> OpenNodes;
             public readonly HashSet<T> ClosedNodes;

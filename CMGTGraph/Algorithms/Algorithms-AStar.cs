@@ -98,10 +98,8 @@ namespace CMGTGraph.Algorithms
                 // get most promising node
                 var recordHolder = AStarGetMostPromisingNode(open);
 
-                // we don't want a null record holder something went wrong
-                // TODO this will go in an infinite loop if record holder ever is null
-                // it probably won't be, but this is bad design!
-                if(recordHolder == null) continue;
+                if(recordHolder == null) 
+                    throw new InvalidOperationException("The most promising node was null. This should never ever happen!");
                 
                 // check if the record node is the finish and return the corresponding data if it is
                 if (recordHolder.Data.Equals(end))
