@@ -165,19 +165,30 @@ namespace CMGTGraph.Algorithms
 
                 // on the basis of the containing node only (no heuristic, predecessor, etc.)
                 // TODO check out TryGetValue from .Net Framework 4.7.2+
+                // TODO this makes it way slower compared to the old way
+                // I think it is because we are not using a hashset's capability of O(1) lookup and
+                // are instead are doing O(n) lookup (twice)
                 var inOpen = false;
-                foreach (var aStarNode in open.Where(aStarNode => aStarNode.Data.Equals(neighbor)))
+                foreach (var aStarNode in open)
                 {
-                    inOpen = true;
-                    n = aStarNode;
+                    if (aStarNode.Data.Equals(neighbor))
+                    {
+                        inOpen = true;
+                        n = aStarNode;
+                    }
                 }
+                
+                // do we have to look in the closed list
                 var inClosed = false;
                 if (!inOpen)
                 {
-                    foreach (var aStarNode in closed.Where(aStarNode => aStarNode.Data.Equals(neighbor)))
+                    foreach (var aStarNode in closed)
                     {
-                        inClosed = true;
-                        n = aStarNode;
+                        if (aStarNode.Data.Equals(neighbor))
+                        {
+                            inClosed = true;
+                            n = aStarNode;
+                        }
                     }
                 }
                 
@@ -186,13 +197,20 @@ namespace CMGTGraph.Algorithms
                 else if (currentPathLength >= n.CurrentPathLength)
                     continue;
                 // After this point, n cannot be null
-
+                // if(inClosed) Logger.Log("Node is better AND in closed list");
+                
                 n.Predecessor = node.Data;
                 n.CurrentPathLength = currentPathLength;
                 n.DistanceToFinish = calculator.Distance(neighbor, finish);
 
-                if (inClosed || !inOpen)
+                if (!inOpen)
                     open.Add(n);
+                if (inClosed)
+                {
+                    open.Add(n);
+                    closed.Remove(n);
+                }
+                // also add to open and remove from closed, if in closed at this point
             }
         }
     }

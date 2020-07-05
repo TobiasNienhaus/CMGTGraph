@@ -23,7 +23,7 @@ namespace CMGTGraphTest.AlgorithmsTests.AStar
             _g = new Graph<Point>(PointCalculator.This);
             _random = new Random();
 
-            while (_g.NodeCount < 100) _g.Add(new Point(_random.Next(100), _random.Next(100)));
+            while (_g.NodeCount < 1000) _g.Add(new Point(_random.Next(100), _random.Next(100)));
 
             var nodes = _g.Nodes.ToArray();
             Logger.Log($"NodeCount: {nodes.Length.ToString()}");
@@ -60,6 +60,7 @@ namespace CMGTGraphTest.AlgorithmsTests.AStar
             
             stopwatch.Stop();
             var elapsed = stopwatch.ElapsedMilliseconds;
+            Logger.Log($"A* took {stopwatch.ElapsedTicks.ToString()} ticks");
             Logger.Log($"A* took {elapsed.ToString()}ms");
             Assert.LessOrEqual(elapsed, 250L, "Test took to long");
             Assert.IsNotEmpty(path);
